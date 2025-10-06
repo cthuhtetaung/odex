@@ -526,6 +526,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const featuresPreviewBtn = document.querySelector('.features-preview .btn');
             if (featuresPreviewBtn) featuresPreviewBtn.textContent = lang.featuresPreviewBtn;
 
+            // Ensure hero stat shows latest number
+            const heroFirstStat = document.querySelector('.hero-stats .stat .stat-number');
+            if (heroFirstStat) heroFirstStat.textContent = '28+';
+
             // Additional homepage text internationalization
             if (currentLang === 'en') {
                 // Statistics section
