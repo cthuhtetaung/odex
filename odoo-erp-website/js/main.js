@@ -538,7 +538,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const statLabels = document.querySelectorAll('.statistics .stat-label');
                 if (statLabels[0]) statLabels[0].textContent = 'Successful Businesses';
                 if (statLabels[1]) statLabels[1].textContent = 'Customer Satisfaction';
-                if (statLabels[2]) statLabels[2].textContent = '24/7 Support';
+                if (statLabels[2]) statLabels[2].textContent = 'Support';
                 const stat4 = document.querySelector('.statistics .stats-grid .stat-item:nth-child(4) .stat-label');
                 if (stat4) stat4.textContent = '% Business Improvement';
                 
@@ -606,7 +606,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const statLabels = document.querySelectorAll('.statistics .stat-label');
                 if (statLabels[0]) statLabels[0].textContent = 'အောင်မြင်သော လုပ်ငန်းများ';
                 if (statLabels[1]) statLabels[1].textContent = 'ဖောက်သည်စိတ်ကျေနပ်မှု';
-                if (statLabels[2]) statLabels[2].textContent = '24/7 ထောက်ပံ့ပေးမှု';
+                if (statLabels[2]) statLabels[2].textContent = 'ထောက်ပံ့ပေးမှု';
                 const stat4 = document.querySelector('.statistics .stats-grid .stat-item:nth-child(4) .stat-label');
                 if (stat4) stat4.textContent = '% လုပ်ငန်းပိုမိုတိုးတက်မှု';
                 const tTitle = document.querySelector('.testimonials h2');
