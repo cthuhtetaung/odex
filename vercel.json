@@ -10,6 +10,10 @@
   "routes": [
     { "src": "/api/contact", "dest": "odoo-erp-website/api/contact.js" },
     { "src": "/$", "dest": "odoo-erp-website/index.html" },
+    { "src": "/about$", "dest": "odoo-erp-website/about.html" },
+    { "src": "/features$", "dest": "odoo-erp-website/features.html" },
+    { "src": "/comparison$", "dest": "odoo-erp-website/comparison.html" },
+    { "src": "/contact$", "dest": "odoo-erp-website/contact.html" },
     { "src": "/(.*)", "dest": "odoo-erp-website/$1" }
   ]
 }
