@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "odoo-erp-website/api/contact.js", "use": "@vercel/node" },
+    { "src": "odoo-erp-website/**/*.html", "use": "@vercel/static" },
+    { "src": "odoo-erp-website/**/*.css", "use": "@vercel/static" },
+    { "src": "odoo-erp-website/**/*.js", "use": "@vercel/static" },
+    { "src": "odoo-erp-website/**/*.{png,jpg,jpeg,webp,gif,ico}", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/contact", "dest": "odoo-erp-website/api/contact.js" },
+    { "src": "/$", "dest": "odoo-erp-website/index.html" },
+    { "src": "/(.*)", "dest": "odoo-erp-website/$1" }
+  ]
+}
