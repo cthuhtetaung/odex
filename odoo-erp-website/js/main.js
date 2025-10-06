@@ -473,7 +473,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update page-specific content
         const pagePath = window.location.pathname;
         
-        if (pagePath.includes('index.html') || pagePath === '/' || pagePath.endsWith('/')) {
+        if (pagePath === '/' || pagePath.endsWith('/')) {
             // Home page
             document.title = lang.homeTitle;
             const logo = document.querySelector('.logo h1');
