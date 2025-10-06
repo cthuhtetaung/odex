@@ -1,5 +1,12 @@
 // Basic JavaScript functionality for the Outto ERP website
 document.addEventListener('DOMContentLoaded', function() {
+    // Basic deterrents (not security): disable context menu and some key combos
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 's' || e.key.toLowerCase() === 'u')) e.preventDefault();
+        if (e.key === 'F12') e.preventDefault();
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key.toLowerCase() === 'i' || e.key.toLowerCase() === 'j' || e.key.toLowerCase() === 'c')) e.preventDefault();
+    });
     // Language toggle functionality
     const langToggle = document.getElementById('lang-toggle');
     let currentLang = localStorage.getItem('language') || 'my';
