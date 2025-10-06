@@ -1101,10 +1101,26 @@ faqItems.forEach(item => {
     // Stacked cards subtle auto-transition (rotate top to back)
     const stacked = document.querySelector('.stacked-cards');
     if (stacked) {
-        setInterval(() => {
+        let stackedTimer;
+        function cycleStack() {
             const cards = stacked.querySelectorAll('.card');
             if (cards.length < 2) return;
-            stacked.appendChild(cards[0]);
-        }, 2600);
+            // highlight current top
+            cards[0].classList.add('active-top');
+            setTimeout(() => {
+                cards[0].classList.remove('active-top');
+                stacked.appendChild(cards[0]);
+            }, 900); // sync with CSS transition
+        }
+        function startStack() {
+            stopStack();
+            stackedTimer = setInterval(cycleStack, 2600);
+        }
+        function stopStack() {
+            if (stackedTimer) clearInterval(stackedTimer);
+        }
+        startStack();
+        stacked.addEventListener('mouseenter', stopStack);
+        stacked.addEventListener('mouseleave', startStack);
     }
 });
