@@ -1097,4 +1097,14 @@ faqItems.forEach(item => {
             slider.addEventListener('mouseleave', startSlideShow);
         }
     }
+
+    // Stacked cards subtle auto-transition (rotate top to back)
+    const stacked = document.querySelector('.stacked-cards');
+    if (stacked) {
+        setInterval(() => {
+            const cards = stacked.querySelectorAll('.card');
+            if (cards.length < 2) return;
+            stacked.appendChild(cards[0]);
+        }, 2600);
+    }
 });
