@@ -1006,21 +1006,37 @@ faqItems.forEach(item => {
                 phone: formData.get('phone'),
                 message: formData.get('message')
             };
+            function showToast(message, type = 'success') {
+                let toast = document.querySelector('.toast');
+                if (!toast) {
+                    toast = document.createElement('div');
+                    toast.className = 'toast';
+                    document.body.appendChild(toast);
+                }
+                toast.classList.remove('success','error');
+                toast.classList.add(type);
+                toast.textContent = message;
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2600);
+            }
             try {
                 const resp = await fetch('/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
-                const data = await resp.json().catch(() => ({}));
+                const text = await resp.text();
+                let data = {};
+                try { data = JSON.parse(text); } catch {}
                 if (resp.ok && data.ok) {
-                    alert(currentLang === 'my' ? 'မက်ဆေ့ခ်ျ ပေးပို့မှု အောင်မြင်ပါသည်။' : 'Message sent successfully.');
+                    showToast(currentLang === 'my' ? 'သင့်မက်ဆေ့ခ်ျအား လက်ခံပြီးပါပြီ။ ကျွန်ုပ်တို့ ဆက်သွယ်ပေးမည်။' : 'Thanks! Your message was sent. We will contact you shortly.', 'success');
                     contactForm.reset();
                 } else {
-                    alert(currentLang === 'my' ? 'ပေးပို့ရာတွင် ပြသာနာရှိပါသည်။ နောက်တစ်ကြိမ် ပြန်လည်ကြိုးစားပါ။' : 'There was a problem sending your message. Please try again.');
+                    const errMsg = data.error || text || 'Unknown error';
+                    showToast((currentLang === 'my' ? 'ပေးပို့ရာတွင် ပြသာနာရှိပါသည်။ ' : 'Submission failed. ') + errMsg, 'error');
                 }
             } catch (err) {
-                alert(currentLang === 'my' ? 'ပေးပို့ရာတွင် ပြသာနာရှိပါသည်။ နောက်တစ်ကြိမ် ပြန်လည်ကြိုးစားပါ။' : 'There was a problem sending your message. Please try again.');
+                showToast((currentLang === 'my' ? 'ပေးပို့ရာတွင် ပြသာနာရှိပါသည်။ ' : 'There was a problem sending your message. ') + (err?.message || ''), 'error');
             }
         });
     }
