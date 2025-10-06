@@ -608,7 +608,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const tTitle = document.querySelector('.testimonials h2');
                 if (tTitle) tTitle.textContent = 'ဖောက်သည်များ၏ ထင်မြင်ချက်များ';
             }
-        } else if (pagePath.includes('about.html')) {
+        } else if (pagePath.includes('about.html') || pagePath === '/about') {
             // About page
             document.title = lang.aboutTitle;
             const logo = document.querySelector('.logo h1');
@@ -649,7 +649,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const aboutCtaBtn = document.querySelector('.cta-section .btn');
             if (aboutCtaBtn) aboutCtaBtn.textContent = lang.homeBtn1;
-        } else if (pagePath.includes('comparison.html')) {
+        } else if (pagePath.includes('comparison.html') || pagePath === '/comparison') {
             // Comparison page
             document.title = lang.comparisonTitle;
             const logo = document.querySelector('.logo h1');
@@ -749,7 +749,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const comparisonCtaBtn = document.querySelector('.cta-section .btn');
             if (comparisonCtaBtn) comparisonCtaBtn.textContent = lang.homeBtn1;
-        } else if (pagePath.includes('features.html')) {
+        } else if (pagePath.includes('features.html') || pagePath === '/features') {
             // Features page
             document.title = lang.featuresTitle;
             const logo = document.querySelector('.logo h1');
@@ -801,7 +801,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const featuresCtaBtn = document.querySelector('.cta-section .btn');
             if (featuresCtaBtn) featuresCtaBtn.textContent = lang.homeBtn1;
-        } else if (pagePath.includes('contact.html')) {
+        } else if (pagePath.includes('contact.html') || pagePath === '/contact') {
             // Contact page
             document.title = lang.contactTitle;
             const logo = document.querySelector('.logo h1');
