@@ -1346,14 +1346,14 @@ footer {
 /* Company Showcase Section */
 .company-showcase {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    background: linear-gradient(135deg, #714B67 0%, #5a3a52 100%);
     text-align: center;
 }
 
 .company-showcase h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #ecf0f1;
+    color: #ffffff;
     font-weight: 700;
 }
 
@@ -1369,11 +1369,11 @@ footer {
 .slide {
     display: none;
     padding: 3rem;
-    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+    background: linear-gradient(135deg, #6d5470 0%, #714B67 100%);
     min-height: 400px;
     animation: slideIn 0.8s ease-in-out;
-    border: 2px solid #3498db;
-    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+    border: 2px solid #FFB84D;
+    box-shadow: 0 10px 30px rgba(255, 153, 0, 0.25);
 }
 
 .slide.active {
@@ -1424,14 +1424,14 @@ footer {
 
 .company-info h3 {
     font-size: 2rem;
-    color: #ecf0f1;
+    color: #ffffff;
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
 
 .company-type {
     font-size: 1.1rem;
-    color: #3498db;
+    color: #FFB84D;
     font-weight: 600;
     margin-bottom: 1rem;
     text-transform: uppercase;
@@ -1439,9 +1439,9 @@ footer {
 }
 
 .company-description {
-    font-size: 1.1rem;
-    color: #bdc3c7;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
     margin-bottom: 2rem;
 }
 
@@ -1452,13 +1452,13 @@ footer {
 }
 
 .company-stats .stat {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    color: white;
+    background: linear-gradient(135deg, #FF9900, #FFB84D);
+    color: #333;
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
     font-size: 0.9rem;
-    font-weight: 600;
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(255, 153, 0, 0.35);
     transition: transform 0.3s ease;
 }
 
@@ -1487,12 +1487,12 @@ footer {
 }
 
 .dot.active {
-    background: #3498db;
+    background: #FF9900;
     transform: scale(1.2);
 }
 
 .dot:hover {
-    background: #2980b9;
+    background: #FFB84D;
     transform: scale(1.1);
 }
 
