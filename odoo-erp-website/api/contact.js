@@ -1,13 +1,13 @@
-exports.handler = async function(event) {
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    res.setHeader('Allow', ['POST']);
+    return res.status(405).json({ ok: false, error: 'Method Not Allowed' });
   }
 
   try {
-    const { name, company, email, phone, message } = JSON.parse(event.body || '{}');
-
+    const { name, company, email, phone, message } = req.body || {};
     if (!name || !email || !message) {
-      return { statusCode: 400, body: JSON.stringify({ ok: false, error: 'Missing required fields' }) };
+      return res.status(400).json({ ok: false, error: 'Missing required fields' });
     }
 
     const apiKey = process.env.AIRTABLE_API_KEY;
@@ -15,12 +15,12 @@ exports.handler = async function(event) {
     const tableIdOrName = process.env.AIRTABLE_TABLE_ID || process.env.TABLE_NAME;
 
     if (!apiKey || !baseId || !tableIdOrName) {
-      return { statusCode: 500, body: JSON.stringify({ ok: false, error: 'Server not configured' }) };
+      return res.status(500).json({ ok: false, error: 'Server not configured' });
     }
 
     const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableIdOrName)}`;
 
-    const res = await fetch(url, {
+    const airtableResp = await fetch(url, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
@@ -41,13 +41,13 @@ exports.handler = async function(event) {
       })
     });
 
-    if (!res.ok) {
-      const txt = await res.text();
-      return { statusCode: res.status, body: JSON.stringify({ ok: false, error: txt }) };
+    if (!airtableResp.ok) {
+      const txt = await airtableResp.text();
+      return res.status(airtableResp.status).json({ ok: false, error: txt });
     }
 
-    return { statusCode: 200, body: JSON.stringify({ ok: true }) };
+    return res.status(200).json({ ok: true });
   } catch (e) {
-    return { statusCode: 500, body: JSON.stringify({ ok: false, error: e.message }) };
+    return res.status(500).json({ ok: false, error: e.message });
   }
-};
+}
