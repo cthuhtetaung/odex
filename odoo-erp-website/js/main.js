@@ -1,5 +1,13 @@
 // Basic JavaScript functionality for the Outto ERP website
 document.addEventListener('DOMContentLoaded', function() {
+    // Clean URL if someone lands on /index.html
+    try {
+        if (window.location.pathname.endsWith('/index.html')) {
+            const search = window.location.search || '';
+            const hash = window.location.hash || '';
+            window.history.replaceState({}, '', '/' + search + hash);
+        }
+    } catch (_) {}
     // Basic deterrents (not security): disable context menu and some key combos
     document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
     document.addEventListener('keydown', function(e) {
