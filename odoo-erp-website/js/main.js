@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Language toggle functionality
     const langToggle = document.getElementById('lang-toggle');
-    let currentLang = localStorage.getItem('language') || 'en';
+    let currentLang = localStorage.getItem('language') || 'my';
     
     // Language data
     const langData = {
