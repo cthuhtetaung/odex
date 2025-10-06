@@ -16,6 +16,9 @@
     { "src": "/contact$", "dest": "odoo-erp-website/contact.html" },
     { "src": "/(.*)", "dest": "odoo-erp-website/$1" }
   ],
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
