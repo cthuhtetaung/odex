@@ -1119,8 +1119,22 @@ faqItems.forEach(item => {
         function stopStack() {
             if (stackedTimer) clearInterval(stackedTimer);
         }
-        startStack();
+        // If prefers-reduced-motion, don't auto-cycle
+        const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReduced) startStack();
         stacked.addEventListener('mouseenter', stopStack);
         stacked.addEventListener('mouseleave', startStack);
+
+        // Mobile fallback: if cards are not visible after load, show fallback image
+        setTimeout(() => {
+            const cards = stacked.querySelectorAll('.card');
+            const rect = cards[0] ? cards[0].getBoundingClientRect() : null;
+            const hidden = !rect || rect.width < 40 || rect.height < 40; // likely not laid out
+            const fallback = stacked.querySelector('.fallback-image');
+            if (hidden && fallback) {
+                cards.forEach(c => c.style.display = 'none');
+                fallback.style.display = 'block';
+            }
+        }, 600);
     }
 });
