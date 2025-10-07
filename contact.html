@@ -55,7 +55,7 @@
         <div class="container">
             <div class="form-container">
                 <h2>ဒီမို တောင်းဆိုခြင်း သို့မဟုတ် ဆက်သွယ်ရန်</h2>
-                <form id="contactForm">
+                <form id="contactForm" autocomplete="off" novalidate>
                     <div class="form-group">
                         <label for="name">အမည်</label>
                         <input type="text" id="name" name="name" required>
@@ -75,6 +75,11 @@
                     <div class="form-group">
                         <label for="message">မက်ဆေ့ခ်ျ</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <!-- Honeypot: hidden field that real users won't fill -->
+                    <div style="position:absolute;left:-5000px;height:0;overflow:hidden" aria-hidden="true">
+                        <label for="companyWebsite">Leave this field empty</label>
+                        <input type="text" id="companyWebsite" name="companyWebsite" tabindex="-1" autocomplete="off">
                     </div>
                     <button type="submit" class="btn primary">ပေးပို့ရန်</button>
                 </form>

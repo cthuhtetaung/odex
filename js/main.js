@@ -1121,12 +1121,28 @@ faqItems.forEach(item => {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             const formData = new FormData(contactForm);
+            // Honeypot check
+            if ((formData.get('companyWebsite') || '').toString().trim() !== '') {
+                return; // silently drop bots
+            }
+            // Basic client-side length validation
+            const name = (formData.get('name') || '').toString().trim();
+            const company = (formData.get('company') || '').toString().trim();
+            const email = (formData.get('email') || '').toString().trim();
+            const phone = (formData.get('phone') || '').toString().trim();
+            const message = (formData.get('message') || '').toString().trim();
+            if (!name || !email || !message) {
+                return showToast(currentLang === 'my' ? 'အမည်၊ အီးမေးလ်၊ မက်ဆေ့ခ်ျ လိုအပ်ပါသည်' : 'Name, email and message are required', 'error');
+            }
+            if (name.length > 120 || company.length > 120 || email.length > 150 || phone.length > 40 || message.length > 2000) {
+                return showToast(currentLang === 'my' ? 'ဖာမ် အချက်အလက်များသည် အလွန်ရှည်လျားနေ합니다' : 'Form fields are too long', 'error');
+            }
             const payload = {
-                name: formData.get('name'),
-                company: formData.get('company'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                message: formData.get('message')
+                name,
+                company,
+                email,
+                phone,
+                message
             };
             function showToast(message, type = 'success') {
                 let toast = document.querySelector('.toast');
