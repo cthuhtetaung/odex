@@ -1,5 +1,5 @@
 // Basic JavaScript functionality for the Outto ERP website
-console.log('OdeX JS loaded - Version 2025-10-07b with language switching fixes');
+console.log('OdeX JS loaded - Version 2025-10-07c with language switching fixes - FORCE DEPLOY');
 document.addEventListener('DOMContentLoaded', function() {
     // Clean URL if someone lands on /index.html
     try {
@@ -963,6 +963,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Set initial language
     updatePageContent();
+    
+    // Temporary visual indicator for deployment verification
+    const body = document.body;
+    if (body) {
+        body.style.border = '3px solid #ff0000';
+        console.log('DEPLOYMENT TEST: Red border should be visible if new JS is loaded');
+    }
     
     // Preloader: show for 3.5s then hide
     const preloader = document.getElementById('preloader');
