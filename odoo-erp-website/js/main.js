@@ -469,6 +469,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to update page content based on language
     function updatePageContent() {
         const lang = langData[currentLang];
+        console.log('updatePageContent called with currentLang:', currentLang);
         
         // Update common elements
         const langToggle = document.getElementById('lang-toggle');
@@ -610,7 +611,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Industry solutions - Always handle for both languages
             const industryTitle = document.querySelector('.industry-solutions h2');
-            if (industryTitle) industryTitle.textContent = lang.industrySolutionsTitle || 'Solutions by Industry';
+            if (industryTitle) {
+                industryTitle.textContent = lang.industrySolutionsTitle || 'Solutions by Industry';
+                console.log('Industry Solutions Title updated:', industryTitle.textContent);
+            }
             const industrySubtitle = document.querySelector('.industry-solutions p');
             if (industrySubtitle) industrySubtitle.textContent = lang.industrySolutionsText || 'OdeX provides customized solutions for different industries.';
             const industryCards = document.querySelectorAll('.industry-solutions .industry-card');
