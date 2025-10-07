@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ဆက်သွယ်ရန် | OdeX နှင့် POS ဝန်ဆောင်မှုများ</title>
+    <link rel="stylesheet" href="../css/style.css?v=2025-10-07c">
+    <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="icon" href="../images/odoo.webp" type="image/webp">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/" aria-label="Go to Home">
+                    <h1>Ode<span class="accent-x">X</span></h1>
+                </a>
+            </div>
+            <div class="header-controls">
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="/" data-lang="navHome">ပင်မစာမျက်နှာ</a></li>
+                        <li><a href="/about" data-lang="navAbout">ERP အကြောင်း</a></li>
+                        <li><a href="/comparison" data-lang="navComparison">နှိုင်းယှဉ်ချက်</a></li>
+                        <li><a href="/features" data-lang="navFeatures">အဓိကမော်ဂျူးများ</a></li>
+                        <li><a href="/contact" class="active" data-lang="navContact">ဆက်သွယ်ရန်</a></li>
+                    </ul>
+                </nav>
+                <div class="language-switcher">
+                    <button id="lang-toggle" class="btn secondary">English Version</button>
+                </div>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>သင့်စီးပွားရေးအောင်မြင်မှုအတွက် ကျွန်ုပ်တို့နှင့် ဆက်သွယ်ပါ</h1>
+                <p>OdeX ကို သင့်စီးပွားရေးအတွက် မည်သို့ အသုံးပြုနိုင်သည်ကို အခမဲ့ ဒီမိုပြသခြင်း တောင်းဆိုပါ။</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2>ဒီမို တောင်းဆိုခြင်း သို့မဟုတ် ဆက်သွယ်ရန်</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">အမည်</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">ကုမ္ပဏီအမည်</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">အီးမေးလ်</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">ဖုန်းနံပါတ်</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">မက်ဆေ့ခ်ျ</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">ပေးပို့ရန်</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info">
+        <div class="container">
+            <h2>ကျွန်ုပ်တို့နှင့် ဆက်သွယ်ရန်</h2>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>လိပ်စာ</h3>
+                    <p>ရန်ကုန်၊ မြန်မာ</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>ဖုန်းနံပါတ်</h3>
+                    <p><i class="fas fa-phone"></i> 09-754758505</p>
+                    <p><i class="fas fa-phone"></i> 09-952177102</p>
+                    <p><i class="fas fa-phone"></i> 09-788315991</p>
+                    <p><i class="fas fa-phone"></i> 09-450049600</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>အီးမေးလ်</h3>
+                    <p>odexerp@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>မကြာခဏ မေးလေ့ရှိသော မေးခွန်းများ</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>OdeX ကို အသုံးပြုရန် ဘယ်လို စတင်ရမလဲ?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ကျွန်ုပ်တို့၏ အခမဲ့ demo တစ်ခုကို တောင်းဆိုပြီး သင့်လုပ်ငန်း၏ လိုအပ်ချက်များကို ဆွေးနွေးနိုင်ပါသည်။ ပြီးနောက် implementation plan နှင့် pricing ကို ပေးပါမည်။</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>ဘယ်လို လုပ်ငန်းအမျိုးအစားများအတွက် ကောင်းမွန်ပါသလဲ?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>OdeX သည် ထုတ်လုပ်မှု၊ အရောင်းအဝယ်၊ ပို့ဆောင်ရေး၊ ကျန်းမာရေး၊ ပညာရေး၊ အစိုးရ စသည့် လုပ်ငန်းအမျိုးအစားများအတွက် ကောင်းမွန်ပါသည်။</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>ထောက်ပံ့ပေးမှု ဘယ်လိုရမလဲ?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ကျွန်ုပ်တို့သည် 24/7 ဖုန်းထောက်ပံ့ပေးမှု၊ email support၊ နှင့် on-site training များကို ပေးဆောင်ပါသည်။</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>အချက်အလက်များ ဘယ်လို လုံခြုံပါသလဲ?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ကျွန်ုပ်တို့သည် SSL encryption၊ advanced security protocols၊ နှင့် ISO 27001 compliance ဖြင့် သင့်အချက်အလက်များကို ကာကွယ်ပါသည်။</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support-section">
+        <div class="container">
+            <h2>ထောက်ပံ့ပေးမှု ဝန်ဆောင်မှုများ</h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 ဖုန်းထောက်ပံ့ပေးမှု</h3>
+                    <p>အချိန်မရွေး ဖုန်းဖြင့် ဆက်သွယ်ပြီး အကူအညီရယူနိုင်ပါသည်။</p>
+                    <div class="support-contact">
+                        <span><i class="fas fa-phone"></i> 09-754758505</span>
+                    </div>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>သင်တန်းနှင့် လမ်းညွှန်မှု</h3>
+                    <p>သင့်အဖွဲ့အစည်းအတွက် စိတ်ကြိုက် သင်တန်းများကို ပေးဆောင်ပါသည်။</p>
+                    <div class="support-contact">
+                        <span><i class="fas fa-envelope"></i> odexerp@gmail.com</span>
+                    </div>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>စိတ်ကြိုက် ပြုပြင်မှု</h3>
+                    <p>သင့်လုပ်ငန်း၏ လိုအပ်ချက်များနှင့် ကိုက်ညီသော စိတ်ကြိုက်ပြုပြင်မှုများ။</p>
+                    <div class="support-contact">
+                        <span><i class="fas fa-envelope"></i> odexerp@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>OdeX</h3>
+                    <p>သင့်စီးပွားရေးလုပ်ငန်းကို တိုးတက်စေရန် အကောင်းဆုံး ဖြေရှင်းချက်</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">ပင်မစာမျက်နှာ</a></li>
+                        <li><a href="/about">ERP အကြောင်း</a></li>
+                        <li><a href="/comparison">နှိုင်းယှဉ်ချက်</a></li>
+                        <li><a href="/features">အဓိကမော်ဂျူးများ</a></li>
+                        <li><a href="/contact">ဆက်သွယ်ရန်</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>ဆက်သွယ်ရန်</h4>
+                    <p><i class="fas fa-envelope"></i> odexerp@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> 09-754758505</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 OdeX. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js?v=2025-10-07f"></script>
+</body>
+</html>

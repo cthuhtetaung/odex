@@ -1,0 +1,24 @@
+{
+  "name": "odoo-erp-website",
+  "version": "1.0.0",
+  "description": "Professional website for Odoo ERP and POS services in Myanmar market.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build required'",
+    "preview": "python3 -m http.server 8000"
+  },
+  "keywords": ["odoo", "erp", "pos", "myanmar", "business", "static-site"],
+  "author": "OdeX Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/odoo-erp-website.git"
+  },
+  "homepage": "https://your-username.github.io/odoo-erp-website"
+}
