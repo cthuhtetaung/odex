@@ -1,0 +1,12 @@
+{
+  "name": "odoo-erp-website",
+  "version": "1.0.0",
+  "description": "This is a professional, user-friendly website for promoting ERP by Us and POS services. The website is designed to showcase the features and benefits of ERP by Us, with a focus on the Myanmar market.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
