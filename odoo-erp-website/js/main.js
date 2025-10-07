@@ -209,7 +209,38 @@ document.addEventListener('DOMContentLoaded', function() {
             contactEmail2: "odexerp@gmail.com",
             
             // Language toggle
-            langToggleText: "English Version"
+            langToggleText: "English Version",
+            
+            // Industry Solutions Section
+            industrySolutionsTitle: "လုပ်ငန်းအမျိုးအစားအလိုက် ဖြေရှင်းချက်များ",
+            industrySolutionsText: "OdeX သည် မတူညီသော လုပ်ငန်းများအတွက် စိတ်ကြိုက်ပြုပြင်ထားသော ဖြေရှင်းချက်များကို ပေးဆောင်ပါသည်။",
+            industryManufacturing: "ထုတ်လုပ်မှု",
+            industryManufacturingText: "ထုတ်လုပ်မှုလုပ်ငန်းများအတွက် အထူးပြုလုပ်ထားသော စီမံခန့်ခွဲမှုစနစ်",
+            industryRetail: "အရောင်းအဝယ်",
+            industryRetailText: "အရောင်းအဝယ်လုပ်ငန်းများအတွက် စာရင်းနှင့် POS စနစ်",
+            industryLogistics: "ပို့ဆောင်ရေး",
+            industryLogisticsText: "ပို့ဆောင်ရေးလုပ်ငန်းများအတွက် လမ်းကြောင်းစီမံခန့်ခွဲမှု",
+            industryHealthcare: "ကျန်းမာရေး",
+            industryHealthcareText: "ဆေးရုံများနှင့် ကျန်းမာရေးစင်တာများအတွက် စီမံခန့်ခွဲမှု",
+            industryEducation: "ပညာရေး",
+            industryEducationText: "ကျောင်းများနှင့် တက္ကသိုလ်များအတွက် ပညာရေးစီမံခန့်ခွဲမှု",
+            industryGovernment: "အစိုးရ",
+            industryGovernmentText: "အစိုးရဌာနများအတွက် စီမံခန့်ခွဲမှုနှင့် အစီရင်ခံစာစနစ်",
+            
+            // Security & Compliance Section
+            securityComplianceTitle: "လုံခြုံရေးနှင့် စံချိန်များ",
+            securityComplianceText: "OdeX သည် သင့်အချက်အလက်များကို အမြင့်ဆုံး လုံခြုံရေးစံချိန်များဖြင့် ကာကွယ်ပေးပါသည်။",
+            securityDataSecurity: "အချက်အလက် လုံခြုံရေး",
+            securityDataSecurityText: "SSL encryption နှင့် advanced security protocols များဖြင့် သင့်အချက်အလက်များကို ကာကွယ်ပေးပါသည်။",
+            securityDataStorage: "အချက်အလက် သိမ်းဆည်းမှု",
+            securityDataStorageText: "အချက်အလက်များကို လုံခြုံသော cloud servers များတွင် သိမ်းဆည်းပြီး နေ့စဉ် backup ပြုလုပ်ပေးပါသည်။",
+            securityUserManagement: "အသုံးပြုသူ စီမံခန့်ခွဲမှု",
+            securityUserManagementText: "Role-based access control နှင့် user permissions များဖြင့် သင့်အချက်အလက်များကို လုံခြုံစွာ စီမံခန့်ခွဲပါသည်။",
+            securityStandardsCompliance: "စံချိန်များ လိုက်နာမှု",
+            securityStandardsComplianceText: "ISO 27001, GDPR နှင့် အခြားသော နိုင်ငံတကာ လုံခြုံရေးစံချိန်များကို လိုက်နာပါသည်။",
+            securityISO27001: "ISO 27001 Certified",
+            securityGDPR: "GDPR Compliant",
+            securityUptime: "99.9% Uptime SLA"
         },
         en: {
             homeTitle: "OdeX",
@@ -399,7 +430,38 @@ document.addEventListener('DOMContentLoaded', function() {
             contactEmail2: "odexerp@gmail.com",
             
             // Language toggle
-            langToggleText: "Myanmar Version"
+            langToggleText: "Myanmar Version",
+            
+            // Industry Solutions Section
+            industrySolutionsTitle: "Solutions by Industry",
+            industrySolutionsText: "OdeX provides customized solutions for different industries.",
+            industryManufacturing: "Manufacturing",
+            industryManufacturingText: "Specialized management system for manufacturing businesses",
+            industryRetail: "Retail",
+            industryRetailText: "Inventory and POS system for retail businesses",
+            industryLogistics: "Logistics",
+            industryLogisticsText: "Route management for logistics businesses",
+            industryHealthcare: "Healthcare",
+            industryHealthcareText: "Management for hospitals and health centers",
+            industryEducation: "Education",
+            industryEducationText: "Educational management for schools and universities",
+            industryGovernment: "Government",
+            industryGovernmentText: "Management and reporting system for government departments",
+            
+            // Security & Compliance Section
+            securityComplianceTitle: "Security & Compliance",
+            securityComplianceText: "OdeX protects your data with the highest security standards.",
+            securityDataSecurity: "Data Security",
+            securityDataSecurityText: "Protect your data with SSL encryption and advanced security protocols.",
+            securityDataStorage: "Data Storage",
+            securityDataStorageText: "Data is stored on secure cloud servers with daily backups.",
+            securityUserManagement: "User Management",
+            securityUserManagementText: "Securely manage your data with role-based access control and user permissions.",
+            securityStandardsCompliance: "Standards Compliance",
+            securityStandardsComplianceText: "Compliant with ISO 27001, GDPR and other international security standards.",
+            securityISO27001: "ISO 27001 Certified",
+            securityGDPR: "GDPR Compliant",
+            securityUptime: "99.9% Uptime SLA"
         }
     };
     
@@ -575,17 +637,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Industry solutions
                 const industryTitle = document.querySelector('.industry-solutions h2');
-                if (industryTitle) industryTitle.textContent = 'Solutions by Industry';
+                if (industryTitle) industryTitle.textContent = lang.industrySolutionsTitle || 'Solutions by Industry';
+                const industrySubtitle = document.querySelector('.industry-solutions p');
+                if (industrySubtitle) industrySubtitle.textContent = lang.industrySolutionsText || 'OdeX provides customized solutions for different industries.';
                 const industryCards = document.querySelectorAll('.industry-solutions .industry-card');
                 if (industryCards.length >= 6) {
-                    const heads = ['Manufacturing','Retail','Logistics','Healthcare','Education','Government'];
+                    const heads = [
+                        lang.industryManufacturing || 'Manufacturing',
+                        lang.industryRetail || 'Retail', 
+                        lang.industryLogistics || 'Logistics',
+                        lang.industryHealthcare || 'Healthcare',
+                        lang.industryEducation || 'Education',
+                        lang.industryGovernment || 'Government'
+                    ];
                     const descs = [
-                        'Specialized management system for manufacturing businesses',
-                        'Inventory and POS system for retail businesses',
-                        'Route and operations management for logistics',
-                        'Management for hospitals and health centers',
-                        'Education management for schools and universities',
-                        'Management and reporting for government departments'
+                        lang.industryManufacturingText || 'Specialized management system for manufacturing businesses',
+                        lang.industryRetailText || 'Inventory and POS system for retail businesses',
+                        lang.industryLogisticsText || 'Route and operations management for logistics',
+                        lang.industryHealthcareText || 'Management for hospitals and health centers',
+                        lang.industryEducationText || 'Educational management for schools and universities',
+                        lang.industryGovernmentText || 'Management and reporting system for government departments'
                     ];
                     industryCards.forEach((card, i) => {
                         const h3 = card.querySelector('h3');
@@ -597,15 +668,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Security & compliance
                 const secTitle = document.querySelector('.security-compliance h2');
-                if (secTitle) secTitle.textContent = 'Security & Compliance';
+                if (secTitle) secTitle.textContent = lang.securityComplianceTitle || 'Security & Compliance';
+                const secSubtitle = document.querySelector('.security-compliance p');
+                if (secSubtitle) secSubtitle.textContent = lang.securityComplianceText || 'OdeX protects your data with the highest security standards.';
                 const secItems = document.querySelectorAll('.security-compliance .security-item');
                 if (secItems.length >= 4) {
-                    const sHeads = ['Data Security','Data Storage','User Management','Standards Compliance'];
+                    const sHeads = [
+                        lang.securityDataSecurity || 'Data Security',
+                        lang.securityDataStorage || 'Data Storage',
+                        lang.securityUserManagement || 'User Management',
+                        lang.securityStandardsCompliance || 'Standards Compliance'
+                    ];
                     const sDescs = [
-                        'Protect your data with SSL encryption and advanced security protocols.',
-                        'Data stored securely on cloud servers with daily backups.',
-                        'Safely manage your data with role-based access control and user permissions.',
-                        'Compliant with global standards such as ISO 27001 and GDPR.'
+                        lang.securityDataSecurityText || 'Protect your data with SSL encryption and advanced security protocols.',
+                        lang.securityDataStorageText || 'Data stored securely on cloud servers with daily backups.',
+                        lang.securityUserManagementText || 'Safely manage your data with role-based access control and user permissions.',
+                        lang.securityStandardsComplianceText || 'Compliant with global standards such as ISO 27001 and GDPR.'
                     ];
                     secItems.forEach((item, i) => {
                         const h3 = item.querySelector('h3');
@@ -613,6 +691,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (h3) h3.textContent = sHeads[i] || h3.textContent;
                         if (p) p.textContent = sDescs[i] || p.textContent;
                     });
+                }
+                
+                // Update compliance badges
+                const badges = document.querySelectorAll('.compliance-badges .badge span');
+                if (badges.length >= 3) {
+                    if (badges[0]) badges[0].textContent = lang.securityISO27001 || 'ISO 27001 Certified';
+                    if (badges[1]) badges[1].textContent = lang.securityGDPR || 'GDPR Compliant';
+                    if (badges[2]) badges[2].textContent = lang.securityUptime || '99.9% Uptime SLA';
                 }
             } else {
                 // Restore Myanmar labels when switching back
@@ -626,6 +712,60 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (stat4) stat4.textContent = '% လုပ်ငန်းပိုမိုတိုးတက်မှု';
                 const tTitle = document.querySelector('.testimonials h2');
                 if (tTitle) tTitle.textContent = 'ဖောက်သည်များ၏ ထင်မြင်ချက်များ';
+                
+                // Industry solutions - Myanmar
+                const industryTitle = document.querySelector('.industry-solutions h2');
+                if (industryTitle) industryTitle.textContent = 'လုပ်ငန်းအမျိုးအစားအလိုက် ဖြေရှင်းချက်များ';
+                const industrySubtitle = document.querySelector('.industry-solutions p');
+                if (industrySubtitle) industrySubtitle.textContent = 'OdeX သည် မတူညီသော လုပ်ငန်းများအတွက် စိတ်ကြိုက်ပြုပြင်ထားသော ဖြေရှင်းချက်များကို ပေးဆောင်ပါသည်။';
+                const industryCards = document.querySelectorAll('.industry-solutions .industry-card');
+                if (industryCards.length >= 6) {
+                    const heads = ['ထုတ်လုပ်မှု','အရောင်းအဝယ်','ပို့ဆောင်ရေး','ကျန်းမာရေး','ပညာရေး','အစိုးရ'];
+                    const descs = [
+                        'ထုတ်လုပ်မှုလုပ်ငန်းများအတွက် အထူးပြုလုပ်ထားသော စီမံခန့်ခွဲမှုစနစ်',
+                        'အရောင်းအဝယ်လုပ်ငန်းများအတွက် စာရင်းနှင့် POS စနစ်',
+                        'ပို့ဆောင်ရေးလုပ်ငန်းများအတွက် လမ်းကြောင်းစီမံခန့်ခွဲမှု',
+                        'ဆေးရုံများနှင့် ကျန်းမာရေးစင်တာများအတွက် စီမံခန့်ခွဲမှု',
+                        'ကျောင်းများနှင့် တက္ကသိုလ်များအတွက် ပညာရေးစီမံခန့်ခွဲမှု',
+                        'အစိုးရဌာနများအတွက် စီမံခန့်ခွဲမှုနှင့် အစီရင်ခံစာစနစ်'
+                    ];
+                    industryCards.forEach((card, i) => {
+                        const h3 = card.querySelector('h3');
+                        const p = card.querySelector('p');
+                        if (h3) h3.textContent = heads[i] || h3.textContent;
+                        if (p) p.textContent = descs[i] || p.textContent;
+                    });
+                }
+                
+                // Security & compliance - Myanmar
+                const secTitle = document.querySelector('.security-compliance h2');
+                if (secTitle) secTitle.textContent = 'လုံခြုံရေးနှင့် စံချိန်များ';
+                const secSubtitle = document.querySelector('.security-compliance p');
+                if (secSubtitle) secSubtitle.textContent = 'OdeX သည် သင့်အချက်အလက်များကို အမြင့်ဆုံး လုံခြုံရေးစံချိန်များဖြင့် ကာကွယ်ပေးပါသည်။';
+                const secItems = document.querySelectorAll('.security-compliance .security-item');
+                if (secItems.length >= 4) {
+                    const sHeads = ['အချက်အလက် လုံခြုံရေး','အချက်အလက် သိမ်းဆည်းမှု','အသုံးပြုသူ စီမံခန့်ခွဲမှု','စံချိန်များ လိုက်နာမှု'];
+                    const sDescs = [
+                        'SSL encryption နှင့် advanced security protocols များဖြင့် သင့်အချက်အလက်များကို ကာကွယ်ပေးပါသည်။',
+                        'အချက်အလက်များကို လုံခြုံသော cloud servers များတွင် သိမ်းဆည်းပြီး နေ့စဉ် backup ပြုလုပ်ပေးပါသည်။',
+                        'Role-based access control နှင့် user permissions များဖြင့် သင့်အချက်အလက်များကို လုံခြုံစွာ စီမံခန့်ခွဲပါသည်။',
+                        'ISO 27001, GDPR နှင့် အခြားသော နိုင်ငံတကာ လုံခြုံရေးစံချိန်များကို လိုက်နာပါသည်။'
+                    ];
+                    secItems.forEach((item, i) => {
+                        const h3 = item.querySelector('h3');
+                        const p = item.querySelector('p');
+                        if (h3) h3.textContent = sHeads[i] || h3.textContent;
+                        if (p) p.textContent = sDescs[i] || p.textContent;
+                    });
+                }
+                
+                // Update compliance badges - Myanmar
+                const badges = document.querySelectorAll('.compliance-badges .badge span');
+                if (badges.length >= 3) {
+                    if (badges[0]) badges[0].textContent = 'ISO 27001 Certified';
+                    if (badges[1]) badges[1].textContent = 'GDPR Compliant';
+                    if (badges[2]) badges[2].textContent = '99.9% Uptime SLA';
+                }
             }
         } else if (pagePath.includes('about.html') || pagePath === '/about') {
             // About page
