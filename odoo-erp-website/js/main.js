@@ -701,7 +701,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (badges[2]) badges[2].textContent = lang.securityUptime || '99.9% Uptime SLA';
                 }
             } else {
-                // Restore Myanmar labels when switching back
+                // Restore Myanmar labels when switching back - using language data
+                const myLang = langData.my;
+                
+                // Statistics section
                 const statsTitle = document.querySelector('.statistics h2');
                 if (statsTitle) statsTitle.textContent = 'ကျွန်ုပ်တို့၏ အောင်မြင်မှုများ';
                 const statLabels = document.querySelectorAll('.statistics .stat-label');
@@ -710,24 +713,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (statLabels[2]) statLabels[2].textContent = 'ထောက်ပံ့ပေးမှု';
                 const stat4 = document.querySelector('.statistics .stats-grid .stat-item:nth-child(4) .stat-label');
                 if (stat4) stat4.textContent = '% လုပ်ငန်းပိုမိုတိုးတက်မှု';
+                
+                // Testimonials section
                 const tTitle = document.querySelector('.testimonials h2');
                 if (tTitle) tTitle.textContent = 'ဖောက်သည်များ၏ ထင်မြင်ချက်များ';
                 
-                // Industry solutions - Myanmar
+                // Industry solutions - Myanmar using language data
                 const industryTitle = document.querySelector('.industry-solutions h2');
-                if (industryTitle) industryTitle.textContent = 'လုပ်ငန်းအမျိုးအစားအလိုက် ဖြေရှင်းချက်များ';
+                if (industryTitle) industryTitle.textContent = myLang.industrySolutionsTitle || 'လုပ်ငန်းအမျိုးအစားအလိုက် ဖြေရှင်းချက်များ';
                 const industrySubtitle = document.querySelector('.industry-solutions p');
-                if (industrySubtitle) industrySubtitle.textContent = 'OdeX သည် မတူညီသော လုပ်ငန်းများအတွက် စိတ်ကြိုက်ပြုပြင်ထားသော ဖြေရှင်းချက်များကို ပေးဆောင်ပါသည်။';
+                if (industrySubtitle) industrySubtitle.textContent = myLang.industrySolutionsText || 'OdeX သည် မတူညီသော လုပ်ငန်းများအတွက် စိတ်ကြိုက်ပြုပြင်ထားသော ဖြေရှင်းချက်များကို ပေးဆောင်ပါသည်။';
                 const industryCards = document.querySelectorAll('.industry-solutions .industry-card');
                 if (industryCards.length >= 6) {
-                    const heads = ['ထုတ်လုပ်မှု','အရောင်းအဝယ်','ပို့ဆောင်ရေး','ကျန်းမာရေး','ပညာရေး','အစိုးရ'];
+                    const heads = [
+                        myLang.industryManufacturing || 'ထုတ်လုပ်မှု',
+                        myLang.industryRetail || 'အရောင်းအဝယ်',
+                        myLang.industryLogistics || 'ပို့ဆောင်ရေး',
+                        myLang.industryHealthcare || 'ကျန်းမာရေး',
+                        myLang.industryEducation || 'ပညာရေး',
+                        myLang.industryGovernment || 'အစိုးရ'
+                    ];
                     const descs = [
-                        'ထုတ်လုပ်မှုလုပ်ငန်းများအတွက် အထူးပြုလုပ်ထားသော စီမံခန့်ခွဲမှုစနစ်',
-                        'အရောင်းအဝယ်လုပ်ငန်းများအတွက် စာရင်းနှင့် POS စနစ်',
-                        'ပို့ဆောင်ရေးလုပ်ငန်းများအတွက် လမ်းကြောင်းစီမံခန့်ခွဲမှု',
-                        'ဆေးရုံများနှင့် ကျန်းမာရေးစင်တာများအတွက် စီမံခန့်ခွဲမှု',
-                        'ကျောင်းများနှင့် တက္ကသိုလ်များအတွက် ပညာရေးစီမံခန့်ခွဲမှု',
-                        'အစိုးရဌာနများအတွက် စီမံခန့်ခွဲမှုနှင့် အစီရင်ခံစာစနစ်'
+                        myLang.industryManufacturingText || 'ထုတ်လုပ်မှုလုပ်ငန်းများအတွက် အထူးပြုလုပ်ထားသော စီမံခန့်ခွဲမှုစနစ်',
+                        myLang.industryRetailText || 'အရောင်းအဝယ်လုပ်ငန်းများအတွက် စာရင်းနှင့် POS စနစ်',
+                        myLang.industryLogisticsText || 'ပို့ဆောင်ရေးလုပ်ငန်းများအတွက် လမ်းကြောင်းစီမံခန့်ခွဲမှု',
+                        myLang.industryHealthcareText || 'ဆေးရုံများနှင့် ကျန်းမာရေးစင်တာများအတွက် စီမံခန့်ခွဲမှု',
+                        myLang.industryEducationText || 'ကျောင်းများနှင့် တက္ကသိုလ်များအတွက် ပညာရေးစီမံခန့်ခွဲမှု',
+                        myLang.industryGovernmentText || 'အစိုးရဌာနများအတွက် စီမံခန့်ခွဲမှုနှင့် အစီရင်ခံစာစနစ်'
                     ];
                     industryCards.forEach((card, i) => {
                         const h3 = card.querySelector('h3');
@@ -737,19 +749,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
                 
-                // Security & compliance - Myanmar
+                // Security & compliance - Myanmar using language data
                 const secTitle = document.querySelector('.security-compliance h2');
-                if (secTitle) secTitle.textContent = 'လုံခြုံရေးနှင့် စံချိန်များ';
+                if (secTitle) secTitle.textContent = myLang.securityComplianceTitle || 'လုံခြုံရေးနှင့် စံချိန်များ';
                 const secSubtitle = document.querySelector('.security-compliance p');
-                if (secSubtitle) secSubtitle.textContent = 'OdeX သည် သင့်အချက်အလက်များကို အမြင့်ဆုံး လုံခြုံရေးစံချိန်များဖြင့် ကာကွယ်ပေးပါသည်။';
+                if (secSubtitle) secSubtitle.textContent = myLang.securityComplianceText || 'OdeX သည် သင့်အချက်အလက်များကို အမြင့်ဆုံး လုံခြုံရေးစံချိန်များဖြင့် ကာကွယ်ပေးပါသည်။';
                 const secItems = document.querySelectorAll('.security-compliance .security-item');
                 if (secItems.length >= 4) {
-                    const sHeads = ['အချက်အလက် လုံခြုံရေး','အချက်အလက် သိမ်းဆည်းမှု','အသုံးပြုသူ စီမံခန့်ခွဲမှု','စံချိန်များ လိုက်နာမှု'];
+                    const sHeads = [
+                        myLang.securityDataSecurity || 'အချက်အလက် လုံခြုံရေး',
+                        myLang.securityDataStorage || 'အချက်အလက် သိမ်းဆည်းမှု',
+                        myLang.securityUserManagement || 'အသုံးပြုသူ စီမံခန့်ခွဲမှု',
+                        myLang.securityStandardsCompliance || 'စံချိန်များ လိုက်နာမှု'
+                    ];
                     const sDescs = [
-                        'SSL encryption နှင့် advanced security protocols များဖြင့် သင့်အချက်အလက်များကို ကာကွယ်ပေးပါသည်။',
-                        'အချက်အလက်များကို လုံခြုံသော cloud servers များတွင် သိမ်းဆည်းပြီး နေ့စဉ် backup ပြုလုပ်ပေးပါသည်။',
-                        'Role-based access control နှင့် user permissions များဖြင့် သင့်အချက်အလက်များကို လုံခြုံစွာ စီမံခန့်ခွဲပါသည်။',
-                        'ISO 27001, GDPR နှင့် အခြားသော နိုင်ငံတကာ လုံခြုံရေးစံချိန်များကို လိုက်နာပါသည်။'
+                        myLang.securityDataSecurityText || 'SSL encryption နှင့် advanced security protocols များဖြင့် သင့်အချက်အလက်များကို ကာကွယ်ပေးပါသည်။',
+                        myLang.securityDataStorageText || 'အချက်အလက်များကို လုံခြုံသော cloud servers များတွင် သိမ်းဆည်းပြီး နေ့စဉ် backup ပြုလုပ်ပေးပါသည်။',
+                        myLang.securityUserManagementText || 'Role-based access control နှင့် user permissions များဖြင့် သင့်အချက်အလက်များကို လုံခြုံစွာ စီမံခန့်ခွဲပါသည်။',
+                        myLang.securityStandardsComplianceText || 'ISO 27001, GDPR နှင့် အခြားသော နိုင်ငံတကာ လုံခြုံရေးစံချိန်များကို လိုက်နာပါသည်။'
                     ];
                     secItems.forEach((item, i) => {
                         const h3 = item.querySelector('h3');
@@ -759,12 +776,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
                 
-                // Update compliance badges - Myanmar
+                // Update compliance badges - Myanmar using language data
                 const badges = document.querySelectorAll('.compliance-badges .badge span');
                 if (badges.length >= 3) {
-                    if (badges[0]) badges[0].textContent = 'ISO 27001 Certified';
-                    if (badges[1]) badges[1].textContent = 'GDPR Compliant';
-                    if (badges[2]) badges[2].textContent = '99.9% Uptime SLA';
+                    if (badges[0]) badges[0].textContent = myLang.securityISO27001 || 'ISO 27001 Certified';
+                    if (badges[1]) badges[1].textContent = myLang.securityGDPR || 'GDPR Compliant';
+                    if (badges[2]) badges[2].textContent = myLang.securityUptime || '99.9% Uptime SLA';
                 }
             }
         } else if (pagePath.includes('about.html') || pagePath === '/about') {
