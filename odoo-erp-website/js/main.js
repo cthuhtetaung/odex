@@ -1,4 +1,5 @@
 // Basic JavaScript functionality for the Outto ERP website
+console.log('OdeX JS loaded - Version 2025-10-07b with language switching fixes');
 document.addEventListener('DOMContentLoaded', function() {
     // Clean URL if someone lands on /index.html
     try {
