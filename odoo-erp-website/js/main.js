@@ -607,6 +607,72 @@ document.addEventListener('DOMContentLoaded', function() {
             const heroFirstStat = document.querySelector('.hero-stats .stat .stat-number');
             if (heroFirstStat) heroFirstStat.textContent = '28+';
 
+            // Industry solutions - Always handle for both languages
+            const industryTitle = document.querySelector('.industry-solutions h2');
+            if (industryTitle) industryTitle.textContent = lang.industrySolutionsTitle || 'Solutions by Industry';
+            const industrySubtitle = document.querySelector('.industry-solutions p');
+            if (industrySubtitle) industrySubtitle.textContent = lang.industrySolutionsText || 'OdeX provides customized solutions for different industries.';
+            const industryCards = document.querySelectorAll('.industry-solutions .industry-card');
+            if (industryCards.length >= 6) {
+                const heads = [
+                    lang.industryManufacturing || 'Manufacturing',
+                    lang.industryRetail || 'Retail', 
+                    lang.industryLogistics || 'Logistics',
+                    lang.industryHealthcare || 'Healthcare',
+                    lang.industryEducation || 'Education',
+                    lang.industryGovernment || 'Government'
+                ];
+                const descs = [
+                    lang.industryManufacturingText || 'Specialized management system for manufacturing businesses',
+                    lang.industryRetailText || 'Inventory and POS system for retail businesses',
+                    lang.industryLogisticsText || 'Route and operations management for logistics',
+                    lang.industryHealthcareText || 'Management for hospitals and health centers',
+                    lang.industryEducationText || 'Educational management for schools and universities',
+                    lang.industryGovernmentText || 'Management and reporting system for government departments'
+                ];
+                industryCards.forEach((card, i) => {
+                    const h3 = card.querySelector('h3');
+                    const p = card.querySelector('p');
+                    if (h3) h3.textContent = heads[i] || h3.textContent;
+                    if (p) p.textContent = descs[i] || p.textContent;
+                });
+            }
+            
+            // Security & compliance - Always handle for both languages
+            const secTitle = document.querySelector('.security-compliance h2');
+            if (secTitle) secTitle.textContent = lang.securityComplianceTitle || 'Security & Compliance';
+            const secSubtitle = document.querySelector('.security-compliance p');
+            if (secSubtitle) secSubtitle.textContent = lang.securityComplianceText || 'OdeX protects your data with the highest security standards.';
+            const secItems = document.querySelectorAll('.security-compliance .security-item');
+            if (secItems.length >= 4) {
+                const sHeads = [
+                    lang.securityDataSecurity || 'Data Security',
+                    lang.securityDataStorage || 'Data Storage',
+                    lang.securityUserManagement || 'User Management',
+                    lang.securityStandardsCompliance || 'Standards Compliance'
+                ];
+                const sDescs = [
+                    lang.securityDataSecurityText || 'Protect your data with SSL encryption and advanced security protocols.',
+                    lang.securityDataStorageText || 'Data stored securely on cloud servers with daily backups.',
+                    lang.securityUserManagementText || 'Safely manage your data with role-based access control and user permissions.',
+                    lang.securityStandardsComplianceText || 'Compliant with global standards such as ISO 27001 and GDPR.'
+                ];
+                secItems.forEach((item, i) => {
+                    const h3 = item.querySelector('h3');
+                    const p = item.querySelector('p');
+                    if (h3) h3.textContent = sHeads[i] || h3.textContent;
+                    if (p) p.textContent = sDescs[i] || p.textContent;
+                });
+            }
+            
+            // Update compliance badges - Always handle for both languages
+            const badges = document.querySelectorAll('.compliance-badges .badge span');
+            if (badges.length >= 3) {
+                if (badges[0]) badges[0].textContent = lang.securityISO27001 || 'ISO 27001 Certified';
+                if (badges[1]) badges[1].textContent = lang.securityGDPR || 'GDPR Compliant';
+                if (badges[2]) badges[2].textContent = lang.securityUptime || '99.9% Uptime SLA';
+            }
+
             // Additional homepage text internationalization
             if (currentLang === 'en') {
                 // Statistics section
@@ -634,72 +700,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (n2) n2.textContent = 'Daw Nini Khine';
                 if (t3) t3.textContent = 'Mobile accessibility is crucial. We can manage our business from anywhere. OdeX really changed the way we work.';
                 if (n3) n3.textContent = 'U Soe Min';
-                
-                // Industry solutions
-                const industryTitle = document.querySelector('.industry-solutions h2');
-                if (industryTitle) industryTitle.textContent = lang.industrySolutionsTitle || 'Solutions by Industry';
-                const industrySubtitle = document.querySelector('.industry-solutions p');
-                if (industrySubtitle) industrySubtitle.textContent = lang.industrySolutionsText || 'OdeX provides customized solutions for different industries.';
-                const industryCards = document.querySelectorAll('.industry-solutions .industry-card');
-                if (industryCards.length >= 6) {
-                    const heads = [
-                        lang.industryManufacturing || 'Manufacturing',
-                        lang.industryRetail || 'Retail', 
-                        lang.industryLogistics || 'Logistics',
-                        lang.industryHealthcare || 'Healthcare',
-                        lang.industryEducation || 'Education',
-                        lang.industryGovernment || 'Government'
-                    ];
-                    const descs = [
-                        lang.industryManufacturingText || 'Specialized management system for manufacturing businesses',
-                        lang.industryRetailText || 'Inventory and POS system for retail businesses',
-                        lang.industryLogisticsText || 'Route and operations management for logistics',
-                        lang.industryHealthcareText || 'Management for hospitals and health centers',
-                        lang.industryEducationText || 'Educational management for schools and universities',
-                        lang.industryGovernmentText || 'Management and reporting system for government departments'
-                    ];
-                    industryCards.forEach((card, i) => {
-                        const h3 = card.querySelector('h3');
-                        const p = card.querySelector('p');
-                        if (h3) h3.textContent = heads[i] || h3.textContent;
-                        if (p) p.textContent = descs[i] || p.textContent;
-                    });
-                }
-                
-                // Security & compliance
-                const secTitle = document.querySelector('.security-compliance h2');
-                if (secTitle) secTitle.textContent = lang.securityComplianceTitle || 'Security & Compliance';
-                const secSubtitle = document.querySelector('.security-compliance p');
-                if (secSubtitle) secSubtitle.textContent = lang.securityComplianceText || 'OdeX protects your data with the highest security standards.';
-                const secItems = document.querySelectorAll('.security-compliance .security-item');
-                if (secItems.length >= 4) {
-                    const sHeads = [
-                        lang.securityDataSecurity || 'Data Security',
-                        lang.securityDataStorage || 'Data Storage',
-                        lang.securityUserManagement || 'User Management',
-                        lang.securityStandardsCompliance || 'Standards Compliance'
-                    ];
-                    const sDescs = [
-                        lang.securityDataSecurityText || 'Protect your data with SSL encryption and advanced security protocols.',
-                        lang.securityDataStorageText || 'Data stored securely on cloud servers with daily backups.',
-                        lang.securityUserManagementText || 'Safely manage your data with role-based access control and user permissions.',
-                        lang.securityStandardsComplianceText || 'Compliant with global standards such as ISO 27001 and GDPR.'
-                    ];
-                    secItems.forEach((item, i) => {
-                        const h3 = item.querySelector('h3');
-                        const p = item.querySelector('p');
-                        if (h3) h3.textContent = sHeads[i] || h3.textContent;
-                        if (p) p.textContent = sDescs[i] || p.textContent;
-                    });
-                }
-                
-                // Update compliance badges
-                const badges = document.querySelectorAll('.compliance-badges .badge span');
-                if (badges.length >= 3) {
-                    if (badges[0]) badges[0].textContent = lang.securityISO27001 || 'ISO 27001 Certified';
-                    if (badges[1]) badges[1].textContent = lang.securityGDPR || 'GDPR Compliant';
-                    if (badges[2]) badges[2].textContent = lang.securityUptime || '99.9% Uptime SLA';
-                }
             } else {
                 // Restore Myanmar labels when switching back - using language data
                 const myLang = langData.my;
@@ -717,72 +717,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Testimonials section
                 const tTitle = document.querySelector('.testimonials h2');
                 if (tTitle) tTitle.textContent = 'ဖောက်သည်များ၏ ထင်မြင်ချက်များ';
-                
-                // Industry solutions - Myanmar using language data
-                const industryTitle = document.querySelector('.industry-solutions h2');
-                if (industryTitle) industryTitle.textContent = myLang.industrySolutionsTitle || 'လုပ်ငန်းအမျိုးအစားအလိုက် ဖြေရှင်းချက်များ';
-                const industrySubtitle = document.querySelector('.industry-solutions p');
-                if (industrySubtitle) industrySubtitle.textContent = myLang.industrySolutionsText || 'OdeX သည် မတူညီသော လုပ်ငန်းများအတွက် စိတ်ကြိုက်ပြုပြင်ထားသော ဖြေရှင်းချက်များကို ပေးဆောင်ပါသည်။';
-                const industryCards = document.querySelectorAll('.industry-solutions .industry-card');
-                if (industryCards.length >= 6) {
-                    const heads = [
-                        myLang.industryManufacturing || 'ထုတ်လုပ်မှု',
-                        myLang.industryRetail || 'အရောင်းအဝယ်',
-                        myLang.industryLogistics || 'ပို့ဆောင်ရေး',
-                        myLang.industryHealthcare || 'ကျန်းမာရေး',
-                        myLang.industryEducation || 'ပညာရေး',
-                        myLang.industryGovernment || 'အစိုးရ'
-                    ];
-                    const descs = [
-                        myLang.industryManufacturingText || 'ထုတ်လုပ်မှုလုပ်ငန်းများအတွက် အထူးပြုလုပ်ထားသော စီမံခန့်ခွဲမှုစနစ်',
-                        myLang.industryRetailText || 'အရောင်းအဝယ်လုပ်ငန်းများအတွက် စာရင်းနှင့် POS စနစ်',
-                        myLang.industryLogisticsText || 'ပို့ဆောင်ရေးလုပ်ငန်းများအတွက် လမ်းကြောင်းစီမံခန့်ခွဲမှု',
-                        myLang.industryHealthcareText || 'ဆေးရုံများနှင့် ကျန်းမာရေးစင်တာများအတွက် စီမံခန့်ခွဲမှု',
-                        myLang.industryEducationText || 'ကျောင်းများနှင့် တက္ကသိုလ်များအတွက် ပညာရေးစီမံခန့်ခွဲမှု',
-                        myLang.industryGovernmentText || 'အစိုးရဌာနများအတွက် စီမံခန့်ခွဲမှုနှင့် အစီရင်ခံစာစနစ်'
-                    ];
-                    industryCards.forEach((card, i) => {
-                        const h3 = card.querySelector('h3');
-                        const p = card.querySelector('p');
-                        if (h3) h3.textContent = heads[i] || h3.textContent;
-                        if (p) p.textContent = descs[i] || p.textContent;
-                    });
-                }
-                
-                // Security & compliance - Myanmar using language data
-                const secTitle = document.querySelector('.security-compliance h2');
-                if (secTitle) secTitle.textContent = myLang.securityComplianceTitle || 'လုံခြုံရေးနှင့် စံချိန်များ';
-                const secSubtitle = document.querySelector('.security-compliance p');
-                if (secSubtitle) secSubtitle.textContent = myLang.securityComplianceText || 'OdeX သည် သင့်အချက်အလက်များကို အမြင့်ဆုံး လုံခြုံရေးစံချိန်များဖြင့် ကာကွယ်ပေးပါသည်။';
-                const secItems = document.querySelectorAll('.security-compliance .security-item');
-                if (secItems.length >= 4) {
-                    const sHeads = [
-                        myLang.securityDataSecurity || 'အချက်အလက် လုံခြုံရေး',
-                        myLang.securityDataStorage || 'အချက်အလက် သိမ်းဆည်းမှု',
-                        myLang.securityUserManagement || 'အသုံးပြုသူ စီမံခန့်ခွဲမှု',
-                        myLang.securityStandardsCompliance || 'စံချိန်များ လိုက်နာမှု'
-                    ];
-                    const sDescs = [
-                        myLang.securityDataSecurityText || 'SSL encryption နှင့် advanced security protocols များဖြင့် သင့်အချက်အလက်များကို ကာကွယ်ပေးပါသည်။',
-                        myLang.securityDataStorageText || 'အချက်အလက်များကို လုံခြုံသော cloud servers များတွင် သိမ်းဆည်းပြီး နေ့စဉ် backup ပြုလုပ်ပေးပါသည်။',
-                        myLang.securityUserManagementText || 'Role-based access control နှင့် user permissions များဖြင့် သင့်အချက်အလက်များကို လုံခြုံစွာ စီမံခန့်ခွဲပါသည်။',
-                        myLang.securityStandardsComplianceText || 'ISO 27001, GDPR နှင့် အခြားသော နိုင်ငံတကာ လုံခြုံရေးစံချိန်များကို လိုက်နာပါသည်။'
-                    ];
-                    secItems.forEach((item, i) => {
-                        const h3 = item.querySelector('h3');
-                        const p = item.querySelector('p');
-                        if (h3) h3.textContent = sHeads[i] || h3.textContent;
-                        if (p) p.textContent = sDescs[i] || p.textContent;
-                    });
-                }
-                
-                // Update compliance badges - Myanmar using language data
-                const badges = document.querySelectorAll('.compliance-badges .badge span');
-                if (badges.length >= 3) {
-                    if (badges[0]) badges[0].textContent = myLang.securityISO27001 || 'ISO 27001 Certified';
-                    if (badges[1]) badges[1].textContent = myLang.securityGDPR || 'GDPR Compliant';
-                    if (badges[2]) badges[2].textContent = myLang.securityUptime || '99.9% Uptime SLA';
-                }
             }
         } else if (pagePath.includes('about.html') || pagePath === '/about') {
             // About page
