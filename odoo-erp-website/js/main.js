@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Language data
     const langData = {
         my: {
-            homeTitle: "OdeX - VERCEL DEPLOYMENT FIX",
+            homeTitle: "OdeX - FORCE VERCEL DEPLOY",
             heroHeading: "Manual မှ Digital သို့ — အသုံးပြုရလွယ်ကူ၊ စျေးနှုန်းသက်သာသော Odoo ERP ဖြင့်ပြောင်းလဲပါ။",
             heroMotto: "အဆင့်မြင့် နည်းပညာ၊ မဆုံးနိုင်သော အလားအလာများ",
             heroText: "Odoo ERP သည် လုပ်ငန်းဆောင်ရွက်မှုများကို တစ်နေရာတည်းမှ စုစည်းစီမံနိုင်သော စနစ်ဖြစ်ပြီး၊ ရောင်းအား၊ ဘဏ်စာရင်း၊ ဂိုဒေါင်စီမံခန့်ခွဲမှု၊ လူ့စွမ်းအင်စသည်တို့ကို အလွယ်တကူ ပေါင်းစည်းအသုံးပြုနိုင်ပါသည်။ လုပ်ငန်းစဉ်များကို ထိရောက်စွာ စနစ်တကျ ပြောင်းလဲစေပြီး အချိန်နှင့် ကုန်ကျစရိတ်ကို လျော့ချပေးပါသည်။",
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
             securityUptime: "99.9% Uptime SLA"
         },
         en: {
-            homeTitle: "OdeX - VERCEL DEPLOYMENT FIX",
+            homeTitle: "OdeX - FORCE VERCEL DEPLOY",
             heroHeading: "From Manual to Digital — switch with easy‑to‑use, affordable Odoo ERP",
             heroMotto: "Advanced Technology, Infinite Possibilities",
             heroText: "Odoo ERP centralizes your operations in one place — seamlessly integrating sales, accounting, inventory, and HR. It streamlines processes, improves efficiency, and reduces both time and operating costs.",
