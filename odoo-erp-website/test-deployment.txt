@@ -1,0 +1,3 @@
+Deployment test file - Version 2025-10-07d
+This file was created to force Vercel to detect changes.
+Timestamp: 2025-10-07
