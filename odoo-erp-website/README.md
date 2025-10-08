@@ -1,70 +1,207 @@
-# ERP by Us Website
+# OdeX ERP Website
 
-This is a professional, user-friendly website for promoting ERP by Us and POS services. The website is designed to showcase the features and benefits of ERP by Us, with a focus on the Myanmar market.
+A professional, bilingual website for Odoo ERP and POS services targeting the Myanmar market. Built with modern web technologies and optimized for deployment on GitHub Pages and Vercel.
 
-## Features
+## 🚀 Features
 
-- **Multi-page Design**: Home, About ERP, Comparison (Traditional POS vs OdeX ERP), Features & Modules, and Contact/Request Demo pages
-- **Responsive Layout**: Mobile-friendly design that works on all devices
+- **Multi-page Design**: Home, About ERP, Comparison, Features & Modules, and Contact pages
+- **Responsive Layout**: Mobile-first design that works on all devices
 - **Bilingual Support**: Myanmar (Burmese) and English language toggle functionality
 - **Modern UI**: Clean, professional design with intuitive navigation
+- **Contact Form**: Integrated with Airtable for lead management
+- **SEO Optimized**: Meta tags and structured data for better search visibility
 
-## Pages
+## 📁 Project Structure
 
-1. **Home** (`index.html`) - Main landing page showcasing ERP by Us services
-2. **About ERP** (`about.html`) - Detailed information about ERP by Us
-3. **Comparison** (`comparison.html`) - Comparison between traditional POS and OdeX ERP
-4. **Features** (`features.html`) - Overview of key modules and features
-5. **Contact** (`contact.html`) - Contact form and information
+```
+odoo-erp-website/
+├── index.html              # Homepage
+├── about.html              # About ERP page
+├── comparison.html         # POS vs ERP comparison
+├── features.html           # Features and modules
+├── contact.html            # Contact form
+├── css/
+│   └── style.css          # Main stylesheet
+├── js/
+│   └── main.js             # JavaScript functionality
+├── api/
+│   └── contact.js         # Contact form API handler
+├── images/                # All images and assets
+├── package.json           # Project configuration
+├── vercel.json           # Vercel deployment config
+└── README.md             # This file
+```
 
-## Technical Details
+## 🛠️ Technical Stack
 
-- **HTML5** for semantic markup
-- **CSS3** for styling with Flexbox and Grid layouts
-- **JavaScript** for interactive elements and language switching
-- **Google Fonts** for Myanmar language support (Padauk font)
-- **Font Awesome** for icons
-- **LocalStorage** for persisting language preferences
+- **HTML5** - Semantic markup
+- **CSS3** - Flexbox and Grid layouts
+- **Vanilla JavaScript** - No frameworks, pure JS
+- **Google Fonts** - Padauk font for Myanmar language
+- **Font Awesome** - Icons
+- **Airtable API** - Contact form backend
 
-## Language Support
+## 🚀 Deployment Options
 
-The website supports both Myanmar (Burmese) and English languages. Users can toggle between languages using the button in the header. The language preference is saved in the browser's localStorage.
+### Option 1: GitHub Pages (Free)
 
-## Images
+1. **Create GitHub Repository**:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/your-username/odoo-erp-website.git
+   git push -u origin main
+   ```
 
-- `images/odoo.webp` - Main dashboard image
-- `assets/erp-modules.png` - Modules illustration
+2. **Enable GitHub Pages**:
+   - Go to repository Settings → Pages
+   - Source: Deploy from a branch
+   - Branch: main
+   - Folder: / (root)
+   - Save
 
-## Getting Started
+3. **Access your site**: `https://your-username.github.io/odoo-erp-website`
 
-1. Clone or download the repository
-2. Open `index.html` in a web browser
-3. Navigate through the pages using the menu
-4. Toggle between languages using the language switcher button
+### Option 2: Vercel (Recommended)
 
-## Customization
+1. **Install Vercel CLI**:
+   ```bash
+   npm i -g vercel
+   ```
 
-To customize the website:
+2. **Deploy**:
+   ```bash
+   cd odoo-erp-website
+   vercel
+   ```
 
-1. Update content in the HTML files
-2. Modify styles in `css/style.css`
-3. Adjust JavaScript functionality in `js/main.js`
-4. Replace images in the `images/` and `assets/` folders
+3. **Configure Environment Variables** (for contact form):
+   - `AIRTABLE_API_KEY`: Your Airtable API key
+   - `AIRTABLE_BASE_ID`: Your Airtable base ID
+   - `AIRTABLE_TABLE_ID`: Your Airtable table ID
 
-## Browser Support
+### Option 3: Netlify
 
-The website works on all modern browsers including:
-- Chrome
-- Firefox
-- Safari
-- Edge
+1. **Connect Repository**:
+   - Go to [Netlify](https://netlify.com)
+   - Connect your GitHub repository
+   - Deploy settings: Build command: `echo "Static site"`, Publish directory: `/`
 
-## License
+## 🔧 Local Development
 
-This project is proprietary and intended for use by ERP by Us Services.
+### Prerequisites
+- Python 3.x (for local server)
+- Git (for version control)
 
-## Contact
+### Setup
+```bash
+# Clone the repository
+git clone https://github.com/your-username/odoo-erp-website.git
+cd odoo-erp-website
 
-For inquiries about OdeX services, please visit the contact page or reach out to:
-- Email: odexerp@gmail.com
-- Phone: 09-754758505
+# Start local development server
+python3 -m http.server 8000
+# or
+npm start
+```
+
+Visit `http://localhost:8000` to view the site.
+
+## 📝 Configuration
+
+### Contact Form Setup (Airtable)
+
+1. Create an Airtable base with the following fields:
+   - Name (Single line text)
+   - Company (Single line text)
+   - Email (Email)
+   - Phone (Phone number)
+   - Message (Long text)
+
+2. Get your API credentials:
+   - API Key: Account → Personal access tokens
+   - Base ID: Help → API documentation
+   - Table ID: Use table name or ID
+
+3. Set environment variables in your deployment platform
+
+### Customization
+
+- **Content**: Edit HTML files in the root directory
+- **Styling**: Modify `css/style.css`
+- **Functionality**: Update `js/main.js`
+- **Images**: Replace files in `images/` directory
+- **Language**: Update language data in `js/main.js`
+
+## 🌐 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## 📱 Mobile Optimization
+
+- Responsive design for all screen sizes
+- Touch-friendly navigation
+- Optimized images and assets
+- Fast loading on mobile networks
+
+## 🔒 Security Features
+
+- Form validation and sanitization
+- HTTPS enforcement
+- Content Security Policy ready
+- No sensitive data in client-side code
+
+## 📊 Performance
+
+- Optimized images (WebP format)
+- Minified CSS and JS
+- Fast loading times
+- SEO optimized
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+This project is proprietary and intended for use by OdeX ERP Services.
+
+## 📞 Contact
+
+For inquiries about OdeX services:
+- **Email**: odexerp@gmail.com
+- **Phone**: 09-754758505
+- **Website**: [Your deployed URL]
+
+## 🆘 Troubleshooting
+
+### Common Issues
+
+1. **Contact form not working**:
+   - Check environment variables are set correctly
+   - Verify Airtable API credentials
+   - Check browser console for errors
+
+2. **Images not loading**:
+   - Ensure image paths are correct
+   - Check file permissions
+   - Verify image files exist
+
+3. **Language toggle not working**:
+   - Check JavaScript console for errors
+   - Verify localStorage is enabled
+   - Clear browser cache
+
+### Support
+
+For technical support, please contact the development team or create an issue in the repository.

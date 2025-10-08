@@ -1,5 +1,5 @@
 // Basic JavaScript functionality for the OdeX website
-console.log('OdeX JS loaded - Version 2025-10-07e - VERCEL DEPLOYMENT FIX');
+console.log('OdeX JS loaded - Version 2025-10-07e');
 document.addEventListener('DOMContentLoaded', function() {
     // Clean URL if someone lands on /index.html
     try {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Language data
     const langData = {
         my: {
-            homeTitle: "OdeX - VERCEL RECONNECTED TEST",
+            homeTitle: "OdeX",
             heroHeading: "Manual မှ Digital သို့ — အသုံးပြုရလွယ်ကူ၊ စျေးနှုန်းသက်သာသော Odoo ERP ဖြင့်ပြောင်းလဲပါ။",
             heroMotto: "အဆင့်မြင့် နည်းပညာ၊ မဆုံးနိုင်သော အလားအလာများ",
             heroText: "Odoo ERP သည် လုပ်ငန်းဆောင်ရွက်မှုများကို တစ်နေရာတည်းမှ စုစည်းစီမံနိုင်သော စနစ်ဖြစ်ပြီး၊ ရောင်းအား၊ ဘဏ်စာရင်း၊ ဂိုဒေါင်စီမံခန့်ခွဲမှု၊ လူ့စွမ်းအင်စသည်တို့ကို အလွယ်တကူ ပေါင်းစည်းအသုံးပြုနိုင်ပါသည်။ လုပ်ငန်းစဉ်များကို ထိရောက်စွာ စနစ်တကျ ပြောင်းလဲစေပြီး အချိန်နှင့် ကုန်ကျစရိတ်ကို လျော့ချပေးပါသည်။",
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
             securityUptime: "99.9% Uptime SLA"
         },
         en: {
-            homeTitle: "OdeX - VERCEL RECONNECTED TEST",
+            homeTitle: "OdeX",
             heroHeading: "From Manual to Digital — switch with easy‑to‑use, affordable Odoo ERP",
             heroMotto: "Advanced Technology, Infinite Possibilities",
             heroText: "Odoo ERP centralizes your operations in one place — seamlessly integrating sales, accounting, inventory, and HR. It streamlines processes, improves efficiency, and reduces both time and operating costs.",
@@ -967,8 +967,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Temporary visual indicator for deployment verification
     const body = document.body;
     if (body) {
-        body.style.border = '3px solid #ff0000';
-        console.log('DEPLOYMENT TEST: Red border should be visible if new JS is loaded');
+        // Red border removed for production
     }
     
     // Preloader: show for 3.5s then hide
@@ -1122,12 +1121,28 @@ faqItems.forEach(item => {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             const formData = new FormData(contactForm);
+            // Honeypot check
+            if ((formData.get('companyWebsite') || '').toString().trim() !== '') {
+                return; // silently drop bots
+            }
+            // Basic client-side length validation
+            const name = (formData.get('name') || '').toString().trim();
+            const company = (formData.get('company') || '').toString().trim();
+            const email = (formData.get('email') || '').toString().trim();
+            const phone = (formData.get('phone') || '').toString().trim();
+            const message = (formData.get('message') || '').toString().trim();
+            if (!name || !email || !message) {
+                return showToast(currentLang === 'my' ? 'အမည်၊ အီးမေးလ်၊ မက်ဆေ့ခ်ျ လိုအပ်ပါသည်' : 'Name, email and message are required', 'error');
+            }
+            if (name.length > 120 || company.length > 120 || email.length > 150 || phone.length > 40 || message.length > 2000) {
+                return showToast(currentLang === 'my' ? 'ဖာမ် အချက်အလက်များသည် အလွန်ရှည်လျားနေ합니다' : 'Form fields are too long', 'error');
+            }
             const payload = {
-                name: formData.get('name'),
-                company: formData.get('company'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                message: formData.get('message')
+                name,
+                company,
+                email,
+                phone,
+                message
             };
             function showToast(message, type = 'success') {
                 let toast = document.querySelector('.toast');
