@@ -346,10 +346,103 @@ nav ul li a.active {
     transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease, box-shadow 0.6s ease;
 }
 
-/* Mobile adjustments */
+/* Team Grid Responsive */
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .team-member {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .member-photo {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+    
+    .team-member h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .team-member h4 {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .team-member p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    
+    .member-social {
+        gap: 0.75rem;
+    }
+    
+    .member-social a {
+        width: 32px;
+        height: 32px;
+    }
+    
     .stacked-cards { height: auto; aspect-ratio: 16 / 10; min-height: 220px; }
     .stacked-cards .fallback-image { display: block; }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    .team-grid {
+        padding: 0 0.5rem;
+        gap: 1rem;
+    }
+    
+    .team-member {
+        padding: 1.25rem 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .member-photo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 0.75rem;
+    }
+    
+    .team-member h3 {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .team-member h4 {
+        font-size: 0.8rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .team-member p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 0.75rem;
+    }
+    
+    .member-social {
+        gap: 0.5rem;
+    }
+    
+    .member-social a {
+        width: 28px;
+        height: 28px;
+    }
 }
 
 /* Fallback image style */
@@ -1645,9 +1738,9 @@ footer {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1000px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -1687,6 +1780,11 @@ footer {
     object-position: 50% 32%;
     display: block;
     border-radius: 50%;
+}
+
+/* Specific alignment for U Ye Lin Ko's profile image */
+.member-photo img[alt="U Ye Lin Ko"] {
+    object-position: 50% 25%;
 }
 
 .team-member:hover .member-photo {
