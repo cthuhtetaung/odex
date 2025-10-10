@@ -15,7 +15,9 @@ export default async function handler(req, res) {
     const origin = req.headers.origin || '';
     const allowedOrigins = [
       'https://cthuhtetaung.github.io',
-      'https://*.vercel.app'
+      'https://*.vercel.app',
+      'https://odex-mm.info',
+      'https://www.odex-mm.info'
     ];
     if (origin && !allowedOrigins.some(o => {
       if (o.includes('*')) {
@@ -48,7 +50,7 @@ export default async function handler(req, res) {
 
     const apiKey = process.env.AIRTABLE_API_KEY;
     const baseId = process.env.AIRTABLE_BASE_ID;
-    const tableIdOrName = process.env.AIRTABLE_TABLE_ID || process.env.TABLE_NAME;
+    const tableIdOrName = process.env.AIRTABLE_TABLE_ID;
 
     if (!apiKey || !baseId || !tableIdOrName) {
       return res.status(500).json({ ok: false, error: 'Server not configured' });
@@ -66,11 +68,11 @@ export default async function handler(req, res) {
         records: [
           {
             fields: {
-              Name: trimmed.name,
-              Company: trimmed.company,
-              Email: trimmed.email,
-              Phone: trimmed.phone,
-              Message: trimmed.message
+              'A Name': trimmed.name,
+              'A Company Name': trimmed.company,
+              'A Email': trimmed.email,
+              'A Ph No.': trimmed.phone,
+              'Msg': trimmed.message
             }
           }
         ]
