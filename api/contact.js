@@ -48,7 +48,7 @@ export default async function handler(req, res) {
 
     const apiKey = process.env.AIRTABLE_API_KEY;
     const baseId = process.env.AIRTABLE_BASE_ID;
-    const tableIdOrName = process.env.AIRTABLE_TABLE_ID || process.env.TABLE_NAME;
+    const tableIdOrName = process.env.TABLE_NAME;
 
     if (!apiKey || !baseId || !tableIdOrName) {
       return res.status(500).json({ ok: false, error: 'Server not configured' });
