@@ -15,7 +15,9 @@ export default async function handler(req, res) {
     const origin = req.headers.origin || '';
     const allowedOrigins = [
       'https://cthuhtetaung.github.io',
-      'https://*.vercel.app'
+      'https://*.vercel.app',
+      'https://odex-mm.info',
+      'https://www.odex-mm.info'
     ];
     if (origin && !allowedOrigins.some(o => {
       if (o.includes('*')) {
