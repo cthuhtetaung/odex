@@ -327,11 +327,12 @@ nav ul li a.active {
     display: block;
 }
 
-.stacked-cards .card:nth-child(1) { transform: translateY(-6px) rotate(-2deg) scale(1.02); z-index: 5; }
-.stacked-cards .card:nth-child(2) { transform: translate(14px, 14px) rotate(3deg) scale(0.98); z-index: 4; opacity: 0.95; }
-.stacked-cards .card:nth-child(3) { transform: translate(-18px, 22px) rotate(-4deg) scale(0.96); z-index: 3; opacity: 0.9; }
-.stacked-cards .card:nth-child(4) { transform: translate(10px, 34px) rotate(2deg) scale(0.94); z-index: 2; opacity: 0.85; }
-.stacked-cards .card:nth-child(5) { transform: translate(-8px, 44px) rotate(-1deg) scale(0.92); z-index: 1; opacity: 0.8; }
+.stacked-cards .card:nth-child(1) { transform: translateY(-6px) rotate(-2deg) scale(1.02); z-index: 6; }
+.stacked-cards .card:nth-child(2) { transform: translate(14px, 14px) rotate(3deg) scale(0.98); z-index: 5; opacity: 0.95; }
+.stacked-cards .card:nth-child(3) { transform: translate(-18px, 22px) rotate(-4deg) scale(0.96); z-index: 4; opacity: 0.9; }
+.stacked-cards .card:nth-child(4) { transform: translate(10px, 34px) rotate(2deg) scale(0.94); z-index: 3; opacity: 0.85; }
+.stacked-cards .card:nth-child(5) { transform: translate(-8px, 44px) rotate(-1deg) scale(0.92); z-index: 2; opacity: 0.8; }
+.stacked-cards .card:nth-child(6) { transform: translate(6px, 52px) rotate(3deg) scale(0.90); z-index: 1; opacity: 0.75; }
 
 /* Hover lift */
 .stacked-cards:hover .card:nth-child(1) { transform: translateY(-10px) rotate(-2deg) scale(1.03); }
@@ -339,6 +340,7 @@ nav ul li a.active {
 .stacked-cards:hover .card:nth-child(3) { transform: translate(-22px, 18px) rotate(-4deg) scale(0.97); }
 .stacked-cards:hover .card:nth-child(4) { transform: translate(14px, 30px) rotate(2deg) scale(0.95); }
 .stacked-cards:hover .card:nth-child(5) { transform: translate(-12px, 40px) rotate(-1deg) scale(0.93); }
+.stacked-cards:hover .card:nth-child(6) { transform: translate(8px, 48px) rotate(3deg) scale(0.91); }
 
 /* Emphasize top card during auto transition */
 .stacked-cards .card.active-top {
@@ -490,6 +492,97 @@ nav ul li a.active {
     flex-wrap: wrap;
 }
 
+/* Section Header Styles */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #714B67;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Why Choose OdeX Section */
+.why-choose {
+    padding: 4rem 0;
+    background-color: #f0f2f5;
+}
+
+.why-choose h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #714B67;
+}
+
+.why-choose p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-icon {
+    margin-bottom: 1.5rem;
+}
+
+.benefit-icon i {
+    font-size: 3rem;
+    color: #714B67;
+}
+
+.benefit-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.benefit-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* Features Preview Section */
+.features-preview {
+    padding: 4rem 0;
+    background-color: #f0f2f5;
+}
+
+.features-preview .section-header {
+    margin-bottom: 3rem;
+}
+
 /* Why Outto Section */
 .why-odoo {
     padding: 4rem 0;
@@ -559,6 +652,38 @@ nav ul li a.active {
 
 .highlight:last-child {
     margin-bottom: 0;
+}
+
+/* CTA Section */
+.cta {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #714B67 0%, #5a3a52 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn.large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
 }
 
 /* Comparison Preview */
@@ -663,6 +788,26 @@ footer {
 .footer-section p {
     color: #ccc;
     margin-bottom: 0.5rem;
+}
+
+/* Contact info styling in footer */
+.footer-section .contact-info {
+    background: transparent;
+    padding: 0;
+}
+
+.footer-section .contact-info p {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.footer-section .contact-info p:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #FF9900;
 }
 
 .footer-bottom {

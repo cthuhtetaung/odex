@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>OdeX | မြန်မာနိုင်ငံ၏ အကောင်းဆုံး ERP နှင့် POS ဝန်ဆောင်မှုများ</title>
+    <meta name="description" content="OdeX - မြန်မာနိုင်ငံအတွက် သီးသန့်ဖန်တီးထားသော အကောင်းဆုံး ERP နှင့် POS စနစ်များ။ သင့်စီးပွားရေးလုပ်ငန်းကို ခေတ်မီဆုံးနည်းလမ်းဖြင့် စီမံခန့်ခွဲပါ။">
+    <link rel="stylesheet" href="css/style.css?v=2025-10-10-FINAL">
+    <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="images/odoo.webp" type="image/webp">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div style="text-align: center;">
+            <img src="images/logos/Erpload.gif" alt="Loading...">
+            <div class="message">Loading<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></div>
+        </div>
+    </div>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" aria-label="Go to Home">
+                    <h1>Ode<span class="accent-x">X</span></h1>
+                </a>
+            </div>
+            <div class="header-controls">
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="index.html" class="active" data-lang="navHome">ပင်မစာမျက်နှာ</a></li>
+                        <li><a href="about.html" data-lang="navAbout">ERP အကြောင်း</a></li>
+                        <li><a href="comparison.html" data-lang="navComparison">နှိုင်းယှဉ်ချက်</a></li>
+                        <li><a href="features.html" data-lang="navFeatures">အဓိကမော်ဂျူးများ</a></li>
+                        <li><a href="contact.html" data-lang="navContact">ဆက်သွယ်ရန်</a></li>
+                    </ul>
+                </nav>
+                <div class="language-switcher">
+                    <button id="lang-toggle" class="btn secondary">English Version</button>
+                </div>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>သင့်စီးပွားရေးအောင်မြင်မှုအတွက် အကောင်းဆုံး ERP ဖြေရှင်းချက်</h1>
+                <p class="motto">ကျွမ်းကျင်ပညာရှင်များဖြင့် ဖန်တီးထားသော စီးပွားရေးစီမံခန့်ခွဲမှုစနစ်</p>
+                <p>OdeX သည် သင့်စီးပွားရေးလုပ်ငန်း၏ အားလုံးကို စီမံခန့်ခွဲပေးနိုင်သော အဆင့်မြင့် စွမ်းရည်ပြည့်ဝသော ဆော့ဖ်ဝဲလ်ဖြစ်ပါသည်။ နိုင်ငံတကာ အဆင့်မီ နည်းပညာနှင့် မြန်မာနိုင်ငံ၏ စီးပွားရေးလိုအပ်ချက်များကို ပေါင်းစပ်ကာ ဖန်တီးထားသော ပလတ်ဖောင်းတစ်ခုဖြစ်ပါသည်။</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn primary">အခုပဲ စတင်ပါ</a>
+                    <a href="about.html" class="btn secondary">ပိုမိုလေ့လာပါ</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="stacked-cards">
+                    <div class="card">
+                        <img src="images/screenshots/Account.webp" alt="Accounting Module">
+                    </div>
+                    <div class="card">
+                        <img src="images/screenshots/CRM.jpg" alt="CRM Module">
+                    </div>
+                    <div class="card">
+                        <img src="images/screenshots/custo.png" alt="Customer Management">
+                    </div>
+                    <div class="card">
+                        <img src="images/screenshots/Eco.jpg" alt="E-commerce Module">
+                    </div>
+                    <div class="card">
+                        <img src="images/screenshots/HR.jpeg" alt="HR Module">
+                    </div>
+                    <div class="card">
+                        <img src="images/screenshots/Inv.webp" alt="Inventory Module">
+                    </div>
+                    <!-- Fallback image for mobile if cards don't display properly -->
+                    <img class="fallback-image" src="images/odoo.webp" alt="OdeX ERP System">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Preview Section -->
+    <section class="features-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>အဓိက အားသာချက်များ</h2>
+                <p>သင့်စီးပွားရေးလုပ်ငန်းကို နောက်တစ်ဆင့်သို့ ပို့ဆောင်ပေးမည့် အင်္ဂါရပ်များ</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>စီးပွားရေးစီမံခန့်ခွဲမှု</h3>
+                    <p>သင့်စီးပွားရေးလုပ်ငန်း၏ အားလုံးကို တစ်နေရာတည်းမှ ထိရောက်စွာ စီမံခန့်ခွဲပါ။</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>ဖောက်သည်ဆက်ဆံရေး</h3>
+                    <p>ဖောက်သည်များနှင့် ပိုမိုကောင်းမွန်သော ဆက်ဆံရေးကို တည်ဆောက်ပါ။</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>POS စနစ်</h3>
+                    <p>ခေတ်မီဆုံး POS စနစ်ဖြင့် ရောင်းချမှုများကို လွယ်ကူမြန်ဆန်စွာ စီမံပါ။</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>မိုဘိုင်းအဆင်ပြေမှု</h3>
+                    <p>မည်သည့်နေရာမှမဆို သင့်စီးပွားရေးကို စီမံခန့်ခွဲနိုင်ပါသည်။</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose OdeX Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>ဘာကြောင့် OdeX ကို ရွေးချယ်ရမလဲ?</h2>
+                <p>မြန်မာနိုင်ငံ၏ စီးပွားရေးလိုအပ်ချက်များကို နားလည်သော ကျွမ်းကျင်ပညာရှင်များ၏ ဝန်ဆောင်မှု</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <h3>မြန်မာနိုင်ငံအတွက် သီးသန့်</h3>
+                    <p>ဒေသတွင်း စီးပွားရေးလုပ်ငန်းများ၏ လိုအပ်ချက်များကို နားလည်ကာ ဒီဇိုင်းထုတ်ထားပါသည်။</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>၂၄/၇ ပံ့ပိုးမှု</h3>
+                    <p>သင့်စီးပွားရေးလုပ်ငန်း အဆက်မပြတ် လည်ပတ်နိုင်စေရန် နေ့စဉ် ပံ့ပိုးမှုပေးပါသည်။</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>လုံခြုံမှု</h3>
+                    <p>သင့်အချက်အလက်များကို ကာကွယ်ရန် အဆင့်မြင့် လုံခြုံရေးစနစ်များ တပ်ဆင်ထားပါသည်။</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>အမြန်ဆုံး စတင်နိုင်မှု</h3>
+                    <p>သင့်စီးပွားရေးလုပ်ငန်းကို မြန်ဆန်စွာ ဒစ်ဂျစ်တယ်ဖြစ်စေပြီး လုပ်ငန်းများကို ပိုမိုထိရောက်စေပါသည်။</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Showcase Section -->
+    <section class="company-showcase">
+        <div class="container">
+            <h2>Odoo ERP System ကို လက်ရှိအသုံးပြုနေကြသော လုပ်ငန်းများ</h2>
+            <div class="showcase-slider">
+                <div class="slide active">
+                    <div class="company-content">
+                        <div class="company-logo">
+                            <img src="images/partners/Autonova.jpg" alt="Autonova">
+                        </div>
+                        <div class="company-info">
+                            <h3>Autonova</h3>
+                            <p class="company-type">မော်တော်ယာဉ်လုပ်ငန်း</p>
+                            <p class="company-description">Autonova သည် မြန်မာနိုင်ငံတွင် ထိပ်တန်းမော်တော်ယာဉ် ဖြန့်ဖြူးရောင်းချသူတစ်ဦးဖြစ်ပြီး OdeX ERP ဖြင့် လုပ်ငန်းစီမံခန့်ခွဲမှုကို ထိရောက်စွာ လုပ်ဆောင်လျက်ရှိသည်။</p>
+                            <div class="company-stats">
+                                <span class="stat">စီးပွားရေး ထိရောက်မှု 45% တိုးမြင့်</span>
+                                <span class="stat">အချိန် 60% ချွေတာ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="company-content">
+                        <div class="company-logo">
+                            <img src="images/partners/awba.jpeg" alt="AWBA">
+                        </div>
+                        <div class="company-info">
+                            <h3>AWBA</h3>
+                            <p class="company-type">အစားအသောက်လုပ်ငန်း</p>
+                            <p class="company-description">AWBA သည် အစားအသောက် လုပ်ငန်းတွင် ထိပ်တန်းကုမ္ပဏီတစ်ခုဖြစ်ပြီး OdeX POS နှင့် Inventory စီမံခန့်ခွဲမှုကို အသုံးပြု၍ ဝန်ဆောင်မှုများ ပိုမိုမြန်ဆန်စေသည်။</p>
+                            <div class="company-stats">
+                                <span class="stat">ရောင်းအား 35% တိုးမြင့်</span>
+                                <span class="stat">စာရင်းတိကျမှု 98%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="company-content">
+                        <div class="company-logo">
+                            <img src="images/partners/Citypropities.jpg" alt="City Properties">
+                        </div>
+                        <div class="company-info">
+                            <h3>City Properties</h3>
+                            <p class="company-type">အိမ်ခြံမြေလုပ်ငန်း</p>
+                            <p class="company-description">City Properties သည် အိမ်ခြံမြေလုပ်ငန်းတွင် ဦးဆောင်ကုမ္ပဏီတစ်ခုဖြစ်ပြီး OdeX CRM ဖြင့် ဖောက်သည်များနှင့် ပိုမိုကောင်းမွန်သော ဆက်ဆံရေး တည်ဆောက်ထားသည်။</p>
+                            <div class="company-stats">
+                                <span class="stat">ဖောက်သည် 50% တိုးမြင့်</span>
+                                <span class="stat">ဝန်ဆောင်မှု 40% မြန်ဆန်</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="company-content">
+                        <div class="company-logo">
+                            <img src="images/partners/Citywin.jpeg" alt="Citywin">
+                        </div>
+                        <div class="company-info">
+                            <h3>Citywin</h3>
+                            <p class="company-type">လက်လီလုပ်ငန်း</p>
+                            <p class="company-description">Citywin သည် လက်လီလုပ်ငန်းတွင် ထိပ်တန်းဆိုင်ခွဲများဖွင့်လှစ်ထားပြီး OdeX POS ဖြင့် အရောင်းများကို လွယ်ကူစွာ စီမံခန့်ခွဲနေသည်။</p>
+                            <div class="company-stats">
+                                <span class="stat">ရောင်းချမှု 55% တိုးမြင့်</span>
+                                <span class="stat">မှားယွင်းမှု 85% လျှော့ချ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="company-content">
+                        <div class="company-logo">
+                            <img src="images/partners/Season.jpg" alt="Season">
+                        </div>
+                        <div class="company-info">
+                            <h3>Season</h3>
+                            <p class="company-type">ဟိုတယ်လုပ်ငန်း</p>
+                            <p class="company-description">Season Hotel သည် ဧည့်ဝန်ဆောင်မှုလုပ်ငန်းတွင် ထိပ်တန်းဟိုတယ်တစ်ခုဖြစ်ပြီး OdeX ERP ဖြင့် ဧည့်သည်စီမံခန့်ခွဲမှု၊ စာရင်းနှင့် HR ကို ထိရောက်စွာ လုပ်ဆောင်သည်။</p>
+                            <div class="company-stats">
+                                <span class="stat">ဧည့်သည်ကျေနပ်မှု 95%</span>
+                                <span class="stat">လုပ်ငန်းထိရောက်မှု 50% တိုးမြင့်</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="company-content">
+                        <div class="company-logo">
+                            <img src="images/partners/YIGTL.png" alt="YIGTL">
+                        </div>
+                        <div class="company-info">
+                            <h3>YIGTL</h3>
+                            <p class="company-type">ပို့ဆောင်ရေးလုပ်ငန်း</p>
+                            <p class="company-description">YIGTL သည် ပို့ဆောင်ရေးလုပ်ငန်းတွင် ဦးဆောင်ကုမ္ပဏီတစ်ခုဖြစ်ပြီး OdeX Logistics မော်ဂျူးဖြင့် ပို့ဆောင်မှုများကို အချိန်နှင့်တပြေးညီ ခြေရာခံနိုင်သည်။</p>
+                            <div class="company-stats">
+                                <span class="stat">ပို့ဆောင်မှု 40% မြန်ဆန်</span>
+                                <span class="stat">တိကျမှု 99%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>သင့်စီးပွားရေးလုပ်ငန်းကို ခေတ်မီဆုံးနည်းလမ်းဖြင့် စီမံခန့်ခွဲပါ</h2>
+                <p>ယနေ့ပဲ OdeX နှင့်အတူ သင့်စီးပွားရေးလုပ်ငန်း၏ အနာဂတ်ကို စတင်ပါ။</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn primary large">အခုပဲ ဆက်သွယ်ပါ</a>
+                    <a href="features.html" class="btn secondary large">အင်္ဂါရပ်များ လေ့လာပါ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Ode<span class="accent-x">X</span></h3>
+                        <p>မြန်မာနိုင်ငံ၏ အကောင်းဆုံး ERP နှင့် POS ဝန်ဆောင်မှုများ</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>ဝန်ဆောင်မှုများ</h4>
+                    <ul>
+                        <li><a href="about.html">ERP စနစ်</a></li>
+                        <li><a href="features.html">POS စနစ်</a></li>
+                        <li><a href="comparison.html">နှိုင်းယှဉ်ချက်</a></li>
+                        <li><a href="contact.html">ဆက်သွယ်ရန်</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>ဆက်သွယ်ရန်</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> odexerp@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> 09-754758505</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 OdeX ERP Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=2025-10-10-FINAL"></script>
+</body>
+</html>
