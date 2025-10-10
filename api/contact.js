@@ -66,11 +66,11 @@ export default async function handler(req, res) {
         records: [
           {
             fields: {
-              Name: trimmed.name,
-              Company: trimmed.company,
-              Email: trimmed.email,
-              Phone: trimmed.phone,
-              Message: trimmed.message
+              'A Name': trimmed.name,
+              'A Company Name': trimmed.company,
+              'A Email': trimmed.email,
+              'A Ph No.': trimmed.phone,
+              'A Msg': trimmed.message
             }
           }
         ]
