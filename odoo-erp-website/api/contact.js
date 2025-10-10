@@ -72,7 +72,7 @@ export default async function handler(req, res) {
               'A Company Name': trimmed.company,
               'A Email': trimmed.email,
               'A Ph No.': trimmed.phone,
-              'Msg': trimmed.message
+              'A Msg': trimmed.message
             }
           }
         ]
