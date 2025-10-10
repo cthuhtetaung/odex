@@ -1,5 +1,5 @@
 // Basic JavaScript functionality for the OdeX website
-console.log('OdeX JS loaded - Version 2025-10-10-FINAL');
+console.log('OdeX JS loaded - Version 2025-10-10-MOBILE');
 document.addEventListener('DOMContentLoaded', function() {
     // Clear any cached data that might cause issues
     localStorage.removeItem('partners-section');
@@ -1536,12 +1536,12 @@ faqItems.forEach(item => {
             const cards = stacked.querySelectorAll('.card');
             const fallback = stacked.querySelector('.fallback-image');
             
-            // Only show fallback on very small screens (mobile)
-            if (window.innerWidth <= 480) {
+            // Show fallback only on very small screens (≤320px)
+            if (window.innerWidth <= 320) {
                 if (fallback) fallback.style.display = 'block';
                 cards.forEach(c => c.style.display = 'none');
             } else {
-                // On desktop/tablet, always show cards and hide fallback
+                // On mobile, tablet, desktop - show animated cards
                 if (fallback) fallback.style.display = 'none';
                 cards.forEach(c => c.style.display = '');
             }
@@ -1563,8 +1563,8 @@ window.addEventListener('pageshow', function(event) {
             const cards = stacked.querySelectorAll('.card');
             const fallback = stacked.querySelector('.fallback-image');
             
-            // Always show cards on desktop/tablet
-            if (window.innerWidth > 480) {
+            // Always show cards on mobile/tablet/desktop (only hide on very small screens)
+            if (window.innerWidth > 320) {
                 if (fallback) fallback.style.display = 'none';
                 cards.forEach(c => c.style.display = '');
             }
