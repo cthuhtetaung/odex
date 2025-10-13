@@ -1426,10 +1426,23 @@ faqItems.forEach(item => {
                 setTimeout(() => toast.classList.remove('show'), 2600);
             }
             try {
-                // Submit directly to Airtable
-                await submitToAirtable(payload);
-                showToast(currentLang === 'my' ? 'သင့်မက်ဆေ့ခ်ျအား လက်ခံပြီးပါပြီ။ ကျွန်ုပ်တို့ ဆက်သွယ်ပေးမည်။' : 'Thanks! Your message was sent. We will contact you shortly.', 'success');
-                contactForm.reset();
+                // Submit via serverless function
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                const result = await response.json();
+                
+                if (result.ok) {
+                    showToast(currentLang === 'my' ? 'သင့်မက်ဆေ့ခ်ျအား လက်ခံပြီးပါပြီ။ ကျွန်ုပ်တို့ ဆက်သွယ်ပေးမည်။' : 'Thanks! Your message was sent. We will contact you shortly.', 'success');
+                    contactForm.reset();
+                } else {
+                    throw new Error(result.error || 'Unknown error');
+                }
             } catch (err) {
                 showToast((currentLang === 'my' ? 'ပေးပို့ရာတွင် ပြသာနာရှိပါသည်။ ' : 'There was a problem sending your message. ') + (err?.message || ''), 'error');
             }
@@ -1575,40 +1588,4 @@ window.addEventListener('pageshow', function(event) {
 
 });
 
-// Function to submit to Airtable (moved outside DOMContentLoaded)
-async function submitToAirtable(data) {
-    // IMPORTANT: Replace these with your actual Airtable credentials
-    // You can find these in your Airtable account settings
-    const AIRTABLE_API_KEY = 'YOUR_AIRTABLE_API_KEY'; // Set this in your environment variables
-    const BASE_ID = 'apprTT54N6yro3L44'; // Your Kairoswallet base ID
-    const TABLE_NAME = 'Table 1'; // Based on your screenshot
-    
-    const url = `https://api.airtable.com/v0/${BASE_ID}/${encodeURIComponent(TABLE_NAME)}`;
-    
-    const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            records: [
-                {
-                    fields: {
-                        // Store all contact form data in a readable format
-                        'Twitter Handle': `Website Contact - ${data.name}`,
-                        'Wallet Address': `Company: ${data.company || 'N/A'} | Email: ${data.email} | Phone: ${data.phone || 'N/A'} | Message: ${data.message}`,
-                        'Created': new Date().toISOString().split('T')[0]
-                    }
-                }
-            ]
-        })
-    });
-    
-    if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Airtable API error: ${response.status} - ${errorText}`);
-    }
-    
-    return await response.json();
-}
+// Contact form now uses serverless function at /api/contact
