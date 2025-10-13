@@ -1,19 +1,6 @@
 // Basic JavaScript functionality for the OdeX website
-console.log('OdeX JS loaded - Version 2025-10-10-MOBILE');
+console.log('OdeX JS loaded - Version 2025-10-07e');
 document.addEventListener('DOMContentLoaded', function() {
-    // Clear any cached data that might cause issues
-    localStorage.removeItem('partners-section');
-    sessionStorage.clear();
-    
-    // Preloader: show for 3.5s then hide - RUN THIS FIRST!
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        setTimeout(() => {
-            preloader.classList.add('hide');
-            setTimeout(() => preloader.remove(), 400);
-        }, 3500);
-    }
-
     // Clean URL if someone lands on /index.html
     try {
         if (window.location.pathname.endsWith('/index.html')) {
@@ -572,131 +559,26 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const heroText = document.querySelector('.hero-content p:not(.motto)');
             if (heroText) heroText.textContent = lang.heroText;
-
-            // Update section headers
-            const featurePreviewTitle = document.querySelector('.features-preview .section-header h2');
-            if (featurePreviewTitle) featurePreviewTitle.textContent = currentLang === 'my' ? 'အဓိက အားသာချက်များ' : 'Key Features';
-            
-            const featurePreviewDesc = document.querySelector('.features-preview .section-header p');
-            if (featurePreviewDesc) featurePreviewDesc.textContent = currentLang === 'my' ? 'သင့်စီးပွားရေးလုပ်ငန်းကို နောက်တစ်ဆင့်သို့ ပို့ဆောင်ပေးမည့် အင်္ဂါရပ်များ' : 'Features that will take your business to the next level';
-
-            const whyChooseTitle = document.querySelector('.why-choose .section-header h2');
-            if (whyChooseTitle) whyChooseTitle.textContent = currentLang === 'my' ? 'ဘာကြောင့် OdeX ကို ရွေးချယ်ရမလဲ?' : 'Why Choose OdeX?';
-            
-            const whyChooseDesc = document.querySelector('.why-choose .section-header p');
-            if (whyChooseDesc) whyChooseDesc.textContent = currentLang === 'my' ? 'မြန်မာနိုင်ငံ၏ စီးပွားရေးလိုအပ်ချက်များကို နားလည်သော ကျွမ်းကျင်ပညာရှင်များ၏ ဝန်ဆောင်မှု' : 'Professional services from experts who understand Myanmar business needs';
-
-            const ctaTitle = document.querySelector('.cta .cta-content h2');
-            if (ctaTitle) ctaTitle.textContent = currentLang === 'my' ? 'သင့်စီးပွားရေးလုပ်ငန်းကို ခေတ်မီဆုံးနည်းလမ်းဖြင့် စီမံခန့်ခွဲပါ' : 'Manage Your Business with Modern Solutions';
-            
-            const ctaDesc = document.querySelector('.cta .cta-content p');
-            if (ctaDesc) ctaDesc.textContent = currentLang === 'my' ? 'ယနေ့ပဲ OdeX နှင့်အတူ သင့်စီးပွားရေးလုပ်ငန်း၏ အနာဂတ်ကို စတင်ပါ။' : 'Start your business future with OdeX today.';
-
-            const ctaBtn1 = document.querySelector('.cta .cta-buttons .btn.primary');
-            if (ctaBtn1) ctaBtn1.textContent = currentLang === 'my' ? 'အခုပဲ ဆက်သွယ်ပါ' : 'Contact Now';
-            
-            const ctaBtn2 = document.querySelector('.cta .cta-buttons .btn.secondary');
-            if (ctaBtn2) ctaBtn2.textContent = currentLang === 'my' ? 'အင်္ဂါရပ်များ လေ့လာပါ' : 'Explore Features';
             
             const homeBtn1 = document.querySelector('.cta-buttons .btn.primary');
             if (homeBtn1) homeBtn1.textContent = lang.homeBtn1;
             
             const homeBtn2 = document.querySelector('.cta-buttons .btn.secondary');
             if (homeBtn2) homeBtn2.textContent = lang.homeBtn2;
-
-            // Update feature preview cards
-            const featureCards = document.querySelectorAll('.features-preview .feature-card');
-            if (featureCards.length >= 4) {
-                if (currentLang === 'en') {
-                    if (featureCards[0]) {
-                        featureCards[0].querySelector('h3').textContent = 'Business Management';
-                        featureCards[0].querySelector('p').textContent = 'Manage everything of your business from one place effectively.';
-                    }
-                    if (featureCards[1]) {
-                        featureCards[1].querySelector('h3').textContent = 'Customer Relations';
-                        featureCards[1].querySelector('p').textContent = 'Build better relationships with your customers.';
-                    }
-                    if (featureCards[2]) {
-                        featureCards[2].querySelector('h3').textContent = 'POS System';
-                        featureCards[2].querySelector('p').textContent = 'Manage sales quickly and easily with our modern POS system.';
-                    }
-                    if (featureCards[3]) {
-                        featureCards[3].querySelector('h3').textContent = 'Mobile Friendly';
-                        featureCards[3].querySelector('p').textContent = 'Manage your business from anywhere.';
-                    }
-                } else {
-                    if (featureCards[0]) {
-                        featureCards[0].querySelector('h3').textContent = 'စီးပွားရေးစီမံခန့်ခွဲမှု';
-                        featureCards[0].querySelector('p').textContent = 'သင့်စီးပွားရေးလုပ်ငန်း၏ အားလုံးကို တစ်နေရာတည်းမှ ထိရောက်စွာ စီမံခန့်ခွဲပါ။';
-                    }
-                    if (featureCards[1]) {
-                        featureCards[1].querySelector('h3').textContent = 'ဖောက်သည်ဆက်ဆံရေး';
-                        featureCards[1].querySelector('p').textContent = 'ဖောက်သည်များနှင့် ပိုမိုကောင်းမွန်သော ဆက်ဆံရေးကို တည်ဆောက်ပါ။';
-                    }
-                    if (featureCards[2]) {
-                        featureCards[2].querySelector('h3').textContent = 'POS စနစ်';
-                        featureCards[2].querySelector('p').textContent = 'ခေတ်မီဆုံး POS စနစ်ဖြင့် ရောင်းချမှုများကို လွယ်ကူမြန်ဆန်စွာ စီမံပါ။';
-                    }
-                    if (featureCards[3]) {
-                        featureCards[3].querySelector('h3').textContent = 'မိုဘိုင်းအဆင်ပြေမှု';
-                        featureCards[3].querySelector('p').textContent = 'မည်သည့်နေရာမှမဆို သင့်စီးပွားရေးကို စီမံခန့်ခွဲနိုင်ပါသည်။';
-                    }
-                }
-            }
-
-            // Update benefit items
-            const benefitItems = document.querySelectorAll('.why-choose .benefit-item');
-            if (benefitItems.length >= 4) {
-                if (currentLang === 'en') {
-                    if (benefitItems[0]) {
-                        benefitItems[0].querySelector('h3').textContent = 'Made for Myanmar';
-                        benefitItems[0].querySelector('p').textContent = 'Designed to understand the needs of local businesses.';
-                    }
-                    if (benefitItems[1]) {
-                        benefitItems[1].querySelector('h3').textContent = '24/7 Support';
-                        benefitItems[1].querySelector('p').textContent = 'We provide daily support to keep your business running continuously.';
-                    }
-                    if (benefitItems[2]) {
-                        benefitItems[2].querySelector('h3').textContent = 'Security';
-                        benefitItems[2].querySelector('p').textContent = 'Advanced security systems are installed to protect your data.';
-                    }
-                    if (benefitItems[3]) {
-                        benefitItems[3].querySelector('h3').textContent = 'Quick Start';
-                        benefitItems[3].querySelector('p').textContent = 'Digitize your business quickly and make operations more efficient.';
-                    }
-                } else {
-                    if (benefitItems[0]) {
-                        benefitItems[0].querySelector('h3').textContent = 'မြန်မာနိုင်ငံအတွက် သီးသန့်';
-                        benefitItems[0].querySelector('p').textContent = 'ဒေသတွင်း စီးပွားရေးလုပ်ငန်းများ၏ လိုအပ်ချက်များကို နားလည်ကာ ဒီဇိုင်းထုတ်ထားပါသည်။';
-                    }
-                    if (benefitItems[1]) {
-                        benefitItems[1].querySelector('h3').textContent = '၂၄/၇ ပံ့ပိုးမှု';
-                        benefitItems[1].querySelector('p').textContent = 'သင့်စီးပွားရေးလုပ်ငန်း အဆက်မပြတ် လည်ပတ်နိုင်စေရန် နေ့စဉ် ပံ့ပိုးမှုပေးပါသည်။';
-                    }
-                    if (benefitItems[2]) {
-                        benefitItems[2].querySelector('h3').textContent = 'လုံခြုံမှု';
-                        benefitItems[2].querySelector('p').textContent = 'သင့်အချက်အလက်များကို ကာကွယ်ရန် အဆင့်မြင့် လုံခြုံရေးစနစ်များ တပ်ဆင်ထားပါသည်။';
-                    }
-                    if (benefitItems[3]) {
-                        benefitItems[3].querySelector('h3').textContent = 'အမြန်ဆုံး စတင်နိုင်မှု';
-                        benefitItems[3].querySelector('p').textContent = 'သင့်စီးပွားရေးလုပ်ငန်းကို မြန်ဆန်စွာ ဒစ်ဂျစ်တယ်ဖြစ်စေပြီး လုပ်ငန်းများကို ပိုမိုထိရောက်စေပါသည်။';
-                    }
-                }
-            }
             
             const whyOuttoTitle = document.querySelector('.why-odoo h2');
             if (whyOuttoTitle) whyOuttoTitle.textContent = lang.whyOuttoTitle;
             
-            const whyOdooCards = document.querySelectorAll('.why-odoo .feature-card');
-            if (whyOdooCards.length >= 4) {
-                whyOdooCards[0].querySelector('h3').textContent = lang.whyOuttoFeature1;
-                whyOdooCards[0].querySelector('p').textContent = lang.whyOuttoFeature1Text;
-                whyOdooCards[1].querySelector('h3').textContent = lang.whyOuttoFeature2;
-                whyOdooCards[1].querySelector('p').textContent = lang.whyOuttoFeature2Text;
-                whyOdooCards[2].querySelector('h3').textContent = lang.whyOuttoFeature3;
-                whyOdooCards[2].querySelector('p').textContent = lang.whyOuttoFeature3Text;
-                whyOdooCards[3].querySelector('h3').textContent = lang.whyOuttoFeature4;
-                whyOdooCards[3].querySelector('p').textContent = lang.whyOuttoFeature4Text;
+            const featureCards = document.querySelectorAll('.feature-card');
+            if (featureCards.length >= 4) {
+                featureCards[0].querySelector('h3').textContent = lang.whyOuttoFeature1;
+                featureCards[0].querySelector('p').textContent = lang.whyOuttoFeature1Text;
+                featureCards[1].querySelector('h3').textContent = lang.whyOuttoFeature2;
+                featureCards[1].querySelector('p').textContent = lang.whyOuttoFeature2Text;
+                featureCards[2].querySelector('h3').textContent = lang.whyOuttoFeature3;
+                featureCards[2].querySelector('p').textContent = lang.whyOuttoFeature3Text;
+                featureCards[3].querySelector('h3').textContent = lang.whyOuttoFeature4;
+                featureCards[3].querySelector('p').textContent = lang.whyOuttoFeature4Text;
             }
             
             const comparisonPreviewTitle = document.querySelector('.comparison-preview h2');
@@ -794,165 +676,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (badges[0]) badges[0].textContent = lang.securityISO27001 || 'ISO 27001 Certified';
                 if (badges[1]) badges[1].textContent = lang.securityGDPR || 'GDPR Compliant';
                 if (badges[2]) badges[2].textContent = lang.securityUptime || '99.9% Uptime SLA';
-            }
-
-            // Company Showcase Section
-            const companyShowcaseTitle = document.querySelector('.company-showcase h2');
-            if (companyShowcaseTitle) {
-                companyShowcaseTitle.textContent = currentLang === 'my' ? 'Odoo ERP System ကို လက်ရှိအသုံးပြုနေကြသော လုပ်ငန်းများ' : 'Businesses Currently Using Odoo ERP System';
-            }
-
-            // Update company showcase slides
-            const slides = document.querySelectorAll('.company-showcase .slide');
-            if (slides.length >= 6) {
-                if (currentLang === 'en') {
-                    // Slide 1 - Autonova
-                    if (slides[0]) {
-                        const h3 = slides[0].querySelector('h3');
-                        const type = slides[0].querySelector('.company-type');
-                        const desc = slides[0].querySelector('.company-description');
-                        const stats = slides[0].querySelectorAll('.stat');
-                        if (h3) h3.textContent = 'Autonova';
-                        if (type) type.textContent = 'Automotive Industry';
-                        if (desc) desc.textContent = 'Autonova is a leading automotive distributor in Myanmar, efficiently managing business operations with OdeX ERP.';
-                        if (stats[0]) stats[0].textContent = '45% Business Efficiency Increase';
-                        if (stats[1]) stats[1].textContent = '60% Time Saved';
-                    }
-                    // Slide 2 - AWBA
-                    if (slides[1]) {
-                        const h3 = slides[1].querySelector('h3');
-                        const type = slides[1].querySelector('.company-type');
-                        const desc = slides[1].querySelector('.company-description');
-                        const stats = slides[1].querySelectorAll('.stat');
-                        if (h3) h3.textContent = 'AWBA';
-                        if (type) type.textContent = 'Food & Beverage Industry';
-                        if (desc) desc.textContent = 'AWBA is a top company in the food and beverage industry, using OdeX POS and Inventory Management for faster service.';
-                        if (stats[0]) stats[0].textContent = '35% Sales Increase';
-                        if (stats[1]) stats[1].textContent = '98% Inventory Accuracy';
-                    }
-                    // Slide 3 - City Properties
-                    if (slides[2]) {
-                        const h3 = slides[2].querySelector('h3');
-                        const type = slides[2].querySelector('.company-type');
-                        const desc = slides[2].querySelector('.company-description');
-                        const stats = slides[2].querySelectorAll('.stat');
-                        if (h3) h3.textContent = 'City Properties';
-                        if (type) type.textContent = 'Real Estate Industry';
-                        if (desc) desc.textContent = 'City Properties is a leading real estate company, building better customer relationships with OdeX CRM.';
-                        if (stats[0]) stats[0].textContent = '50% Customer Increase';
-                        if (stats[1]) stats[1].textContent = '40% Faster Service';
-                    }
-                    // Slide 4 - Citywin
-                    if (slides[3]) {
-                        const h3 = slides[3].querySelector('h3');
-                        const type = slides[3].querySelector('.company-type');
-                        const desc = slides[3].querySelector('.company-description');
-                        const stats = slides[3].querySelectorAll('.stat');
-                        if (h3) h3.textContent = 'Citywin';
-                        if (type) type.textContent = 'Retail Industry';
-                        if (desc) desc.textContent = 'Citywin operates top retail outlets and easily manages sales with OdeX POS.';
-                        if (stats[0]) stats[0].textContent = '55% Sales Increase';
-                        if (stats[1]) stats[1].textContent = '85% Error Reduction';
-                    }
-                    // Slide 5 - Seasons
-                    if (slides[4]) {
-                        const h3 = slides[4].querySelector('h3');
-                        const type = slides[4].querySelector('.company-type');
-                        const desc = slides[4].querySelector('.company-description');
-                        const stats = slides[4].querySelectorAll('.stat');
-                        if (h3) h3.textContent = 'Seasons';
-                        if (type) type.textContent = 'Bakery Business';
-                        if (desc) desc.textContent = 'Seasons is a renowned bakery chain in Myanmar, efficiently managing product inventory, sales, and operations with OdeX ERP.';
-                        if (stats[0]) stats[0].textContent = '95% Customer Satisfaction';
-                        if (stats[1]) stats[1].textContent = '50% Efficiency Increase';
-                    }
-                    // Slide 6 - YIGTL
-                    if (slides[5]) {
-                        const h3 = slides[5].querySelector('h3');
-                        const type = slides[5].querySelector('.company-type');
-                        const desc = slides[5].querySelector('.company-description');
-                        const stats = slides[5].querySelectorAll('.stat');
-                        if (h3) h3.textContent = 'YIGTL';
-                        if (type) type.textContent = 'Logistics Industry';
-                        if (desc) desc.textContent = 'YIGTL is a leading logistics company, tracking shipments in real-time with the OdeX Logistics module.';
-                        if (stats[0]) stats[0].textContent = '40% Faster Delivery';
-                        if (stats[1]) stats[1].textContent = '99% Accuracy';
-                    }
-                } else {
-                    // Myanmar - restore original content
-                    // Slide 1 - Autonova
-                    if (slides[0]) {
-                        const h3 = slides[0].querySelector('h3');
-                        const type = slides[0].querySelector('.company-type');
-                        const desc = slides[0].querySelector('.company-description');
-                        const stats = slides[0].querySelectorAll('.stat');
-                        if (h3) h3.textContent = 'Autonova';
-                        if (type) type.textContent = 'မော်တော်ယာဉ်လုပ်ငန်း';
-                        if (desc) desc.textContent = 'Autonova သည် မြန်မာနိုင်ငံတွင် ထိပ်တန်းမော်တော်ယာဉ် ဖြန့်ဖြူးရောင်းချသူတစ်ဦးဖြစ်ပြီး OdeX ERP ဖြင့် လုပ်ငန်းစီမံခန့်ခွဲမှုကို ထိရောက်စွာ လုပ်ဆောင်လျက်ရှိသည်။';
-                        if (stats[0]) stats[0].textContent = 'စီးပွားရေး ထိရောက်မှု 45% တိုးမြင့်';
-                        if (stats[1]) stats[1].textContent = 'အချိန် 60% ချွေတာ';
-                    }
-                    // Slide 2 - AWBA
-                    if (slides[1]) {
-                        const h3 = slides[1].querySelector('h3');
-                        const type = slides[1].querySelector('.company-type');
-                        const desc = slides[1].querySelector('.company-description');
-                        const stats = slides[1].querySelectorAll('.stat');
-                        if (h3) h3.textContent = 'AWBA';
-                        if (type) type.textContent = 'အစားအသောက်လုပ်ငန်း';
-                        if (desc) desc.textContent = 'AWBA သည် အစားအသောက် လုပ်ငန်းတွင် ထိပ်တန်းကုမ္ပဏီတစ်ခုဖြစ်ပြီး OdeX POS နှင့် Inventory စီမံခန့်ခွဲမှုကို အသုံးပြု၍ ဝန်ဆောင်မှုများ ပိုမိုမြန်ဆန်စေသည်။';
-                        if (stats[0]) stats[0].textContent = 'ရောင်းအား 35% တိုးမြင့်';
-                        if (stats[1]) stats[1].textContent = 'စာရင်းတိကျမှု 98%';
-                    }
-                    // Slide 3 - City Properties
-                    if (slides[2]) {
-                        const h3 = slides[2].querySelector('h3');
-                        const type = slides[2].querySelector('.company-type');
-                        const desc = slides[2].querySelector('.company-description');
-                        const stats = slides[2].querySelectorAll('.stat');
-                        if (h3) h3.textContent = 'City Properties';
-                        if (type) type.textContent = 'အိမ်ခြံမြေလုပ်ငန်း';
-                        if (desc) desc.textContent = 'City Properties သည် အိမ်ခြံမြေလုပ်ငန်းတွင် ဦးဆောင်ကုမ္ပဏီတစ်ခုဖြစ်ပြီး OdeX CRM ဖြင့် ဖောက်သည်များနှင့် ပိုမိုကောင်းမွန်သော ဆက်ဆံရေး တည်ဆောက်ထားသည်။';
-                        if (stats[0]) stats[0].textContent = 'ဖောက်သည် 50% တိုးမြင့်';
-                        if (stats[1]) stats[1].textContent = 'ဝန်ဆောင်မှု 40% မြန်ဆန်';
-                    }
-                    // Slide 4 - Citywin
-                    if (slides[3]) {
-                        const h3 = slides[3].querySelector('h3');
-                        const type = slides[3].querySelector('.company-type');
-                        const desc = slides[3].querySelector('.company-description');
-                        const stats = slides[3].querySelectorAll('.stat');
-                        if (h3) h3.textContent = 'Citywin';
-                        if (type) type.textContent = 'လက်လီလုပ်ငန်း';
-                        if (desc) desc.textContent = 'Citywin သည် လက်လီလုပ်ငန်းတွင် ထိပ်တန်းဆိုင်ခွဲများဖွင့်လှစ်ထားပြီး OdeX POS ဖြင့် အရောင်းများကို လွယ်ကူစွာ စီမံခန့်ခွဲနေသည်။';
-                        if (stats[0]) stats[0].textContent = 'ရောင်းချမှု 55% တိုးမြင့်';
-                        if (stats[1]) stats[1].textContent = 'မှားယွင်းမှု 85% လျှော့ချ';
-                    }
-                    // Slide 5 - Seasons
-                    if (slides[4]) {
-                        const h3 = slides[4].querySelector('h3');
-                        const type = slides[4].querySelector('.company-type');
-                        const desc = slides[4].querySelector('.company-description');
-                        const stats = slides[4].querySelectorAll('.stat');
-                        if (h3) h3.textContent = 'Seasons';
-                        if (type) type.textContent = 'မုန့်ဆိုင်လုပ်ငန်း';
-                        if (desc) desc.textContent = 'Seasons သည် မြန်မာနိုင်ငံတွင် နာမည်ကြီးသော မုန့်ဆိုင်များ၏ အမှတ်တံဆိပ်ဖြစ်ပြီး OdeX ERP ဖြင့် ကုန်ပစ္စည်းစီမံခန့်ခွဲမှု၊ စာရင်းနှင့် ရောင်းချမှုကို ထိရောက်စွာ လုပ်ဆောင်သည်။';
-                        if (stats[0]) stats[0].textContent = 'ဖောက်သည်ကျေနပ်မှု 95%';
-                        if (stats[1]) stats[1].textContent = 'လုပ်ငန်းထိရောက်မှု 50% တိုးမြင့်';
-                    }
-                    // Slide 6 - YIGTL
-                    if (slides[5]) {
-                        const h3 = slides[5].querySelector('h3');
-                        const type = slides[5].querySelector('.company-type');
-                        const desc = slides[5].querySelector('.company-description');
-                        const stats = slides[5].querySelectorAll('.stat');
-                        if (h3) h3.textContent = 'YIGTL';
-                        if (type) type.textContent = 'ပို့ဆောင်ရေးလုပ်ငန်း';
-                        if (desc) desc.textContent = 'YIGTL သည် ပို့ဆောင်ရေးလုပ်ငန်းတွင် ဦးဆောင်ကုမ္ပဏီတစ်ခုဖြစ်ပြီး OdeX Logistics မော်ဂျူးဖြင့် ပို့ဆောင်မှုများကို အချိန်နှင့်တပြေးညီ ခြေရာခံနိုင်သည်။';
-                        if (stats[0]) stats[0].textContent = 'ပို့ဆောင်မှု 40% မြန်ဆန်';
-                        if (stats[1]) stats[1].textContent = 'တိကျမှု 99%';
-                    }
-                }
             }
 
             // Additional homepage text internationalization
@@ -1247,6 +970,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // Red border removed for production
     }
     
+    // Preloader: show for 3.5s then hide
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add('hide');
+            setTimeout(() => preloader.remove(), 400);
+        }, 3500);
+    }
+    
     // Language toggle event listener
     if (langToggle) {
         langToggle.addEventListener('click', function() {
@@ -1426,10 +1158,21 @@ faqItems.forEach(item => {
                 setTimeout(() => toast.classList.remove('show'), 2600);
             }
             try {
-                // Submit directly to Airtable
-                await submitToAirtable(payload);
-                showToast(currentLang === 'my' ? 'သင့်မက်ဆေ့ခ်ျအား လက်ခံပြီးပါပြီ။ ကျွန်ုပ်တို့ ဆက်သွယ်ပေးမည်။' : 'Thanks! Your message was sent. We will contact you shortly.', 'success');
-                contactForm.reset();
+                const resp = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const text = await resp.text();
+                let data = {};
+                try { data = JSON.parse(text); } catch {}
+                if (resp.ok && data.ok) {
+                    showToast(currentLang === 'my' ? 'သင့်မက်ဆေ့ခ်ျအား လက်ခံပြီးပါပြီ။ ကျွန်ုပ်တို့ ဆက်သွယ်ပေးမည်။' : 'Thanks! Your message was sent. We will contact you shortly.', 'success');
+                    contactForm.reset();
+                } else {
+                    const errMsg = data.error || text || 'Unknown error';
+                    showToast((currentLang === 'my' ? 'ပေးပို့ရာတွင် ပြသာနာရှိပါသည်။ ' : 'Submission failed. ') + errMsg, 'error');
+                }
             } catch (err) {
                 showToast((currentLang === 'my' ? 'ပေးပို့ရာတွင် ပြသာနာရှိပါသည်။ ' : 'There was a problem sending your message. ') + (err?.message || ''), 'error');
             }
@@ -1437,8 +1180,8 @@ faqItems.forEach(item => {
     }
 
     // Company Showcase Slider Functionality
-    const slides = document.querySelectorAll('.company-showcase .slide');
-    const dots = document.querySelectorAll('.company-showcase .dot');
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
     let currentSlide = 0;
     let slideInterval;
 
@@ -1520,95 +1263,16 @@ faqItems.forEach(item => {
         stacked.addEventListener('mouseenter', stopStack);
         stacked.addEventListener('mouseleave', startStack);
 
-        // Mobile fallback: only show fallback on very small screens
-        function checkMobileFallback() {
+        // Mobile fallback: if cards are not visible after load, show fallback image
+        setTimeout(() => {
             const cards = stacked.querySelectorAll('.card');
+            const rect = cards[0] ? cards[0].getBoundingClientRect() : null;
+            const hidden = !rect || rect.width < 40 || rect.height < 40; // likely not laid out
             const fallback = stacked.querySelector('.fallback-image');
-            
-            // Show fallback only on very small screens (≤320px)
-            if (window.innerWidth <= 320) {
-                if (fallback) fallback.style.display = 'block';
+            if (hidden && fallback) {
                 cards.forEach(c => c.style.display = 'none');
-            } else {
-                // On mobile, tablet, desktop - show animated cards
-                if (fallback) fallback.style.display = 'none';
-                cards.forEach(c => c.style.display = '');
+                fallback.style.display = 'block';
             }
-        }
-        
-        // Check on load and window resize
-        setTimeout(checkMobileFallback, 100);
-        window.addEventListener('resize', checkMobileFallback);
+        }, 600);
     }
 });
-
-// Handle page show event (for back/forward navigation)
-window.addEventListener('pageshow', function(event) {
-    // If page is loaded from cache (back/forward button)
-    if (event.persisted) {
-        // Force reinitialize stacked cards
-        const stacked = document.querySelector('.stacked-cards');
-        if (stacked) {
-            const cards = stacked.querySelectorAll('.card');
-            const fallback = stacked.querySelector('.fallback-image');
-            
-            // Always show cards on mobile/tablet/desktop (only hide on very small screens)
-            if (window.innerWidth > 320) {
-                if (fallback) fallback.style.display = 'none';
-                cards.forEach(c => c.style.display = '');
-            }
-        }
-        
-        // Reinitialize company showcase slider
-        const slides = document.querySelectorAll('.company-showcase .slide');
-        const dots = document.querySelectorAll('.company-showcase .dot');
-        if (slides.length > 0) {
-            // Reset to first slide
-            slides.forEach((slide, index) => {
-                slide.classList.toggle('active', index === 0);
-            });
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === 0);
-            });
-        }
-    }
-
-});
-
-// Function to submit to Airtable (moved outside DOMContentLoaded)
-async function submitToAirtable(data) {
-    // IMPORTANT: Replace these with your actual Airtable credentials
-    // You can find these in your Airtable account settings
-    const AIRTABLE_API_KEY = 'YOUR_AIRTABLE_API_KEY'; // Set this in your environment variables
-    const BASE_ID = 'apprTT54N6yro3L44'; // Your Kairoswallet base ID
-    const TABLE_NAME = 'Table 1'; // Based on your screenshot
-    
-    const url = `https://api.airtable.com/v0/${BASE_ID}/${encodeURIComponent(TABLE_NAME)}`;
-    
-    const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            records: [
-                {
-                    fields: {
-                        // Store all contact form data in a readable format
-                        'Twitter Handle': `Website Contact - ${data.name}`,
-                        'Wallet Address': `Company: ${data.company || 'N/A'} | Email: ${data.email} | Phone: ${data.phone || 'N/A'} | Message: ${data.message}`,
-                        'Created': new Date().toISOString().split('T')[0]
-                    }
-                }
-            ]
-        })
-    });
-    
-    if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Airtable API error: ${response.status} - ${errorText}`);
-    }
-    
-    return await response.json();
-}
