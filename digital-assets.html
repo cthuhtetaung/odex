@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OdeX | Digital Assets ရောင်းဝယ်ရေး</title>
+    <link rel="stylesheet" href="css/style.css?v=2025-10-10-MOBILE">
+    <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="images/odoo.webp" type="image/webp">
+    <style>
+        :root {
+            --da-primary: #714B67;
+            --da-secondary: #FF9900;
+            --da-dark: #1c1331;
+        }
+        body.da-page {
+            background: radial-gradient(circle at top, #2f2246 0%, #130a21 55%, #090612 100%);
+            color: #f5f5ff;
+            font-family: 'Inter', 'Padauk', sans-serif;
+        }
+        body.modal-open {
+            overflow: hidden;
+        }
+        .da-hero {
+            position: relative;
+            padding: 140px 0 120px;
+            overflow: hidden;
+        }
+        .da-hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+            z-index: 0;
+        }
+        .da-hero::before,
+        .da-hero::after {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 153, 0, 0.35) 0%, transparent 65%);
+            filter: blur(60px);
+            opacity: 0.7;
+            z-index: 1;
+        }
+        .da-hero::before { top: -60px; left: -120px; }
+        .da-hero::after { bottom: -120px; right: -80px; background: radial-gradient(circle, rgba(81, 46, 109, 0.6) 0%, transparent 70%); }
+        .da-hero-content {
+            position: relative;
+            max-width: 920px;
+            margin: 0 auto;
+            text-align: center;
+            z-index: 3;
+        }
+        .da-hero h1 {
+            font-size: clamp(2.25rem, 3vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 1.2rem;
+        }
+        .da-hero p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(235, 232, 255, 0.85);
+            max-width: 720px;
+            margin: 0.85rem auto 0;
+        }
+        .da-cta {
+            margin-top: 2.4rem;
+            display: inline-flex;
+            gap: 0.75rem;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(255, 153, 0, 0.92), rgba(255, 120, 0, 0.82));
+            color: #2d1044;
+            font-weight: 700;
+            border-radius: 999px;
+            padding: 0.85rem 1.75rem;
+            text-decoration: none;
+            box-shadow: 0 20px 45px rgba(255, 153, 0, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .da-cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 26px 55px rgba(255, 153, 0, 0.35);
+        }
+        .da-section {
+            padding: 0 0 90px;
+        }
+        .da-heading {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .da-heading h2 {
+            font-size: clamp(2rem, 2.2vw, 2.6rem);
+            font-weight: 700;
+            color: #fff;
+        }
+        .da-heading p {
+            color: rgba(231, 228, 255, 0.75);
+            margin-top: 0.85rem;
+        }
+        .da-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 28px;
+        }
+        .da-card {
+            background: linear-gradient(165deg, rgba(33, 21, 48, 0.96), rgba(19, 11, 32, 0.92));
+            border-radius: 28px;
+            padding: 26px 26px 28px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            box-shadow: 0 22px 55px rgba(6, 3, 14, 0.55);
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .da-card::after {
+            content: "";
+            position: absolute;
+            top: -110px;
+            right: -140px;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(255, 153, 0, 0.22) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+        .da-card:hover {
+            transform: translateY(-10px) scale(1.01);
+            border-color: rgba(255, 153, 0, 0.4);
+            box-shadow: 0 32px 70px rgba(8, 2, 20, 0.6);
+        }
+        .da-card:hover::after {
+            opacity: 1;
+        }
+        .da-card-header {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        .da-card h3 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin: 0;
+            color: #fef8ff;
+        }
+        .da-card p {
+            color: rgba(238, 233, 255, 0.7);
+        }
+        .da-price-list {
+            display: grid;
+            gap: 14px;
+            margin-top: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        .da-price-pill {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.96rem;
+            color: rgba(243, 239, 255, 0.92);
+        }
+        .da-price-pill span:last-child {
+            font-weight: 700;
+            color: #ffd699;
+            font-size: 1.04rem;
+        }
+        .da-card-note {
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: rgba(233, 231, 255, 0.7);
+        }
+        .da-support-strip {
+            margin: 90px auto 60px;
+            max-width: 920px;
+            padding: 28px 32px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .da-support-strip p {
+            color: rgba(233, 231, 255, 0.85);
+            margin: 0;
+            font-size: 1rem;
+        }
+        .da-order-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(255, 153, 0, 0.95), rgba(255, 120, 0, 0.88));
+            color: #2f1046;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 16px 32px rgba(255, 153, 0, 0.22);
+        }
+        .da-order-btn:hover {
+            box-shadow: 0 24px 44px rgba(255, 153, 0, 0.28);
+        }
+        .da-payment {
+            max-width: 760px;
+            margin: 0 auto 110px;
+            text-align: center;
+            color: rgba(232, 227, 255, 0.8);
+            line-height: 1.7;
+        }
+        .da-payment strong {
+            color: #ffd38a;
+        }
+        .order-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(9, 6, 18, 0.82);
+            backdrop-filter: blur(10px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 1.5rem;
+        }
+        .order-modal-backdrop.active {
+            display: flex;
+        }
+        .order-modal {
+            width: 100%;
+            max-width: 520px;
+            background: linear-gradient(155deg, rgba(36, 22, 63, 0.92), rgba(16, 8, 28, 0.96));
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 32px;
+            padding: 2.8rem 2.4rem 2.2rem;
+            box-shadow: 0 34px 75px rgba(5, 2, 14, 0.62);
+            position: relative;
+            color: #f5f1ff;
+            overflow: hidden;
+        }
+        .order-modal::before {
+            content: "";
+            position: absolute;
+            inset: -120px -140px auto auto;
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 153, 0, 0.22) 0%, rgba(255, 255, 255, 0) 70%);
+            filter: blur(0px);
+            opacity: 0.9;
+        }
+        .order-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #f5f1ff;
+            border-radius: 999px;
+            width: 36px;
+            height: 36px;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        .order-modal-close:hover {
+            background: rgba(255, 255, 255, 0.22);
+        }
+        .order-modal-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        .order-modal-badge {
+            width: 52px;
+            height: 52px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0));
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            display: grid;
+            place-items: center;
+            font-size: 1.4rem;
+            color: #ffd38a;
+        }
+        .order-modal-kicker {
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            font-size: 0.68rem;
+            color: rgba(255, 211, 138, 0.85);
+            margin-bottom: 0.35rem;
+        }
+        .order-modal h3 {
+            font-size: 1.7rem;
+            margin: 0;
+            font-weight: 700;
+        }
+        .order-modal-subtext {
+            margin: 0 0 1.6rem;
+            color: rgba(245, 241, 255, 0.75);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+        .order-contact-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 1.05rem;
+            position: relative;
+            z-index: 1;
+        }
+        .order-contact-list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.1rem;
+            padding: 1.05rem 1.2rem;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            font-size: 0.98rem;
+        }
+        .order-contact-list li i {
+            font-size: 1.2rem;
+        }
+        .order-contact-main {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .order-contact-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.14);
+            display: grid;
+            place-items: center;
+            color: #ffd38a;
+        }
+        .order-contact-label {
+            display: block;
+            font-size: 0.72rem;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: rgba(255, 211, 138, 0.78);
+            margin-bottom: 0.2rem;
+        }
+        .order-contact-value {
+            color: #fdfbff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .order-contact-value:hover {
+            text-decoration: underline;
+        }
+        .order-contact-action {
+            padding: 0.6rem 1.15rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(255, 153, 0, 0.9), rgba(255, 120, 0, 0.85));
+            color: #2d1044;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.86rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 12px 26px rgba(255, 153, 0, 0.3);
+            white-space: nowrap;
+        }
+        .order-contact-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 32px rgba(255, 153, 0, 0.34);
+        }
+        .order-support-note {
+            margin-top: 1.8rem;
+            font-size: 0.92rem;
+            color: rgba(245, 241, 255, 0.8);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .payment-section span.label {
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            font-size: 0.68rem;
+            color: rgba(255, 211, 138, 0.85);
+            margin-bottom: 0.5rem;
+        }
+        .payment-section h2 {
+            font-size: clamp(2rem, 3vw, 2.4rem);
+            color: #fefaff;
+            margin-bottom: 0.6rem;
+        }
+        .payment-section p.description {
+            color: rgba(235, 233, 255, 0.75);
+            font-size: 1rem;
+            margin-bottom: 1.8rem;
+        }
+        .payment-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 1.8rem;
+        }
+        .payment-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.55rem 1.1rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+            color: #fefaff;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .payment-item img {
+            width: 26px;
+            height: 26px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .payment-note {
+            font-size: 0.82rem;
+            color: rgba(235, 233, 255, 0.65);
+            margin-top: 1rem;
+        }
+        @media (max-width: 768px) {
+            .da-hero { padding: 120px 0 80px; }
+            .da-support-strip {
+                flex-direction: column;
+                text-align: center;
+            }
+            .da-order-btn { width: 100%; justify-content: center; }
+            .order-contact-list li { flex-direction: column; align-items: flex-start; }
+            .order-contact-action { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body class="da-page">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" aria-label="Go to Home">
+                    <h1>Ode<span class="accent-x">X</span></h1>
+                </a>
+            </div>
+            <div class="header-controls">
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="index.html" data-lang="navHome">ပင်မစာမျက်နှာ</a></li>
+                        <li><a href="about.html" data-lang="navAbout">ERP အကြောင်း</a></li>
+                        <li><a href="comparison.html" data-lang="navComparison">နှိုင်းယှဉ်ချက်</a></li>
+                        <li><a href="features.html" data-lang="navFeatures">အဓိကမော်ဂျူးများ</a></li>
+                        <li><a href="index.html#services" data-lang="navServices">အခြားဝန်ဆောင်မှုများ</a></li>
+                        <li><a href="contact.html" data-lang="navContact">ဆက်သွယ်ရန်</a></li>
+                    </ul>
+                </nav>
+                <div class="language-switcher">
+                    <button id="lang-toggle" class="btn secondary">English Version</button>
+                </div>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="da-hero">
+            <video class="da-hero-video" autoplay muted loop playsinline>
+                <source src="odoo-erp-website/images/logos/DigitalAssets.mp4" type="video/mp4">
+            </video>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="da-hero-content">
+                    <span class="da-label" style="margin-bottom: 18px;">Game top-up hub</span>
+                    <h1>Digital Assets Marketplace</h1>
+                    <p>
+                        MLBB Diamonds, PUBG UC, Free Fire Diamonds, Honor of Kings Coupons, Steam Wallet, Blizzard Gift Cards, Telegram Premium,
+                        Telegram Stars စတဲ့ premium digital assets များကို တစ်နေရာတည်းမှာပဲ ရရှိနိုင်ပါသည်။ အချိန်နှင့်အမျှ စျေးအပြောင်းလည်းရှိနိုင်သောကြောင့် မဝယ်ယူခင် အရင် ဆက်သွယ်ပေးပါ။
+                    </p>
+                    <a href="contact.html" class="da-cta" id="order-now-btn">
+                        Order now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="da-section">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="da-heading">
+                    <h2>Popular Top-ups</h2>
+                    <p>Region မျိုးစုံအတွက် သာမန်ထက်သက်သာမျှတသော စျေးနှုန်းများဖြင့် ပေးဆောင်ပါသည်။</p>
+                </div>
+                <div class="da-card-grid">
+                    <div class="da-card">
+                        <div class="da-card-header">
+                            <h3>MLBB Diamonds</h3>
+                            <p>Weekly pass, skins, and squad bundles with instant top-up support.</p>
+                        </div>
+                        <p style="color: rgba(241,238,255,0.72); margin-top: 6px;">လိုအပ်ချက်နည်းခြင်းမရှိဘဲ ချက်ချင်းတိုးမြှင့်ပေးပါမည်။</p>
+                        <div class="da-price-list">
+                            <div class="da-price-pill">
+                                <span>86 Diamonds (Weekly Pass)</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>514 Diamonds</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>1,200 Diamonds</span>
+                            </div>
+                        </div>
+                        <p class="da-card-note">Need special bundle? Let us know your MLBB UID for instant top-up arrangements.</p>
+                    </div>
+
+                    <div class="da-card">
+                        <div class="da-card-header">
+                            <h3>PUBG Mobile UC</h3>
+                            <p>Royal Pass, crate openings, and seasonal drops reloaded instantly.</p>
+                        </div>
+                        <p style="color: rgba(241,238,255,0.72); margin-top: 6px;">Royal Pass &amp; Crate များအတွက် အမြန်ဆုံး UC reload.</p>
+                        <div class="da-price-list">
+                            <div class="da-price-pill">
+                                <span>325 UC + Bonus</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>690 UC</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>1,800 UC</span>
+                            </div>
+                        </div>
+                        <p class="da-card-note">Submit PUBG UID and preferred platform; we confirm availability before payment.</p>
+                    </div>
+
+                    <div class="da-card">
+                        <div class="da-card-header">
+                            <h3>Free Fire Diamonds</h3>
+                            <p>Bundle, Weapon Royale, Elite Pass reloads with curated promo options.</p>
+                        </div>
+                        <p style="color: rgba(241,238,255,0.72); margin-top: 6px;">Bundle, Weapon Royale, Elite Pass များအတွက် တိုက်ရိုက် reload.</p>
+                        <div class="da-price-list">
+                            <div class="da-price-pill">
+                                <span>310 Diamonds</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>720 Diamonds</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>2,000 Diamonds</span>
+                            </div>
+                        </div>
+                        <p class="da-card-note">Provide Player ID &amp; Zone; we deliver bundles and Elite Passes on demand.</p>
+                    </div>
+
+                    <div class="da-card">
+                        <div class="da-card-header">
+                            <h3>Honor of Kings Coupons</h3>
+                            <p>Heroes, skins, and season pass bundles tailored for your run.</p>
+                        </div>
+                        <p style="color: rgba(241,238,255,0.72); margin-top: 6px;">Heroes, Skins &amp; Season Pass များကို ကန့်သတ်ချိန်အတွင်း ဝယ်ယူပါ။</p>
+                        <div class="da-price-list">
+                            <div class="da-price-pill">
+                                <span>300 Coupons</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>880 Coupons</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>2,000 Coupons</span>
+                            </div>
+                        </div>
+                        <p class="da-card-note">SEA launch promos available; share your HoK UID for seasonal offers.</p>
+                    </div>
+
+                    <div class="da-card">
+                        <div class="da-card-header">
+                            <h3>Steam Wallet</h3>
+                            <p>Region-free USD keys delivered to your inbox for DLC and games.</p>
+                        </div>
+                        <p style="color: rgba(241,238,255,0.72); margin-top: 6px;">Region-lock မရှိသော USD code များ သင့်သလိုယူနိုင်ပါသည်။</p>
+                        <div class="da-price-list">
+                            <div class="da-price-pill">
+                                <span>USD 5</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>USD 10</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>USD 50</span>
+                            </div>
+                        </div>
+                        <p class="da-card-note">Worldwide USD keys delivered instantly to your email or Steam inbox.</p>
+                    </div>
+
+                    <div class="da-card">
+                        <div class="da-card-header">
+                            <h3>Blizzard Gift Cards</h3>
+                            <p>Hearthstone, Overwatch, Diablo refresh packs for your Battle.net.</p>
+                        </div>
+                        <p style="color: rgba(241,238,255,0.72); margin-top: 6px;">Hearthstone packs, Overwatch coins, Diablo expansions—redeemable worldwide.</p>
+                        <div class="da-price-list">
+                            <div class="da-price-pill">
+                                <span>USD 10 Gift Code</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>USD 20 Gift Code</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>Seasonal Bundles &amp; Promo Keys</span>
+                            </div>
+                        </div>
+                        <p class="da-card-note">Codes issued after identity match; share BattleTag or account email for smooth delivery.</p>
+                    </div>
+
+                    <div class="da-card">
+                        <div class="da-card-header">
+                            <h3>Spotify Premium</h3>
+                            <p>Individual, Duo, and Family renewals with auto region matching.</p>
+                        </div>
+                        <p style="color: rgba(241,238,255,0.72); margin-top: 6px;">Stream ad-free music, podcasts, and audiobooks with curated renewal options.</p>
+                        <div class="da-price-list">
+                            <div class="da-price-pill">
+                                <span>1-Month Premium</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>3-Month Premium</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>Duo / Family Slot Add-ons</span>
+                            </div>
+                        </div>
+                        <p class="da-card-note">Provide account email; we handle region alignment and secure renewal.</p>
+                    </div>
+
+                    <div class="da-card">
+                        <div class="da-card-header">
+                            <h3>Multi Digital Assets</h3>
+                            <p>Combine game, streaming, and voucher credits into one curated pack.</p>
+                        </div>
+                        <p style="color: rgba(241,238,255,0.72); margin-top: 6px;">Combine multiple platforms—games, streaming, vouchers—into a single optimized order.</p>
+                        <div class="da-price-list">
+                            <div class="da-price-pill">
+                                <span>Game + Streaming Combos</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>Monthly Subscription Packs</span>
+                            </div>
+                            <div class="da-price-pill">
+                                <span>Corporate &amp; Guild Bulk Requests</span>
+                            </div>
+                        </div>
+                        <p class="da-card-note">Chat with us to configure bundle, schedule recurring top-ups, and lock in promo rates.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="order-modal-backdrop" id="order-modal">
+             <div class="order-modal">
+                <button type="button" class="order-modal-close" id="order-modal-close" aria-label="Close order contact options">&times;</button>
+                <div class="order-modal-header">
+                    <div class="order-modal-badge">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <span class="order-modal-kicker">24/7 assistance</span>
+                        <h3>Order &amp; Support</h3>
+                    </div>
+                </div>
+                <p class="order-modal-subtext">Choose your preferred channel and our team will confirm your top-up within minutes.</p>
+                <ul class="order-contact-list">
+                    <li>
+                        <div class="order-contact-main">
+                            <span class="order-contact-icon"><i class="fas fa-phone"></i></span>
+                            <div>
+                                <span class="order-contact-label">Phone</span>
+                                <a href="tel:09754758505" class="order-contact-value">09 754 758 505</a>
+                            </div>
+                        </div>
+                        <a href="tel:09754758505" class="order-contact-action">Call now</a>
+                    </li>
+                    <li>
+                        <div class="order-contact-main">
+                            <span class="order-contact-icon"><i class="fab fa-telegram-plane"></i></span>
+                            <div>
+                                <span class="order-contact-label">Telegram</span>
+                                <a href="https://t.me/rueonchain" target="_blank" rel="noopener" class="order-contact-value">t.me/rueonchain</a>
+                            </div>
+                        </div>
+                        <a href="https://t.me/rueonchain" target="_blank" rel="noopener" class="order-contact-action">Open chat</a>
+                    </li>
+                    <li>
+                        <div class="order-contact-main">
+                            <span class="order-contact-icon"><i class="fab fa-facebook-messenger"></i></span>
+                            <div>
+                                <span class="order-contact-label">Messenger</span>
+                                <a href="https://m.me/cthu.mr" target="_blank" rel="noopener" class="order-contact-value">m.me/cthu.mr</a>
+                            </div>
+                        </div>
+                        <a href="https://m.me/cthu.mr" target="_blank" rel="noopener" class="order-contact-action">Message us</a>
+                    </li>
+                </ul>
+                <p class="order-support-note">24/7 support • Quick response for urgent top-ups</p>
+            </div>
+        </div>
+
+        <section class="py-16 payment-section">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
+                <span class="label">Payment options</span>
+                <h2>Accepted payment channels</h2>
+                <p class="description">USDT stablecoins and Myanmar wallets — settle through the channel that fits your finance workflow with real-time confirmation.</p>
+                <div class="payment-list">
+                    <div class="payment-item"><img src="images/partners/usdt.png" alt="USDT logo">USDT/USDC</div>
+                    <div class="payment-item"><img src="images/partners/kbz.png" alt="KBZPay logo">KBZPay</div>
+                    <div class="payment-item"><img src="images/partners/wave.png" alt="WavePay logo">WavePay</div>
+                    <div class="payment-item"><img src="images/partners/aya.png" alt="AYA Pay logo">AYAPay</div>
+                    <div class="payment-item"><img src="images/partners/uab.png" alt="UABPay logo">UABPay</div>
+                    <div class="payment-item"><img src="images/partners/visa.png" alt="Visa logo">Visa</div>
+                </div>
+                <div style="display:flex; flex-direction:column; align-items:center; gap:0.8rem;">
+                    <a href="contact.html" class="da-cta" id="order-now-btn-secondary">Order now <i class="fas fa-arrow-right"></i></a>
+                    <p class="payment-note">24/7 settlement support • Let us know your preferred channel</p>
+                </div>
+            </div>
+        </section>
+
+    <script src="js/main.js"></script>
+    <script>
+        (function () {
+            const orderBtn = document.getElementById('order-now-btn');
+            const orderBackdrop = document.getElementById('order-modal');
+            const orderClose = document.getElementById('order-modal-close');
+            const orderBtnSecondary = document.getElementById('order-now-btn-secondary');
+
+            if (!orderBtn || !orderBackdrop || !orderClose) {
+                return;
+            }
+
+            const openModal = (event) => {
+                if (event) {
+                    event.preventDefault();
+                }
+                orderBackdrop.classList.add('active');
+                document.body.classList.add('modal-open');
+            };
+
+            const closeModal = () => {
+                orderBackdrop.classList.remove('active');
+                document.body.classList.remove('modal-open');
+            };
+
+            orderBtn.addEventListener('click', openModal);
+            if (orderBtnSecondary) {
+                orderBtnSecondary.addEventListener('click', openModal);
+            }
+            orderClose.addEventListener('click', closeModal);
+            orderBackdrop.addEventListener('click', (event) => {
+                if (event.target === orderBackdrop) {
+                    closeModal();
+                }
+            });
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
+

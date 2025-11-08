@@ -81,6 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
         serviceAnchors.forEach(anchor => {
             if (!anchor) return;
 
+            anchor.setAttribute('href', 'index.html#services');
+
             let label = anchor.querySelector('.nav-link-label');
             if (!label) {
                 const text = anchor.textContent.trim() || 'Services';

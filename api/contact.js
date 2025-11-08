@@ -49,8 +49,8 @@ export default async function handler(req, res) {
     };
 
     const apiKey = process.env.AIRTABLE_API_KEY;
-    const baseId = process.env.AIRTABLE_BASE_ID || 'apprTT54N6yro3L44'; // Fallback to your base
-    const tableIdOrName = process.env.AIRTABLE_TABLE_ID || 'Table 1'; // Fallback to your table
+    const baseId = process.env.AIRTABLE_BASE_ID;
+    const tableIdOrName = process.env.AIRTABLE_TABLE_ID;
 
     if (!apiKey || !baseId || !tableIdOrName) {
       return res.status(500).json({ ok: false, error: 'Server not configured' });
@@ -68,9 +68,11 @@ export default async function handler(req, res) {
         records: [
           {
             fields: {
-              'Twitter Handle': `Website Contact - ${trimmed.name}`,
-              'Wallet Address': `Company: ${trimmed.company || 'N/A'} | Email: ${trimmed.email} | Phone: ${trimmed.phone || 'N/A'} | Message: ${trimmed.message}`,
-              'Created': new Date().toISOString().split('T')[0]
+              'A Name': trimmed.name,
+              'A Company Name': trimmed.company,
+              'A Email': trimmed.email,
+              'A Ph No.': trimmed.phone,
+              'A Msg': trimmed.message
             }
           }
         ]
