@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OdeX | Web3 &amp; Blockchain Integration</title>
+    <link rel="stylesheet" href="css/style.css?v=2025-10-10-MOBILE">
+    <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="images/odoo.webp" type="image/webp">
+    <style>
+        :root {
+            --wb-primary: #0f172a;
+            --wb-secondary: #6366f1;
+            --wb-accent: #38bdf8;
+            --wb-rose: #f43f5e;
+        }
+        body.wb-page {
+            margin: 0;
+            background: radial-gradient(circle at top, #0b1324 0%, #060a14 55%, #02040a 100%);
+            color: #f8fbff;
+            font-family: 'Inter', 'Padauk', sans-serif;
+        }
+        .wb-hero {
+            position: relative;
+            padding: 140px 0 120px;
+            overflow: hidden;
+        }
+        .wb-hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.45;
+            z-index: 0;
+        }
+        .wb-hero::before,
+        .wb-hero::after {
+            content: "";
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.55;
+            z-index: 1;
+        }
+        .wb-hero::before {
+            top: -140px;
+            left: -80px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.55) 0%, transparent 70%);
+        }
+        .wb-hero::after {
+            bottom: -200px;
+            right: -120px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.65) 0%, transparent 70%);
+        }
+        .wb-hero-content {
+            position: relative;
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: center;
+            z-index: 2;
+        }
+        .wb-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            background: rgba(99, 102, 241, 0.15);
+            color: rgba(209, 213, 245, 0.92);
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+        .wb-badge i {
+            color: #38bdf8;
+        }
+        .wb-hero-content h1 {
+            font-size: clamp(2.6rem, 3.8vw, 3.8rem);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin: 1.6rem 0 1.1rem;
+        }
+        .wb-hero-content p {
+            font-size: 1.12rem;
+            line-height: 1.8;
+            color: rgba(226, 230, 255, 0.8);
+            margin: 0 auto;
+            max-width: 760px;
+        }
+        .wb-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            justify-content: center;
+            margin-top: 2.6rem;
+        }
+        .wb-cta-primary,
+        .wb-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            border-radius: 999px;
+            padding: 0.9rem 1.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .wb-cta-primary {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.92), rgba(76, 106, 255, 0.92));
+            color: #f8fbff;
+            box-shadow: 0 18px 40px rgba(99, 102, 241, 0.32);
+        }
+        .wb-cta-primary:hover { transform: translateY(-4px); box-shadow: 0 24px 50px rgba(99, 102, 241, 0.45); }
+        .wb-cta-secondary {
+            background: rgba(15, 23, 42, 0.4);
+            color: rgba(196, 201, 234, 0.9);
+            border: 1px solid rgba(99, 102, 241, 0.35);
+        }
+        .wb-cta-secondary:hover { transform: translateY(-4px); border-color: rgba(99, 102, 241, 0.6); }
+        .wb-section {
+            padding: 90px 0;
+        }
+        .wb-heading {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 58px;
+        }
+        .wb-heading h2 {
+            font-size: clamp(2.1rem, 2.7vw, 2.8rem);
+            margin-bottom: 0.8rem;
+        }
+        .wb-heading p {
+            color: rgba(216, 220, 247, 0.72);
+            line-height: 1.7;
+        }
+        .wb-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 26px;
+        }
+        .wb-card {
+            border-radius: 26px;
+            background: linear-gradient(165deg, rgba(19, 27, 52, 0.95), rgba(11, 16, 33, 0.88));
+            border: 1px solid rgba(148, 163, 255, 0.16);
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+        .wb-card::after {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            top: -80px;
+            right: -90px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.45) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+        .wb-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(99, 102, 241, 0.45);
+            box-shadow: 0 32px 68px rgba(10, 13, 28, 0.55);
+        }
+        .wb-card:hover::after { opacity: 1; }
+        .wb-card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(99, 102, 241, 0.18);
+            color: #38bdf8;
+            font-size: 1.2rem;
+            margin-bottom: 18px;
+        }
+        .wb-card h3 {
+            font-size: 1.28rem;
+            margin-bottom: 0.7rem;
+        }
+        .wb-card p {
+            color: rgba(215, 220, 252, 0.75);
+            line-height: 1.6;
+        }
+        .wb-chip-list {
+            margin-top: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+        }
+        .wb-chip {
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            letter-spacing: 0.01em;
+            background: rgba(56, 189, 248, 0.15);
+            color: rgba(198, 226, 255, 0.85);
+        }
+        .wb-process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 26px;
+            counter-reset: wb-step;
+        }
+        .wb-process-step {
+            padding: 28px;
+            border-radius: 24px;
+            background: linear-gradient(160deg, rgba(15, 23, 42, 0.95), rgba(9, 13, 24, 0.88));
+            border: 1px solid rgba(99, 102, 241, 0.18);
+            position: relative;
+        }
+        .wb-process-step::before {
+            counter-increment: wb-step;
+            content: counter(wb-step);
+            position: absolute;
+            top: -16px;
+            left: 24px;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(56, 189, 248, 0.9));
+            color: #020617;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.4);
+        }
+        .wb-process-step h3 {
+            margin-top: 1.4rem;
+            margin-bottom: 0.6rem;
+        }
+        .wb-process-step p {
+            color: rgba(206, 214, 248, 0.72);
+            line-height: 1.6;
+        }
+        .wb-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 36px;
+        }
+        .wb-metric {
+            padding: 22px 24px;
+            border-radius: 20px;
+            border: 1px solid rgba(148, 163, 255, 0.2);
+            background: rgba(15, 23, 42, 0.55);
+        }
+        .wb-metric span {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #38bdf8;
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+        .wb-cta-band {
+            margin: 40px auto 0;
+            max-width: 920px;
+            padding: 42px 44px;
+            border-radius: 32px;
+            background: linear-gradient(140deg, rgba(99, 102, 241, 0.25), rgba(37, 99, 235, 0.2), rgba(56, 189, 248, 0.18));
+            border: 1px solid rgba(148, 163, 255, 0.28);
+            text-align: center;
+            box-shadow: 0 28px 64px rgba(13, 20, 42, 0.35);
+        }
+        .wb-cta-band h3 {
+            font-size: 2rem;
+            margin-bottom: 0.65rem;
+        }
+        .wb-cta-band p {
+            color: rgba(224, 228, 255, 0.75);
+            margin-bottom: 2rem;
+        }
+        .wb-cta-band-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+        .order-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 6, 23, 0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99;
+        }
+        .order-modal-backdrop.active { display: flex; }
+        .order-modal {
+            width: min(520px, calc(100% - 32px));
+            border-radius: 32px;
+            border: 1px solid rgba(129, 140, 248, 0.35);
+            background: rgba(9, 13, 31, 0.92);
+            box-shadow: 0 36px 90px rgba(2, 6, 23, 0.65);
+            color: rgba(232, 238, 255, 0.95);
+            position: relative;
+            overflow: hidden;
+        }
+        .order-modal-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 38px;
+            height: 38px;
+            background: rgba(15, 23, 42, 0.68);
+            border-radius: 50%;
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            color: rgba(226, 232, 255, 0.8);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .order-modal-header {
+            padding: 36px 36px 30px;
+            background: linear-gradient(135deg, rgba(123, 97, 255, 0.35), rgba(236, 72, 153, 0.22));
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(148, 163, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .order-modal-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.45rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.72);
+            border: 1px solid rgba(167, 139, 250, 0.5);
+            color: rgba(216, 220, 255, 0.88);
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .order-modal-header h2 {
+            font-size: 1.68rem;
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+        .order-modal-header p {
+            color: rgba(221, 227, 255, 0.78);
+            margin: 0;
+            line-height: 1.65;
+        }
+        .order-modal-body {
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: rgba(10, 15, 31, 0.92);
+        }
+        .order-contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 16px;
+        }
+        .order-contact-list li {
+            padding: 18px 20px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(30, 41, 59, 0.85));
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+        .order-contact-list li:hover {
+            border-color: rgba(130, 142, 255, 0.6);
+            transform: translateY(-3px);
+        }
+        .order-contact-main {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .order-contact-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.24), rgba(129, 140, 248, 0.24));
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #38bdf8;
+            font-size: 1rem;
+        }
+        .order-contact-label {
+            display: block;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: rgba(148, 163, 255, 0.7);
+        }
+        .order-contact-value {
+            color: rgba(235, 240, 255, 0.95);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .order-contact-action {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: rgba(226, 232, 255, 0.9);
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(59, 130, 246, 0.18);
+            border: 1px solid rgba(96, 165, 250, 0.28);
+            backdrop-filter: blur(6px);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .order-contact-action:hover {
+            background: rgba(96, 165, 250, 0.28);
+            transform: translateX(2px);
+        }
+        .order-modal-footer {
+            padding: 18px 32px 28px;
+            background: rgba(9, 13, 28, 0.95);
+            border-top: 1px solid rgba(148, 163, 255, 0.14);
+        }
+        .order-support-note {
+            font-size: 0.85rem;
+            color: rgba(203, 213, 255, 0.7);
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .wb-hero { padding: 120px 0 90px; }
+            .wb-hero-content h1 { font-size: 2.4rem; }
+            .wb-card { padding: 24px; }
+            .wb-process-step { padding: 24px; }
+            .wb-cta-band { padding: 32px; }
+            .order-modal-body { padding: 26px 24px; }
+            .order-contact-list li { flex-direction: column; align-items: flex-start; }
+            .order-contact-action { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body class="wb-page">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" aria-label="Go to Home">
+                    <h1>Ode<span class="accent-x">X</span></h1>
+                </a>
+            </div>
+            <div class="header-controls">
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="index.html" data-lang="navHome">ပင်မစာမျက်နှာ</a></li>
+                        <li><a href="about.html" data-lang="navAbout">ERP အကြောင်း</a></li>
+                        <li><a href="comparison.html" data-lang="navComparison">နှိုင်းယှဉ်ချက်</a></li>
+                        <li><a href="features.html" data-lang="navFeatures">အဓိကမော်ဂျူးများ</a></li>
+                        <li><a href="index.html#services" data-lang="navServices">အခြားဝန်ဆောင်မှုများ</a></li>
+                        <li><a href="contact.html" data-lang="navContact">ဆက်သွယ်ရန်</a></li>
+                    </ul>
+                </nav>
+                <div class="language-switcher">
+                    <button id="lang-toggle" class="btn secondary">English Version</button>
+                </div>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="wb-hero">
+            <video class="wb-hero-video" autoplay muted loop playsinline>
+                <source src="odoo-erp-website/images/logos/BlockChain.mp4" type="video/mp4">
+            </video>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="wb-hero-content">
+                    <span class="wb-badge" data-lang="web3HeroBadge"><i class="fas fa-bolt"></i> On-chain product studio</span>
+                    <h1 data-lang="web3HeroTitle">Web3 &amp; Blockchain integrations</h1>
+                    <p data-lang="web3HeroSubtitle">
+                        NFT marketplace များ၊ Token gated community များ၊ Payment bridge များနှင့် On-chain analytics များကို သင့် platform နှင့်တစ်ပြေးညီ ချိတ်ဆက်ပေးပါသည်။ Smart contract၊ Gas optimization နှင့် Compliance အရ ပြည့်စုံအောင် ကျွန်ုပ်တို့၏ Web3 ပရော်ဖက်ရှင်နယ် အဖွဲ့က စီမံဆောင်ရွက်ပေးနေပါသည်။
+                    </p>
+                    <div class="wb-hero-actions">
+                        <a href="#" class="wb-cta-primary" id="order-now-btn" data-lang="web3HeroCTA">
+                            ဆက်သွယ်ပြီး Proof-of-Concept စတင်ရန် <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wb-section">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="wb-heading">
+                    <h2 data-lang="web3ServicesTitle">Web3 ဝန်ဆောင်မှုအစုံ</h2>
+                    <p data-lang="web3ServicesSubtitle">
+                        Strategy, tokenomics, smart contract development, UX, compliance မှ စတင်ပြီး mainnet အထိ production-ready အထိ ဝန်ဆောင်မှုများပေးပါသည်။
+                    </p>
+                </div>
+                <div class="wb-card-grid">
+                    <div class="wb-card">
+                        <span class="wb-card-icon"><i class="fas fa-code"></i></span>
+                        <h3 data-lang="web3Service1Title">Smart Contract &amp; Token Launch</h3>
+                        <p data-lang="web3Service1Desc">
+                            ERC-20 / BEP-20 / Solana Program များရေးသားခြင်း၊ Token vesting schedule များ တည်ဆောက်ခြင်းနှင့် multi-sig treasury ကာကွယ်မှုများ ထည့်သွင်းပေးခြင်း။
+                        </p>
+                        <div class="wb-chip-list">
+                            <span class="wb-chip">Audit ready</span>
+                            <span class="wb-chip">Upgradeable contracts</span>
+                            <span class="wb-chip">Gas optimization</span>
+                        </div>
+                    </div>
+                    <div class="wb-card">
+                        <span class="wb-card-icon"><i class="fas fa-gem"></i></span>
+                        <h3 data-lang="web3Service2Title">NFT Marketplace &amp; Collectibles</h3>
+                        <p data-lang="web3Service2Desc">
+                            Primary/secondary sale mechanics, lazy minting, royalty payout logic နှင့် wallet onboarding UX များပါဝင်သော branded NFT experience များဆောင်ရွက်ပေးခြင်း။
+                        </p>
+                        <div class="wb-chip-list">
+                            <span class="wb-chip">Cross-chain metadata</span>
+                            <span class="wb-chip">Stripe/crypto checkout</span>
+                            <span class="wb-chip">Creator dashboards</span>
+                        </div>
+                    </div>
+                    <div class="wb-card">
+                        <span class="wb-card-icon"><i class="fas fa-link"></i></span>
+                        <h3 data-lang="web3Service3Title">Web2 ↔ Web3 ပေါင်းစပ်ခြင်း</h3>
+                        <p data-lang="web3Service3Desc">
+                            Existing ERP, eCommerce, CRM များနှင့် blockchain data များကို API / oracle များဖြင့် ကိုက်ညီသွားစေပြီး real-time syncing ကို ပြုလုပ်ပေးပါသည်။
+                        </p>
+                        <div class="wb-chip-list">
+                            <span class="wb-chip">Custodial &amp; non-custodial flows</span>
+                            <span class="wb-chip">KYC/AML hooks</span>
+                            <span class="wb-chip">Realtime webhooks</span>
+                        </div>
+                    </div>
+                    <div class="wb-card">
+                        <span class="wb-card-icon"><i class="fas fa-users-cog"></i></span>
+                        <h3 data-lang="web3Service4Title">DAO &amp; Community Tooling</h3>
+                        <p data-lang="web3Service4Desc">
+                            Snapshot voting, gated Discord/Telegram integrations, on-chain reputation score များနှင့် incentive automation များ တည်ဆောက်ပေးခြင်း။
+                        </p>
+                        <div class="wb-chip-list">
+                            <span class="wb-chip">Quadratic voting</span>
+                            <span class="wb-chip">Treasury dashboards</span>
+                            <span class="wb-chip">Reputation NFTs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wb-section" style="padding-top: 40px; padding-bottom: 40px;">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="wb-heading">
+                    <h2 data-lang="web3OutcomesTitle">Web3 တွင်အားသာချက်များ</h2>
+                    <p data-lang="web3OutcomesSubtitle">
+                        OdeX ERP Solutions မှ web3 integrations ၊ GameFi နှင့်သက်ဆိုင်သော အတွေ့အကြုံများအပေါ် အခြေခံထားပြီး မြန်မာလုပ်ငန်း/World Wide သင့်လျော်စေဖို့ ပြင်ဆင်ထားပါသည်။
+                    </p>
+                </div>
+                <div class="wb-card-grid">
+                    <div class="wb-card">
+                        <span class="wb-card-icon"><i class="fas fa-rocket"></i></span>
+                        <h3 data-lang="web3Outcome1Title">Market-ready Launch Kits</h3>
+                        <p data-lang="web3Outcome1Desc">
+                            Branding, tokenomics, whitepaper support စတင်ကာ launch checklist များ၊ go-to-market automation များအထိ တစ်နေရာတည်းမှ ထုတ်ပေးပါသည်။
+                        </p>
+                    </div>
+                    <div class="wb-card">
+                        <span class="wb-card-icon"><i class="fas fa-shield-alt"></i></span>
+                        <h3 data-lang="web3Outcome2Title">Security &amp; Compliance</h3>
+                        <p data-lang="web3Outcome2Desc">
+                            Audit partners, threat modelling, L2 bridge risk mitigation နှင့် regulatory playbook များပါဝင်ပြီး enterprise readiness အထိ prepare လုပ်ပေးပါသည်။
+                        </p>
+                    </div>
+                    <div class="wb-card">
+                        <span class="wb-card-icon"><i class="fas fa-chart-line"></i></span>
+                        <h3 data-lang="web3Outcome3Title">Real-time Analytics</h3>
+                        <p data-lang="web3Outcome3Desc">
+                            Dune, Flipside, The Graph တို့နှင့် အလုပ်လုပ်သည့် custom dashboard များက အချက်အလက်မှန်ကန်မှု၊ KPI visibility ကို 24/7 ပံ့ပိုးပေးပါသည်။
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wb-section" style="padding-top: 40px;">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="wb-heading">
+                    <h2 data-lang="web3ProcessTitle">Engagement Process</h2>
+                    <p data-lang="web3ProcessSubtitle">
+                        workshop မှစတင်ပြီး production mainnet deploy အထိ စနစ်တကျ milestone များဖြင့် ဆောင်ရွက်ပေးပါသည်။
+                    </p>
+                </div>
+                <div class="wb-process">
+                    <div class="wb-process-step">
+                        <h3 data-lang="web3ProcessStep1Title">Discovery &amp; Architecture</h3>
+                        <p data-lang="web3ProcessStep1Desc">
+                            Requirement workshop, token economy mapping, compliance review နှင့် high-level architecture diagrams ထုတ်ပေးခြင်း။
+                        </p>
+                    </div>
+                    <div class="wb-process-step">
+                        <h3 data-lang="web3ProcessStep2Title">Prototype &amp; Validation</h3>
+                        <p data-lang="web3ProcessStep2Desc">
+                            Low-code prototype, user testing, security threat modelling နှင့် stakeholder buy-in deck များ ပြင်ဆင်ပေးခြင်း။
+                        </p>
+                    </div>
+                    <div class="wb-process-step">
+                        <h3 data-lang="web3ProcessStep3Title">Build &amp; Integrate</h3>
+                        <p data-lang="web3ProcessStep3Desc">
+                            Smart contract implementation, frontend/back-office integration, chain monitoring setup နှင့် infrastructure automation။
+                        </p>
+                    </div>
+                    <div class="wb-process-step">
+                        <h3 data-lang="web3ProcessStep4Title">Launch &amp; Growth</h3>
+                        <p data-lang="web3ProcessStep4Desc">
+                            Audit handover, launch war-room, DAO/community ops playbook နှင့် post-launch analytics iteration များ ထောက်ပံ့ခြင်း။
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wb-section">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="wb-cta-band">
+                    <h3 data-lang="web3CTATitle">Ready to ship your Web3 experience?</h3>
+                    <p data-lang="web3CTASubtitle">
+                        Token launch, NFT commerce သို့မဟုတ် blockchain payment rails အတွက် proof-of-concept တစ်ခုစတင်လိုက်ပါ။ Dedicated technical lead တစ်ဦး၊ product strategist တစ်ဦးနှင့် compliance advisor တစ်ဦးအပါအဝင် တစ်စုတစ်စည်းဖြင့် ပံ့ပိုးပေးပါမည်။
+                    </p>
+                    <div class="wb-cta-band-actions">
+                        <a href="#" class="wb-cta-primary" id="order-now-btn-secondary" data-lang="web3CTAPrimary">Project briefing ပို့ရန်</a>
+                        <a href="https://t.me/rueonchain" target="_blank" rel="noopener" class="wb-cta-secondary" data-lang="web3CTASecondary">
+                            Telegram တစ်ဆင့် ဆွေးနွေးလိုက်ပါ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="order-modal-backdrop" id="order-modal">
+         <div class="order-modal">
+             <button class="order-modal-close" id="order-modal-close" aria-label="Close contact modal">
+                 <i class="fas fa-times"></i>
+             </button>
+            <header class="order-modal-header">
+                <span class="order-modal-badge"><i class="fas fa-satellite-dish"></i> 24/7 Support Desk</span>
+                <h2 data-lang="web3ModalTitle">Project War-room ကို စတင်လိုက်ပါ</h2>
+                <p data-lang="web3ModalSubtitle">
+                    24/7 ပံ့ပိုးမှုနဲ့ blockchain integration specialist များက proof-of-concept ထဲမှ mainnet launch အထိ ကူညီပေးပါမည်။
+                </p>
+            </header>
+            <div class="order-modal-body">
+                <ul class="order-contact-list">
+                    <li>
+                        <div class="order-contact-main">
+                            <span class="order-contact-icon"><i class="fas fa-phone"></i></span>
+                            <div>
+                                <span class="order-contact-label">Phone</span>
+                                <a href="tel:09754758505" class="order-contact-value">09 754 758 505</a>
+                            </div>
+                        </div>
+                        <a href="tel:09754758505" class="order-contact-action" data-lang="web3ModalActionCall">ဖုန်းခေါ်ရန်</a>
+                    </li>
+                    <li>
+                        <div class="order-contact-main">
+                            <span class="order-contact-icon"><i class="fab fa-telegram-plane"></i></span>
+                            <div>
+                                <span class="order-contact-label">Telegram</span>
+                                <a href="https://t.me/rueonchain" target="_blank" rel="noopener" class="order-contact-value">t.me/rueonchain</a>
+                            </div>
+                        </div>
+                        <a href="https://t.me/rueonchain" target="_blank" rel="noopener" class="order-contact-action" data-lang="web3ModalActionChat">Chat ဖွင့်ရန်</a>
+                    </li>
+                    <li>
+                        <div class="order-contact-main">
+                            <span class="order-contact-icon"><i class="fab fa-facebook-messenger"></i></span>
+                            <div>
+                                <span class="order-contact-label">Messenger</span>
+                                <a href="https://m.me/cthu.mr" target="_blank" rel="noopener" class="order-contact-value">m.me/cthu.mr</a>
+                            </div>
+                        </div>
+                        <a href="https://m.me/cthu.mr" target="_blank" rel="noopener" class="order-contact-action" data-lang="web3ModalActionMessenger">Messenger ဖြင့် ဆက်သွယ်ရန်</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="order-modal-footer">
+                <p class="order-support-note" data-lang="web3ModalSupport">24/7 support • NDA မခေါ်မီ architectural briefing သတ်မှတ်ပေးပါသည်</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        (function () {
+            const primaryBtn = document.getElementById('order-now-btn');
+            const secondaryBtn = document.getElementById('order-now-btn-secondary');
+            const modalBackdrop = document.getElementById('order-modal');
+            const modalClose = document.getElementById('order-modal-close');
+
+            if (!primaryBtn || !modalBackdrop || !modalClose) {
+                return;
+            }
+
+            const openModal = (event) => {
+                if (event) event.preventDefault();
+                modalBackdrop.classList.add('active');
+                document.body.classList.add('modal-open');
+            };
+
+            const closeModal = () => {
+                modalBackdrop.classList.remove('active');
+                document.body.classList.remove('modal-open');
+            };
+
+            primaryBtn.addEventListener('click', openModal);
+            if (secondaryBtn) secondaryBtn.addEventListener('click', openModal);
+            modalClose.addEventListener('click', closeModal);
+
+            modalBackdrop.addEventListener('click', (event) => {
+                if (event.target === modalBackdrop) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && modalBackdrop.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
+
