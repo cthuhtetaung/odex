@@ -75,8 +75,8 @@ export default async function handler(req, res) {
         records: [
           {
             fields: {
-              'A Twitter Handle': `Website Contact - ${trimmed.name}`,
-              'A Wallet Address': summaryParts.join(' | ')
+              'Twitter Handle': `Website Contact - ${trimmed.name}`,
+              'Wallet Address': summaryParts.join(' | ')
             }
           }
         ]
