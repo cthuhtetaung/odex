@@ -58,6 +58,13 @@ export default async function handler(req, res) {
 
     const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableIdOrName)}`;
 
+    const summaryParts = [
+      trimmed.company ? `Company: ${trimmed.company}` : null,
+      `Email: ${trimmed.email}`,
+      trimmed.phone ? `Phone: ${trimmed.phone}` : null,
+      `Message: ${trimmed.message}`
+    ].filter(Boolean);
+
     const airtableResp = await fetch(url, {
       method: 'POST',
       headers: {
@@ -68,11 +75,8 @@ export default async function handler(req, res) {
         records: [
           {
             fields: {
-              'A Name': trimmed.name,
-              'A Company Name': trimmed.company,
-              'A Email': trimmed.email,
-              'A Ph No.': trimmed.phone,
-              'A Msg': trimmed.message
+              'A Twitter Handle': `Website Contact - ${trimmed.name}`,
+              'A Wallet Address': summaryParts.join(' | ')
             }
           }
         ]
