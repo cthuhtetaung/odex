@@ -418,8 +418,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Contact/Communication questions
             else if (msg.match(/(contact|call|phone|email|reach|ဆက်သွယ်|ဖုန်း|ခေါ်)/i)) {
                 response = currentLang === 'my'
-                    ? 'ကျွန်ုပ်တို့နှင့် ဆက်သွယ်ရန်:\n• ဖုန်း: 09 754 758 505\n• အီးမေးလ်: odexerp@gmail.com\n• ဆက်သွယ်ရန်စာမျက်နှာ: contact.html\nကျွန်ုပ်တို့၏ အဖွဲ့သည် သင့်အား ကူညီရန် အဆင်သင့်ရှိပါသည်။'
-                    : 'To contact us:\n• Phone: 09 754 758 505\n• Email: odexerp@gmail.com\n• Contact Page: contact.html\nOur team is ready to help you.';
+                    ? 'ကျွန်ုပ်တို့နှင့် ဆက်သွယ်ရန်:\n• ဖုန်း: 09 754 758 505\n• အီးမေးလ်: odexerpsolutions@gmail.com\n• ဆက်သွယ်ရန်စာမျက်နှာ: contact.html\nကျွန်ုပ်တို့၏ အဖွဲ့သည် သင့်အား ကူညီရန် အဆင်သင့်ရှိပါသည်။'
+                    : 'To contact us:\n• Phone: 09 754 758 505\n• Email: odexerpsolutions@gmail.com\n• Contact Page: contact.html\nOur team is ready to help you.';
             }
             // What is OdeX questions
             else if (msg.match(/(what is|what are|what does|ဘာလဲ|ဘာတွေ|ဘယ်လို)/i)) {
@@ -490,8 +490,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Company/Partners questions
             else if (msg.match(/(company|partner|client|customer|who use|ကုမ္ပဏီ|ဖောက်သည်|အသုံးပြု)/i)) {
                 response = currentLang === 'my'
-                    ? 'Odoo ERP System ကို အသုံးပြုနေသော လုပ်ငန်းများ (ဥပမာ):\n• Autonova (မော်တော်ယာဉ်လုပ်ငန်း)\n• AWBA (အစားအသောက်လုပ်ငန်း)\n• City Properties (အိမ်ခြံမြေလုပ်ငန်း)\n• Citywin (လက်လီလုပ်ငန်း)\n• Season Hotel (ဟိုတယ်လုပ်ငန်း)\n• YIGTL (ပို့ဆောင်ရေးလုပ်ငန်း)\nဤလုပ်ငန်းများသည် Odoo ERP System ကို အသုံးပြုနေသော ဥပမာများဖြစ်ပါသည်။'
-                    : 'Companies using Odoo ERP System (Examples):\n• Autonova (Automotive)\n• AWBA (Food & Beverage)\n• City Properties (Real Estate)\n• Citywin (Retail)\n• Season Hotel (Hospitality)\n• YIGTL (Logistics)\nThese are examples of companies using Odoo ERP System.';
+                    ? 'Odoo ERP System ကို အသုံးပြုနေသော လုပ်ငန်းများ (ဥပမာ):\n• Autonova (မော်တော်ယာဉ်လုပ်ငန်း)\n• AWBA (စိုက်ပျိုးရေးလုပ်ငန်း)\n• City Properties (အိမ်ခြံမြေလုပ်ငန်း)\n• Citywin (ဆေးရုံလုပ်ငန်း)\n• Season (မုန့်ဖုတ်လုပ်ငန်း)\n• YIGTL (ပို့ဆောင်ရေးလုပ်ငန်း)\nဤလုပ်ငန်းများသည် Odoo ERP System ကို အသုံးပြုနေသော ဥပမာများဖြစ်ပါသည်။'
+                    : 'Companies using Odoo ERP System (Examples):\n• Autonova (Automotive)\n• AWBA (Agribusiness)\n• City Properties (Real Estate)\n• Citywin (Hospital)\n• Season (Bakery)\n• YIGTL (Logistics)\nThese are examples of companies using Odoo ERP System.';
             }
             // Thank you responses
             else if (msg.match(/(thank|thanks|appreciate|ကျေးဇူး|ကျေးဇူးတင်ပါ|ကျေးဇူးပါ)/i)) {
@@ -639,7 +639,7 @@ document.addEventListener('DOMContentLoaded', function() {
             footerFeatures: "အဓိကမော်ဂျူးများ",
             footerContact: "ဆက်သွယ်ရန်",
             footerContactInfo: "ဆက်သွယ်ရန်",
-            footerEmail: "odexerp@gmail.com",
+            footerEmail: "odexerpsolutions@gmail.com",
             footerPhone: "09-754758505",
             footerCopyright: "© 2025 OdeX. All Rights Reserved.",
             
@@ -894,6 +894,14 @@ document.addEventListener('DOMContentLoaded', function() {
             feature5Text: "အရောင်းစနစ်ကို စီမံပေးပါသည်။ ငွေပေးချေမှုများ၊ ပြန်အမ်းမှုများ၊ ကဒ်ပေးမှုများကို စီမံပါသည်။",
             feature6Title: "အစီရင်ခံစာများ",
             feature6Text: "စီးပွားရေးဆုံးဖြတ်ချက်များ ချရန် ကူညီပေးသော အစီရင်ခံစာများကို ထုတ်ပေးပါသည်။",
+            feature7Title: "ဖောက်သည်ဆက်ဆံရေး စီမံခန့်ခွဲမှု (CRM)",
+            feature7Text: "ဖောက်သည်အချက်အလက်များ၊ sales pipeline နှင့် follow-up လုပ်ငန်းစဉ်များကို တစ်နေရာတည်းတွင် စနစ်တကျ စီမံနိုင်ပါသည်။",
+            feature8Title: "ဝယ်ယူရေး စီမံခန့်ခွဲမှု (Purchase)",
+            feature8Text: "Supplier quotation, purchase order နှင့် ဝယ်ယူရေးအတည်ပြုလုပ်ငန်းစဉ်များကို automation ဖြင့် စီမံခန့်ခွဲနိုင်ပါသည်။",
+            feature9Title: "Project စီမံခန့်ခွဲမှု",
+            feature9Text: "Task assignment, timeline planning နှင့် project progress tracking များကို အဖွဲ့လိုက် ထိရောက်စွာ စီမံနိုင်ပါသည်။",
+            feature10Title: "ထုတ်လုပ်မှု စီမံခန့်ခွဲမှု (Manufacturing)",
+            feature10Text: "Bill of Materials, work order နှင့် production planning များကို စနစ်တကျ စီမံပြီး ထုတ်လုပ်မှုစွမ်းဆောင်ရည်ကို တိုးတက်စေပါသည်။",
             
             // Integration section
             integrationTitle: "မော်ဂျူးများ ဆက်သွယ်မှု",
@@ -927,8 +935,8 @@ document.addEventListener('DOMContentLoaded', function() {
             phone1: "09-754758505",
             phone2: "09-952177102",
             emailTitle: "အီးမေးလ်",
-            contactEmail1: "odexerp@gmail.com",
-            contactEmail2: "odexerp@gmail.com",
+            contactEmail1: "odexerpsolutions@gmail.com",
+            contactEmail2: "odexerpsolutions@gmail.com",
             
             // Language toggle
             langToggleText: "English Version",
@@ -1006,7 +1014,7 @@ document.addEventListener('DOMContentLoaded', function() {
             footerFeatures: "Key Modules",
             footerContact: "Contact",
             footerContactInfo: "Contact Info",
-            footerEmail: "odexerp@gmail.com",
+            footerEmail: "odexerpsolutions@gmail.com",
             footerPhone: "09-754758505",
             footerCopyright: "© 2025 OdeX. All Rights Reserved.",
             
@@ -1261,6 +1269,14 @@ document.addEventListener('DOMContentLoaded', function() {
             feature5Text: "Manages sales system. Payments, returns, card payments.",
             feature6Title: "Reports",
             feature6Text: "Provides reports that help with business decisions.",
+            feature7Title: "Customer Relationship Management (CRM)",
+            feature7Text: "Manage customer records, sales pipelines, and follow-up workflows in one centralized system.",
+            feature8Title: "Purchase Management",
+            feature8Text: "Handle supplier quotations, purchase orders, and approval workflows with better control and automation.",
+            feature9Title: "Project Management",
+            feature9Text: "Plan timelines, assign tasks, and track project progress collaboratively across your teams.",
+            feature10Title: "Manufacturing Management",
+            feature10Text: "Manage bills of materials, work orders, and production planning to improve overall manufacturing efficiency.",
             
             // Integration section
             integrationTitle: "Module Integration",
@@ -1294,8 +1310,8 @@ document.addEventListener('DOMContentLoaded', function() {
             phone1: "09-754758505",
             phone2: "09-952177102",
             emailTitle: "Email",
-            contactEmail1: "odexerp@gmail.com",
-            contactEmail2: "odexerp@gmail.com",
+            contactEmail1: "odexerpsolutions@gmail.com",
+            contactEmail2: "odexerpsolutions@gmail.com",
             
             // Language toggle
             langToggleText: "Myanmar Version",
@@ -1397,7 +1413,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (footerContactInfo) footerContactInfo.textContent = lang.footerContactInfo;
         // Ensure footer email/phone are correct in both languages
         const footerEmailEl = document.querySelector('footer .footer-section:nth-child(3) p:nth-of-type(1)');
-        if (footerEmailEl) footerEmailEl.innerHTML = '<i class="fas fa-envelope"></i> ' + (lang.footerEmail || 'odexerp@gmail.com');
+        if (footerEmailEl) footerEmailEl.innerHTML = '<i class="fas fa-envelope"></i> ' + (lang.footerEmail || 'odexerpsolutions@gmail.com');
         const footerPhoneEl = document.querySelector('footer .footer-section:nth-child(3) p:nth-of-type(2)');
         if (footerPhoneEl) footerPhoneEl.innerHTML = '<i class="fas fa-phone"></i> ' + (lang.footerPhone || '09-754758505');
         
@@ -1414,7 +1430,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (contactItems[1].querySelectorAll('p')[2]) contactItems[1].querySelectorAll('p')[2].innerHTML = '<i class="fas fa-phone"></i> 09-788315991';
             if (contactItems[1].querySelectorAll('p')[3]) contactItems[1].querySelectorAll('p')[3].innerHTML = '<i class="fas fa-phone"></i> 09-450049600';
             const emailParagraphs = contactItems[2].querySelectorAll('p');
-            if (emailParagraphs[0]) emailParagraphs[0].textContent = lang.contactEmail1 || 'odexerp@gmail.com';
+            if (emailParagraphs[0]) emailParagraphs[0].textContent = lang.contactEmail1 || 'odexerpsolutions@gmail.com';
             // Remove any extra email lines beyond the first
             if (emailParagraphs[1]) emailParagraphs[1].remove();
         }
@@ -1425,8 +1441,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (pagePath === '/' || pagePath.endsWith('/')) {
             // Home page
             document.title = lang.homeTitle;
-            const logo = document.querySelector('.logo h1');
-            if (logo) logo.innerHTML = 'Ode<span class="accent-x">X</span>';
+            const logoLink = document.querySelector('.logo a');
+            if (logoLink) logoLink.innerHTML = '<img src="/images/logos/OdeXNoBG.png?v=20260218" alt="OdeX Logo" class="site-logo">';
             
             const heroHeading = document.querySelector('.hero-content h1');
             if (heroHeading) heroHeading.textContent = lang.heroHeading;
@@ -1747,8 +1763,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         const desc = slides[1].querySelector('.company-description');
                         const stats = slides[1].querySelectorAll('.stat');
                         if (h3) h3.textContent = 'AWBA';
-                        if (type) type.textContent = 'Food & Beverage Industry';
-                        if (desc) desc.textContent = 'AWBA is a top company in the food and beverage industry, using Odoo POS and Inventory Management for faster service.';
+                        if (type) type.textContent = 'Agribusiness Industry';
+                        if (desc) desc.textContent = 'AWBA is a leading agribusiness company, using Odoo ERP to streamline supply chain, inventory, and sales operations.';
                         if (stats[0]) stats[0].textContent = '35% Sales Increase';
                         if (stats[1]) stats[1].textContent = '98% Inventory Accuracy';
                     }
@@ -1771,9 +1787,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         const desc = slides[3].querySelector('.company-description');
                         const stats = slides[3].querySelectorAll('.stat');
                         if (h3) h3.textContent = 'Citywin';
-                        if (type) type.textContent = 'Retail Industry';
-                        if (desc) desc.textContent = 'Citywin operates top retail outlets and easily manages sales with Odoo POS.';
-                        if (stats[0]) stats[0].textContent = '55% Sales Increase';
+                        if (type) type.textContent = 'Hospital Industry';
+                        if (desc) desc.textContent = 'Citywin is a leading hospital, using Odoo ERP to streamline patient appointments, medical inventory, and billing operations.';
+                        if (stats[0]) stats[0].textContent = '40% Faster Service';
                         if (stats[1]) stats[1].textContent = '85% Error Reduction';
                     }
                     // Slide 5 - Season
@@ -1783,9 +1799,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         const desc = slides[4].querySelector('.company-description');
                         const stats = slides[4].querySelectorAll('.stat');
                         if (h3) h3.textContent = 'Season';
-                        if (type) type.textContent = 'Hotel Industry';
-                        if (desc) desc.textContent = 'Season Hotel is a top hospitality business, efficiently managing guest services, inventory, and HR with Odoo ERP.';
-                        if (stats[0]) stats[0].textContent = '95% Guest Satisfaction';
+                        if (type) type.textContent = 'Bakery Industry';
+                        if (desc) desc.textContent = 'Season is a leading bakery business, efficiently managing production, inventory, and sales with Odoo ERP.';
+                        if (stats[0]) stats[0].textContent = '95% Product Quality';
                         if (stats[1]) stats[1].textContent = '50% Efficiency Increase';
                     }
                     // Slide 6 - YIGTL
@@ -1821,8 +1837,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         const desc = slides[1].querySelector('.company-description');
                         const stats = slides[1].querySelectorAll('.stat');
                         if (h3) h3.textContent = 'AWBA';
-                        if (type) type.textContent = 'အစားအသောက်လုပ်ငန်း';
-                        if (desc) desc.textContent = 'AWBA သည် အစားအသောက် လုပ်ငန်းတွင် ထိပ်တန်းကုမ္ပဏီတစ်ခုဖြစ်ပြီး Odoo POS နှင့် Inventory စီမံခန့်ခွဲမှုကို အသုံးပြု၍ ဝန်ဆောင်မှုများ ပိုမိုမြန်ဆန်စေသည်။';
+                        if (type) type.textContent = 'စိုက်ပျိုးရေးလုပ်ငန်း';
+                        if (desc) desc.textContent = 'AWBA သည် စိုက်ပျိုးရေးလုပ်ငန်းတွင် ဦးဆောင်ကုမ္ပဏီတစ်ခုဖြစ်ပြီး Odoo ERP ဖြင့် supply chain, စာရင်းနှင့် အရောင်းလုပ်ငန်းစဉ်များကို ပိုမိုထိရောက်စွာ စီမံခန့်ခွဲသည်။';
                         if (stats[0]) stats[0].textContent = 'ရောင်းအား 35% တိုးမြင့်';
                         if (stats[1]) stats[1].textContent = 'စာရင်းတိကျမှု 98%';
                     }
@@ -1845,9 +1861,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         const desc = slides[3].querySelector('.company-description');
                         const stats = slides[3].querySelectorAll('.stat');
                         if (h3) h3.textContent = 'Citywin';
-                        if (type) type.textContent = 'လက်လီလုပ်ငန်း';
-                        if (desc) desc.textContent = 'Citywin သည် လက်လီလုပ်ငန်းတွင် ထိပ်တန်းဆိုင်ခွဲများဖွင့်လှစ်ထားပြီး Odoo POS ဖြင့် အရောင်းများကို လွယ်ကူစွာ စီမံခန့်ခွဲနေသည်။';
-                        if (stats[0]) stats[0].textContent = 'ရောင်းချမှု 55% တိုးမြင့်';
+                        if (type) type.textContent = 'ဆေးရုံလုပ်ငန်း';
+                        if (desc) desc.textContent = 'Citywin သည် ဆေးရုံလုပ်ငန်းတွင် ဦးဆောင်ဆေးရုံကြီးတစ်ခုဖြစ်ပြီး Odoo ERP ဖြင့် လူနာချိန်းဆိုမှု၊ ဆေးပစ္စည်းစာရင်းနှင့် ငွေစာရင်းလုပ်ငန်းစဉ်များကို ထိရောက်စွာ စီမံခန့်ခွဲသည်။';
+                        if (stats[0]) stats[0].textContent = 'ဝန်ဆောင်မှု 40% မြန်ဆန်';
                         if (stats[1]) stats[1].textContent = 'မှားယွင်းမှု 85% လျှော့ချ';
                     }
                     // Slide 5 - Season
@@ -1857,9 +1873,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         const desc = slides[4].querySelector('.company-description');
                         const stats = slides[4].querySelectorAll('.stat');
                         if (h3) h3.textContent = 'Season';
-                        if (type) type.textContent = 'ဟိုတယ်လုပ်ငန်း';
-                        if (desc) desc.textContent = 'Season Hotel သည် ဧည့်ဝန်ဆောင်မှုလုပ်ငန်းတွင် ထိပ်တန်းဟိုတယ်တစ်ခုဖြစ်ပြီး Odoo ERP ဖြင့် ဧည့်သည်စီမံခန့်ခွဲမှု၊ စာရင်းနှင့် HR ကို ထိရောက်စွာ လုပ်ဆောင်သည်။';
-                        if (stats[0]) stats[0].textContent = 'ဧည့်သည်ကျေနပ်မှု 95%';
+                        if (type) type.textContent = 'မုန့်ဖုတ်လုပ်ငန်း';
+                        if (desc) desc.textContent = 'Season သည် မုန့်ဖုတ်လုပ်ငန်းတွင် ဦးဆောင်လုပ်ငန်းတစ်ခုဖြစ်ပြီး Odoo ERP ဖြင့် ထုတ်လုပ်မှု၊ စာရင်းနှင့် အရောင်းလုပ်ငန်းစဉ်များကို ထိရောက်စွာ စီမံခန့်ခွဲသည်။';
+                        if (stats[0]) stats[0].textContent = 'ကုန်ပစ္စည်းအရည်အသွေး 95%';
                         if (stats[1]) stats[1].textContent = 'လုပ်ငန်းထိရောက်မှု 50% တိုးမြင့်';
                     }
                     // Slide 6 - YIGTL
@@ -1925,8 +1941,8 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (pagePath.includes('about.html') || pagePath === '/about') {
             // About page
             document.title = lang.aboutTitle;
-            const logo = document.querySelector('.logo h1');
-            if (logo) logo.innerHTML = 'Ode<span class="accent-x">X</span>';
+            const logoLink = document.querySelector('.logo a');
+            if (logoLink) logoLink.innerHTML = '<img src="/images/logos/OdeXNoBG.png?v=20260218" alt="OdeX Logo" class="site-logo">';
             
             const heroTitle = document.querySelector('.hero-content h1');
             if (heroTitle) heroTitle.textContent = lang.aboutHeroTitle;
@@ -1985,8 +2001,8 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (pagePath.includes('comparison.html') || pagePath === '/comparison') {
             // Comparison page
             document.title = lang.comparisonTitle;
-            const logo = document.querySelector('.logo h1');
-            if (logo) logo.innerHTML = 'Ode<span class="accent-x">X</span>';
+            const logoLink = document.querySelector('.logo a');
+            if (logoLink) logoLink.innerHTML = '<img src="/images/logos/OdeXNoBG.png?v=20260218" alt="OdeX Logo" class="site-logo">';
             
             const heroTitle = document.querySelector('.hero-content h1');
             if (heroTitle) heroTitle.textContent = lang.comparisonHeroTitle;
@@ -2085,8 +2101,8 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (pagePath.includes('features.html') || pagePath === '/features') {
             // Features page
             document.title = lang.featuresTitle;
-            const logo = document.querySelector('.logo h1');
-            if (logo) logo.innerHTML = 'Ode<span class="accent-x">X</span>';
+            const logoLink = document.querySelector('.logo a');
+            if (logoLink) logoLink.innerHTML = '<img src="/images/logos/OdeXNoBG.png?v=20260218" alt="OdeX Logo" class="site-logo">';
             
             const heroTitle = document.querySelector('.hero-content h1');
             if (heroTitle) heroTitle.textContent = lang.featuresHeroTitle;
@@ -2095,7 +2111,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (heroText) heroText.textContent = lang.featuresHeroText;
             
             const featureCards = document.querySelectorAll('.feature-card');
-            if (featureCards.length >= 6) {
+            if (featureCards.length >= 10) {
                 featureCards[0].querySelector('h3').textContent = lang.feature1Title;
                 featureCards[0].querySelector('p').textContent = lang.feature1Text;
                 featureCards[1].querySelector('h3').textContent = lang.feature2Title;
@@ -2108,6 +2124,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 featureCards[4].querySelector('p').textContent = lang.feature5Text;
                 featureCards[5].querySelector('h3').textContent = lang.feature6Title;
                 featureCards[5].querySelector('p').textContent = lang.feature6Text;
+                featureCards[6].querySelector('h3').textContent = lang.feature7Title;
+                featureCards[6].querySelector('p').textContent = lang.feature7Text;
+                featureCards[7].querySelector('h3').textContent = lang.feature8Title;
+                featureCards[7].querySelector('p').textContent = lang.feature8Text;
+                featureCards[8].querySelector('h3').textContent = lang.feature9Title;
+                featureCards[8].querySelector('p').textContent = lang.feature9Text;
+                featureCards[9].querySelector('h3').textContent = lang.feature10Title;
+                featureCards[9].querySelector('p').textContent = lang.feature10Text;
             }
             
             const integrationTitle = document.querySelector('.integration h2');
@@ -2137,8 +2161,8 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (pagePath.includes('contact.html') || pagePath === '/contact') {
             // Contact page
             document.title = lang.contactTitle;
-            const logo = document.querySelector('.logo h1');
-            if (logo) logo.innerHTML = 'Ode<span class="accent-x">X</span>';
+            const logoLink = document.querySelector('.logo a');
+            if (logoLink) logoLink.innerHTML = '<img src="/images/logos/OdeXNoBG.png?v=20260218" alt="OdeX Logo" class="site-logo">';
             
             const heroTitle = document.querySelector('.hero-content h1');
             if (heroTitle) heroTitle.textContent = lang.contactHeroTitle;
@@ -2416,7 +2440,7 @@ faqItems.forEach(item => {
     }
 
     function startSlideShow() {
-        slideInterval = setInterval(nextSlide, 2000); // Change slide every 2 seconds
+        slideInterval = setInterval(nextSlide, 7000); // Change slide every 7 seconds
     }
 
     function stopSlideShow() {
