@@ -25,7 +25,7 @@ body {
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, #163A5F 0%, #102A46 100%);
+    background: linear-gradient(135deg, #714B67 0%, #5A3A52 100%);
     color: white;
     padding: 0.8rem 0;
     position: sticky;
@@ -118,10 +118,10 @@ nav ul li a:hover::before {
 
 nav ul li a:hover,
 nav ul li a.active {
-    background: linear-gradient(135deg, #2B8E98, #5FAFB6);
+    background: linear-gradient(135deg, #FF9900, #FFB84D);
     color: #333;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(43, 142, 152, 0.30);
+    box-shadow: 0 6px 20px rgba(255, 153, 0, 0.30);
 }
 
 .header-controls {
@@ -147,7 +147,7 @@ nav ul li a.active {
 .mobile-menu-toggle span {
     width: 100%;
     height: 3px;
-    background: linear-gradient(45deg, #2B8E98, #5FAFB6);
+    background: linear-gradient(45deg, #FF9900, #FFB84D);
     border-radius: 2px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: center;
@@ -171,7 +171,7 @@ nav ul li a.active {
     font-size: 0.85rem;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
     color: white !important;
-    border: 2px solid rgba(43, 142, 152, 0.30);
+    border: 2px solid rgba(255, 153, 0, 0.30);
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -189,16 +189,16 @@ nav ul li a.active {
 }
 
 .language-switcher .btn.secondary:hover {
-    background: linear-gradient(135deg, #2B8E98, #5FAFB6);
+    background: linear-gradient(135deg, #FF9900, #FFB84D);
     color: #333 !important;
-    border-color: #2B8E98;
+    border-color: #FF9900;
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(43, 142, 152, 0.4);
+    box-shadow: 0 8px 25px rgba(255, 153, 0, 0.4);
 }
 
 .language-switcher .btn.secondary:active {
     transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(43, 142, 152, 0.30);
+    box-shadow: 0 4px 15px rgba(255, 153, 0, 0.30);
 }
 
 /* Button Styles */
@@ -215,18 +215,18 @@ nav ul li a.active {
 }
 
 .btn.primary {
-    background-color: #163A5F;
+    background-color: #714B67;
     color: white;
 }
 
 .btn.primary:hover {
-    background-color: #102A46;
+    background-color: #5A3A52;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn.secondary {
-    background-color: #2B8E98;
+    background-color: #FF9900;
     color: #333;
 }
 
@@ -238,7 +238,7 @@ nav ul li a.active {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #163A5F 0%, #102A46 100%);
+    background: linear-gradient(135deg, #714B67 0%, #5A3A52 100%);
     color: white;
     padding: 4rem 0;
 }
@@ -254,7 +254,7 @@ nav ul li a.active {
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 55%),
-                radial-gradient(circle at 80% 30%, rgba(43, 142, 152, 0.18) 0%, transparent 60%);
+                radial-gradient(circle at 80% 30%, rgba(255, 153, 0, 0.18) 0%, transparent 60%);
     pointer-events: none;
 }
 
@@ -312,7 +312,7 @@ body.services-focus footer {
     font-size: 1.3rem;
     font-weight: bold;
     margin: 1rem 0;
-    color: #2B8E98;
+    color: #FF9900;
     text-align: center;
     font-style: italic;
 }
@@ -381,7 +381,7 @@ body.services-focus footer {
 
 /* Emphasize top card during auto transition */
 .stacked-cards .card.active-top {
-    box-shadow: 0 24px 60px rgba(43, 142, 152, 0.35);
+    box-shadow: 0 24px 60px rgba(255, 153, 0, 0.35);
     transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease, box-shadow 0.6s ease;
 }
 
@@ -531,7 +531,7 @@ body.services-focus footer {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    color: #2B8E98;
+    color: #FF9900;
     margin-bottom: 0.5rem;
 }
 
@@ -556,7 +556,7 @@ body.services-focus footer {
 .section-header h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .section-header p {
@@ -576,7 +576,7 @@ body.services-focus footer {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .why-choose p {
@@ -613,7 +613,7 @@ body.services-focus footer {
 
 .benefit-icon i {
     font-size: 3rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .benefit-item h3 {
@@ -648,7 +648,7 @@ body.services-focus footer {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 3rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .features-grid {
@@ -675,7 +675,7 @@ body.services-focus footer {
 
 .feature-card i {
     font-size: 2.5rem;
-    color: #163A5F;
+    color: #714B67;
     margin-bottom: 1rem;
 }
 
@@ -694,12 +694,12 @@ body.services-focus footer {
     background: rgba(15, 60, 112, 0.05);
     padding: 1rem;
     border-radius: 8px;
-    border-left: 4px solid #2B8E98;
+    border-left: 4px solid #FF9900;
 }
 
 .highlight {
     display: block;
-    color: #163A5F;
+    color: #714B67;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
     font-weight: 500;
@@ -712,7 +712,7 @@ body.services-focus footer {
 /* CTA Section */
 .cta {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #163A5F 0%, #102A46 100%);
+    background: linear-gradient(135deg, #714B67 0%, #5A3A52 100%);
     color: white;
     text-align: center;
 }
@@ -751,7 +751,7 @@ body.services-focus footer {
 .comparison-preview h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .comparison-preview p {
@@ -773,7 +773,7 @@ body.services-focus footer {
 .features-preview h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .features-icons {
@@ -793,7 +793,7 @@ body.services-focus footer {
 
 .feature-icon i {
     font-size: 2rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 /* Footer */
@@ -813,13 +813,13 @@ footer {
 .footer-section h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #2B8E98;
+    color: #FF9900;
 }
 
 .footer-section h4 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: #2B8E98;
+    color: #FF9900;
 }
 
 .footer-section ul {
@@ -837,7 +837,7 @@ footer {
 }
 
 .footer-section ul li a:hover {
-    color: #2B8E98;
+    color: #FF9900;
 }
 
 .footer-section p {
@@ -862,7 +862,7 @@ footer {
 
 .footer-section .contact-info p:hover {
     background: rgba(255, 255, 255, 0.15);
-    border-color: #2B8E98;
+    border-color: #FF9900;
 }
 
 /* Extra small mobile stacked cards */
@@ -927,13 +927,13 @@ footer {
 .text-content h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .text-content h3 {
     font-size: 1.5rem;
     margin: 1.5rem 0;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .text-content p {
@@ -961,7 +961,7 @@ footer {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 3rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .benefits-grid {
@@ -986,7 +986,7 @@ footer {
 
 .benefit-card i {
     font-size: 2.5rem;
-    color: #163A5F;
+    color: #714B67;
     margin-bottom: 1rem;
 }
 
@@ -1035,7 +1035,7 @@ footer {
 }
 
 .comparison-table thead {
-    background-color: #163A5F;
+    background-color: #714B67;
     color: white;
 }
 
@@ -1097,7 +1097,7 @@ footer {
 .integration h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .integration p {
@@ -1120,7 +1120,7 @@ footer {
 }
 
 .module {
-    background-color: #163A5F;
+    background-color: #714B67;
     color: white;
     padding: 1rem;
     border-radius: 8px;
@@ -1134,7 +1134,7 @@ footer {
 .center {
     grid-column: 2;
     grid-row: 2;
-    background-color: #2B8E98;
+    background-color: #FF9900;
     color: #333;
     font-weight: 700;
     font-size: 1.2rem;
@@ -1188,7 +1188,7 @@ footer {
 .form-container h2 {
     text-align: center;
     margin-bottom: 2rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .form-group {
@@ -1215,7 +1215,7 @@ footer {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #163A5F;
+    border-color: #714B67;
     box-shadow: 0 0 0 2px rgba(15, 60, 112, 0.20);
 }
 
@@ -1228,7 +1228,7 @@ footer {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 3rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .contact-items {
@@ -1247,14 +1247,14 @@ footer {
 
 .contact-item > i {
     font-size: 2.5rem;
-    color: #163A5F;
+    color: #714B67;
     margin-bottom: 1rem;
 }
 
 /* Inline phone icon next to numbers */
 .contact-item p i {
     font-size: 1rem;
-    color: #163A5F;
+    color: #714B67;
     margin-right: 0.5rem;
     vertical-align: -1px;
 }
@@ -1555,7 +1555,7 @@ footer {
 /* Statistics Section */
 .statistics {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #163A5F 0%, #102A46 100%);
+    background: linear-gradient(135deg, #714B67 0%, #5A3A52 100%);
     color: white;
     text-align: center;
 }
@@ -1591,7 +1591,7 @@ footer {
 .stat-number {
     font-size: 3rem;
     font-weight: 700;
-    color: #2B8E98;
+    color: #FF9900;
     margin-bottom: 0.5rem;
     line-height: 1;
 }
@@ -1612,7 +1612,7 @@ footer {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .testimonials-grid {
@@ -1636,7 +1636,7 @@ footer {
     top: -10px;
     left: 20px;
     font-size: 4rem;
-    color: #2B8E98;
+    color: #FF9900;
     font-weight: bold;
     line-height: 1;
 }
@@ -1667,7 +1667,7 @@ footer {
 
 .author-info h4 {
     font-size: 1.2rem;
-    color: #163A5F;
+    color: #714B67;
     margin-bottom: 0.25rem;
 }
 
@@ -1677,7 +1677,7 @@ footer {
 }
 
 .rating {
-    color: #2B8E98;
+    color: #FF9900;
 }
 
 .rating i {
@@ -1694,7 +1694,7 @@ footer {
 .industry-solutions h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .industry-solutions > p {
@@ -1723,19 +1723,19 @@ footer {
 .industry-card:hover {
     transform: translateY(-8px);
     background: white;
-    border-color: #2B8E98;
+    border-color: #FF9900;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .industry-card i {
     font-size: 3rem;
-    color: #163A5F;
+    color: #714B67;
     margin-bottom: 1.5rem;
     transition: color 0.3s ease;
 }
 
 .industry-card:hover i {
-    color: #2B8E98;
+    color: #FF9900;
 }
 
 .industry-card h3 {
@@ -1752,7 +1752,7 @@ footer {
 /* Company Showcase Section */
 .company-showcase {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #163A5F 0%, #102A46 100%);
+    background: linear-gradient(135deg, #714B67 0%, #5A3A52 100%);
     text-align: center;
 }
 
@@ -1775,11 +1775,11 @@ footer {
 .slide {
     display: none;
     padding: 3rem;
-    background: linear-gradient(135deg, #214B74 0%, #163A5F 100%);
+    background: linear-gradient(135deg, #6D5470 0%, #714B67 100%);
     min-height: 400px;
     animation: slideIn 0.8s ease-in-out;
-    border: 2px solid #5FAFB6;
-    box-shadow: 0 10px 30px rgba(43, 142, 152, 0.25);
+    border: 2px solid #FFB84D;
+    box-shadow: 0 10px 30px rgba(255, 153, 0, 0.25);
 }
 
 .slide.active {
@@ -1839,7 +1839,7 @@ footer {
 
 .company-type {
     font-size: 1.1rem;
-    color: #5FAFB6;
+    color: #FFB84D;
     font-weight: 600;
     margin-bottom: 1rem;
     text-transform: uppercase;
@@ -1860,13 +1860,13 @@ footer {
 }
 
 .company-stats .stat {
-    background: linear-gradient(135deg, #2B8E98, #5FAFB6);
+    background: linear-gradient(135deg, #FF9900, #FFB84D);
     color: #333;
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
     font-size: 0.9rem;
     font-weight: 700;
-    box-shadow: 0 5px 15px rgba(43, 142, 152, 0.35);
+    box-shadow: 0 5px 15px rgba(255, 153, 0, 0.35);
     transition: transform 0.3s ease;
 }
 
@@ -1895,12 +1895,12 @@ footer {
 }
 
 .dot.active {
-    background: #2B8E98;
+    background: #FF9900;
     transform: scale(1.2);
 }
 
 .dot:hover {
-    background: #5FAFB6;
+    background: #FFB84D;
     transform: scale(1.1);
 }
 
@@ -1966,7 +1966,7 @@ footer {
 .company-team h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .company-team > p {
@@ -1999,7 +1999,7 @@ footer {
 .team-member:hover {
     transform: translateY(-6px);
     border-color: #ffd699;
-    box-shadow: 0 12px 30px rgba(43, 142, 152, 0.15);
+    box-shadow: 0 12px 30px rgba(255, 153, 0, 0.15);
 }
 
 .member-photo {
@@ -2075,13 +2075,13 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #163A5F;
+    color: #714B67;
     text-decoration: none;
     transition: all 0.25s ease;
 }
 
 .member-social a:hover {
-    background: linear-gradient(135deg, #2B8E98, #5FAFB6);
+    background: linear-gradient(135deg, #FF9900, #FFB84D);
     color: white;
     transform: translateY(-3px);
 }
@@ -2096,7 +2096,7 @@ footer {
 .company-values h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .values-grid {
@@ -2117,14 +2117,14 @@ footer {
 
 .value-card:hover {
     transform: translateY(-8px);
-    border-color: #2B8E98;
+    border-color: #FF9900;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .value-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #163A5F, #102A46);
+    background: linear-gradient(135deg, #714B67, #5A3A52);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2134,7 +2134,7 @@ footer {
 }
 
 .value-card:hover .value-icon {
-    background: linear-gradient(135deg, #2B8E98, #5FAFB6);
+    background: linear-gradient(135deg, #FF9900, #FFB84D);
     transform: scale(1.1);
 }
 
@@ -2145,7 +2145,7 @@ footer {
 
 .value-card h3 {
     font-size: 1.3rem;
-    color: #163A5F;
+    color: #714B67;
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -2165,7 +2165,7 @@ footer {
 .faq-section h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .faq-grid {
@@ -2192,7 +2192,7 @@ footer {
 
 .faq-question {
     padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, #163A5F, #102A46);
+    background: linear-gradient(135deg, #714B67, #5A3A52);
     color: white;
     cursor: pointer;
     display: flex;
@@ -2202,7 +2202,7 @@ footer {
 }
 
 .faq-question:hover {
-    background: linear-gradient(135deg, #2B8E98, #5FAFB6);
+    background: linear-gradient(135deg, #FF9900, #FFB84D);
 }
 
 .faq-question h3 {
@@ -2248,7 +2248,7 @@ footer {
 .support-section h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .support-grid {
@@ -2270,14 +2270,14 @@ footer {
 .support-card:hover {
     transform: translateY(-8px);
     background: white;
-    border-color: #2B8E98;
+    border-color: #FF9900;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .support-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #2B8E98, #5FAFB6);
+    background: linear-gradient(135deg, #FF9900, #FFB84D);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2288,7 +2288,7 @@ footer {
 
 .support-card:hover .support-icon {
     transform: scale(1.1);
-    box-shadow: 0 10px 25px rgba(43, 142, 152, 0.30);
+    box-shadow: 0 10px 25px rgba(255, 153, 0, 0.30);
 }
 
 .support-icon i {
@@ -2298,7 +2298,7 @@ footer {
 
 .support-card h3 {
     font-size: 1.3rem;
-    color: #163A5F;
+    color: #714B67;
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -2313,11 +2313,11 @@ footer {
     background: rgba(15, 60, 112, 0.10);
     padding: 1rem;
     border-radius: 10px;
-    border-left: 3px solid #2B8E98;
+    border-left: 3px solid #FF9900;
 }
 
 .support-contact span {
-    color: #163A5F;
+    color: #714B67;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -2326,7 +2326,7 @@ footer {
 }
 
 .support-contact i {
-    color: #2B8E98;
+    color: #FF9900;
 }
 
 /* Toast Notification */
@@ -2365,7 +2365,7 @@ footer {
 .security-compliance h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #163A5F;
+    color: #714B67;
 }
 
 .security-compliance > p {
@@ -2393,14 +2393,14 @@ footer {
 
 .security-item:hover {
     transform: translateY(-5px);
-    border-color: #2B8E98;
-    box-shadow: 0 10px 25px rgba(43, 142, 152, 0.1);
+    border-color: #FF9900;
+    box-shadow: 0 10px 25px rgba(255, 153, 0, 0.1);
 }
 
 .security-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #163A5F, #102A46);
+    background: linear-gradient(135deg, #714B67, #5A3A52);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2410,7 +2410,7 @@ footer {
 }
 
 .security-item:hover .security-icon {
-    background: linear-gradient(135deg, #2B8E98, #5FAFB6);
+    background: linear-gradient(135deg, #FF9900, #FFB84D);
     transform: scale(1.1);
 }
 
@@ -2448,8 +2448,8 @@ footer {
 }
 
 .badge:hover {
-    background: rgba(43, 142, 152, 0.1);
-    border-color: #2B8E98;
+    background: rgba(255, 153, 0, 0.1);
+    border-color: #FF9900;
     transform: translateY(-2px);
 }
 
@@ -2460,7 +2460,7 @@ footer {
 }
 
 .badge span {
-    color: #163A5F;
+    color: #714B67;
     font-weight: 600;
     font-size: 0.95rem;
 }
@@ -2480,7 +2480,7 @@ footer {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #163A5F 0%, #102A46 100%);
+    background: linear-gradient(135deg, #714B67 0%, #5A3A52 100%);
     color: white;
     display: flex;
     align-items: center;
@@ -2505,7 +2505,7 @@ footer {
     position: absolute;
     top: -5px;
     right: -5px;
-    background: linear-gradient(135deg, #2B8E98 0%, #5FAFB6 100%);
+    background: linear-gradient(135deg, #FF9900 0%, #FFB84D 100%);
     color: white;
     border-radius: 50%;
     width: 24px;
@@ -2547,7 +2547,7 @@ footer {
 }
 
 .chatbot-header {
-    background: linear-gradient(135deg, #163A5F 0%, #102A46 100%);
+    background: linear-gradient(135deg, #714B67 0%, #5A3A52 100%);
     color: white;
     padding: 16px 20px;
     display: flex;
@@ -2650,7 +2650,7 @@ footer {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #163A5F 0%, #102A46 100%);
+    background: linear-gradient(135deg, #714B67 0%, #5A3A52 100%);
     color: white;
     display: flex;
     align-items: center;
@@ -2664,7 +2664,7 @@ footer {
 }
 
 .chatbot-message-user .chatbot-avatar-small {
-    background: linear-gradient(135deg, #2B8E98 0%, #5FAFB6 100%);
+    background: linear-gradient(135deg, #FF9900 0%, #FFB84D 100%);
 }
 
 .chatbot-message-content {
@@ -2676,7 +2676,7 @@ footer {
 }
 
 .chatbot-message-user .chatbot-message-content {
-    background: linear-gradient(135deg, #163A5F 0%, #102A46 100%);
+    background: linear-gradient(135deg, #714B67 0%, #5A3A52 100%);
     color: white;
 }
 
@@ -2711,14 +2711,14 @@ footer {
 }
 
 .chatbot-input:focus {
-    border-color: #163A5F;
+    border-color: #714B67;
 }
 
 .chatbot-send {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #163A5F 0%, #102A46 100%);
+    background: linear-gradient(135deg, #714B67 0%, #5A3A52 100%);
     color: white;
     border: none;
     cursor: pointer;
@@ -2754,7 +2754,7 @@ footer {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #163A5F;
+    background: #714B67;
     animation: typing 1.4s infinite;
 }
 
