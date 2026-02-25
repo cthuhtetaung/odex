@@ -240,6 +240,82 @@ document.addEventListener('DOMContentLoaded', function() {
         // Log error if chatbot widget not found
         console.warn('Chatbot widget not found on page:', window.location.pathname);
     }
+
+    // Urgent support quick-access (Viber + call)
+    function createUrgentSupportWidget() {
+        if (document.getElementById('urgent-support-widget')) return;
+
+        const lang = (localStorage.getItem('language') || 'my').toLowerCase();
+        const isMyanmar = lang === 'my';
+
+        const labels = isMyanmar ? {
+            badge: 'အရေးပေါ်? Viber ဆက်သွယ်ပါ',
+            title: 'အရေးပေါ်ပံ့ပိုးမှု',
+            desc: 'အရေးပေါ်ကိစ္စရှိပါက Viber သို့မဟုတ် ဖုန်းဖြင့် ချက်ချင်းဆက်သွယ်ပါ။',
+            viber: 'Viber ဆက်သွယ်မယ်',
+            call: 'ဖုန်းခေါ်မယ်',
+            close: 'ပိတ်မည်'
+        } : {
+            badge: 'Urgent? Contact Viber',
+            title: 'Urgent Support',
+            desc: 'For urgent issues, contact us now via Viber or direct phone call.',
+            viber: 'Open Viber',
+            call: 'Call Now',
+            close: 'Close'
+        };
+
+        const widget = document.createElement('div');
+        widget.id = 'urgent-support-widget';
+        widget.className = 'urgent-support-widget';
+        widget.innerHTML = `
+            <button type="button" class="urgent-support-toggle" aria-expanded="false" aria-controls="urgent-support-panel">
+                <span class="urgent-dot"></span>
+                <span>${labels.badge}</span>
+            </button>
+            <div id="urgent-support-panel" class="urgent-support-panel" aria-hidden="true">
+                <button type="button" class="urgent-support-close" aria-label="${labels.close}">&times;</button>
+                <h4>${labels.title}</h4>
+                <p>${labels.desc}</p>
+                <div class="urgent-support-actions">
+                    <a class="urgent-viber-btn" href="viber://chat?number=%2B959754758505">${labels.viber}</a>
+                    <a class="urgent-call-btn" href="tel:09754758505">${labels.call}</a>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(widget);
+
+        const toggle = widget.querySelector('.urgent-support-toggle');
+        const panel = widget.querySelector('.urgent-support-panel');
+        const closeBtn = widget.querySelector('.urgent-support-close');
+
+        function openPanel() {
+            widget.classList.add('is-open');
+            toggle.setAttribute('aria-expanded', 'true');
+            panel.setAttribute('aria-hidden', 'false');
+        }
+
+        function closePanel() {
+            widget.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            panel.setAttribute('aria-hidden', 'true');
+        }
+
+        toggle.addEventListener('click', () => {
+            if (widget.classList.contains('is-open')) closePanel();
+            else openPanel();
+        });
+
+        closeBtn.addEventListener('click', () => {
+            closePanel();
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!widget.contains(event.target)) closePanel();
+        });
+    }
+
+    createUrgentSupportWidget();
     
     // Toggle chatbot window
     if (chatbotToggle && chatbotWindow) {
@@ -2391,20 +2467,22 @@ faqItems.forEach(item => {
                 setTimeout(() => toast.classList.remove('show'), 2600);
             }
             try {
-                const resp = await fetch('/api/contact', {
+                // Submit via serverless function
+                const response = await fetch('/api/contact', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
                     body: JSON.stringify(payload)
                 });
-                const text = await resp.text();
-                let data = {};
-                try { data = JSON.parse(text); } catch {}
-                if (resp.ok && data.ok) {
+                
+                const result = await response.json();
+                
+                if (result.ok) {
                     showToast(currentLang === 'my' ? 'သင့်မက်ဆေ့ခ်ျအား လက်ခံပြီးပါပြီ။ ကျွန်ုပ်တို့ ဆက်သွယ်ပေးမည်။' : 'Thanks! Your message was sent. We will contact you shortly.', 'success');
                     contactForm.reset();
                 } else {
-                    const errMsg = data.error || text || 'Unknown error';
-                    showToast((currentLang === 'my' ? 'ပေးပို့ရာတွင် ပြသာနာရှိပါသည်။ ' : 'Submission failed. ') + errMsg, 'error');
+                    throw new Error(result.error || 'Unknown error');
                 }
             } catch (err) {
                 showToast((currentLang === 'my' ? 'ပေးပို့ရာတွင် ပြသာနာရှိပါသည်။ ' : 'There was a problem sending your message. ') + (err?.message || ''), 'error');
@@ -2594,3 +2672,5 @@ setTimeout(function() {
         }
     }
 }, 500);
+
+// Contact form now uses serverless function at /api/contact
