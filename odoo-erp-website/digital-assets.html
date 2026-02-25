@@ -700,6 +700,45 @@
                 </div>
             </div>
         </section>
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <div id="chatbot-toggle" class="chatbot-toggle">
+            <i data-lucide="message-circle"></i>
+            <span class="chatbot-badge">1</span>
+        </div>
+        <div id="chatbot-window" class="chatbot-window" style="display: none;">
+            <div class="chatbot-header">
+                <div class="chatbot-header-content">
+                    <div class="chatbot-avatar">
+                        <i data-lucide="headphones"></i>
+                    </div>
+                    <div class="chatbot-info">
+                        <h3 data-lang="chatbotTitle">OdeX Support</h3>
+                        <p data-lang="chatbotStatus">Online</p>
+                    </div>
+                </div>
+                <button id="chatbot-minimize" class="chatbot-minimize">
+                    <i data-lucide="minus"></i>
+                </button>
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages">
+                <div class="chatbot-message chatbot-message-bot">
+                    <div class="chatbot-avatar-small">
+                        <i data-lucide="headphones"></i>
+                    </div>
+                    <div class="chatbot-message-content">
+                        <p data-lang="chatbotWelcome">Hello! How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbot-input" class="chatbot-input" placeholder="Type your message..." data-lang="chatbotPlaceholder">
+                <button id="chatbot-send" class="chatbot-send">
+                    <i data-lucide="send"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
     <script>
